@@ -124,16 +124,16 @@
 
 /* 1. The Base State: Let the Block Editor handle the colors.
       We only add the transition and the transparent border. */
-.is-style-outline .wp-block-button__link,
+.has-button .wp-block-button__link,
 .register-button .wp-block-button__link {
-    /* Reserve space for the border to prevent "jumping" */
+    /* Reserve space for the button border to prevent "jumping" */
     border: 2px solid transparent !important;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 /* 2. The Hover State: This is where we force our brand colors. */
-.is-style-outline .wp-block-button__link:hover,
-.is-style-outline .wp-block-button__link:focus,
+.has-button .wp-block-button__link:hover,
+.has-button .wp-block-button__link:focus,
 .register-button .wp-block-button__link:hover,
 .register-button .wp-block-button__link:focus {
     background-color: var(--brand-green-light) !important;
