@@ -1,0 +1,145 @@
+/*
+ Theme Name:   Ixion Child
+ Description:  Custom color overrides for the Ixion theme.
+ Author:       Robert Gadon <https://github.com/rgadon107>
+ Template:     ixion
+ Version:      1.0.0
+ License:      GNU General Public License v3.0 or later
+ License URI:  http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+/* ==========================================================================
+   CSS VARIABLES (Design Tokens)
+   Change these hex codes to update the site-wide branding.
+   ========================================================================== */
+
+:root {
+    --brand-strong-yellow: #c1a01e; /* strongYellow */
+    --brand-green-dark:    #527a55; /* desaturatedDarkLimeGreen */
+    --brand-green-light:   #cbd8cb; /* grayishLimeGreen */
+    --brand-white-lime:    #f8faf8; /* lightGrayishLimeGreen */
+    --card-background:     #f4f4f4; /* Very light gray */
+    --brand-text-main:     #333333; /* Dark gray for readability */
+}
+
+
+/* ==========================================================================
+   Gutenberg classes connected to custom background-color and color variables.
+
+   Declare the selectors below so that the background colors and text colors
+   are available for use in the block editor.
+   ========================================================================== */
+
+/* A. BACKGROUND COLORS
+   Syntax: .has-{slug}-background-color
+------------------------------------------------ */
+.has-brand-strong-yellow-background-color { background-color: var(--brand-strong-yellow) !important; }
+.has-brand-green-dark-background-color { background-color: var(--brand-green-dark) !important; }
+.has-brand-green-light-background-color { background-color: var(--brand-green-light) !important; }
+.has-brand-white-lime-background-color { background-color: var(--brand-white-lime) !important; }
+.has-brand-text-main-background-color     { background-color: var(--brand-text-main) !important; }
+
+/* B. TEXT COLORS
+   Syntax: .has-{slug}-color
+------------------------------------------------ */
+.has-brand-strong-yellow-color { color: var(--brand-strong-yellow) !important; }
+.has-brand-green-dark-color { color: var(--brand-green-dark) !important; }
+.has-brand-green-light-color { color: var(--brand-green-light) !important; }
+.has-brand-white-lime-color { color: var(--brand-white-lime) !important; }
+.has-brand-text-main-color { color: var(--brand-text-main) !important; }
+
+/* ==========================================================================
+   1. THEME OVERRIDES
+   ========================================================================== */
+
+@media screen and (min-width: 37.5em) {
+    .main-navigation ul li {
+        margin-left: 1.2em;
+    }
+}
+
+/* ==========================================================================
+   2. CUSTOM COMPONENTS
+   ========================================================================== */
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+/* Remove the front page wrapper, thereby turning off the site tagline. */
+.front-page-wrapper {
+    display: none;
+}
+
+/*--------------------------------------------------------------
+# Event listings ( 'Home' & '{YYYY}-Events' pages
+--------------------------------------------------------------*/
+
+.custom-tight-card,
+.custom-tight-card-home-page {
+    padding: 2rem;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.custom-tight-card-home-page {
+    border-left: 1px solid var(--brand-green-dark);
+    border-bottom: 2px solid var(--brand-green-dark);
+}
+
+.custom-tight-card {
+    border-left: 5px solid var(--brand-green-dark);
+}
+
+.custom-tight-card h1, .custom-tight-card-home-page h1,
+.custom-tight-card h2, .custom-tight-card-home-page h2,
+.custom-tight-card h3, .custom-tight-card-home-page h3,
+.custom-tight-card p,  .custom-tight-card-home-page p   {
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--brand-text-main);
+}
+
+.custom-tight-card .register-button,
+.custom-tight-card-home-page .register-button			{
+    margin-top: 1.5rem;
+}
+
+.custom-tight-card .event-description   {
+    margin-top: 1rem;
+}
+
+/* Remove margin from the very last paragraph */
+.custom-tight-card *:last-child,
+.custom-tight-card-home-page *:last-child									{
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Targeted Button Styles (Outline Style)
+--------------------------------------------------------------*/
+
+/* 1. The Base State: Let the Block Editor handle the colors.
+      We only add the transition and the transparent border. */
+.is-style-outline .wp-block-button__link,
+.register-button .wp-block-button__link {
+    /* Reserve space for the border to prevent "jumping" */
+    border: 2px solid transparent !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* 2. The Hover State: This is where we force our brand colors. */
+.is-style-outline .wp-block-button__link:hover,
+.is-style-outline .wp-block-button__link:focus,
+.register-button .wp-block-button__link:hover,
+.register-button .wp-block-button__link:focus {
+    background-color: var(--brand-green-light) !important;
+    border-color: var(--brand-green-dark) !important;
+    color: var(--brand-green-dark) !important;
+
+    text-decoration: none;
+    outline: none;
+}
