@@ -12,7 +12,8 @@ This child theme was created to manage custom CSS overrides that were previously
 
 ## Technical Notes
 * **Parent Theme:** Ixion
-* **Enqueuing:** Styles are enqueued via `functions.php` with a dependency on `ixion-style` to ensure correct loading order.
+* **Enqueuing:** Front-end styles are enqueued via `functions.php` with a dependency on `ixion-style` to ensure correct loading order.
+* **Added theme support:** Block editor support to display custom text and background colors are added in `functions.php`. 
 
 ## Deployment
-This theme is managed via Git. Changes should be committed locally and pushed to the GitHub repository before being deployed to the production server. A public version of this child-theme can be viewed [in a GitHub repository owned by Robert Gadon](https://github.com/rgadon107/ixion-child). 
+This theme is managed via Git. Changes should be committed locally and pushed to the GitHub repository before being deployed to the production server. A public version of this child-theme can be viewed [in a GitHub repository owned by Robert Gadon](https://github.com/rgadon107/ixion-child-theme). 
