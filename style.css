@@ -3,7 +3,7 @@
  Description:  Custom color overrides for the Ixion theme.
  Author:       Robert Gadon <https://github.com/rgadon107>
  Template:     ixion
- Version:      1.0.0
+ Version:      1.0.1
  License:      GNU General Public License v3.0 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -67,8 +67,83 @@
 --------------------------------------------------------------*/
 
 /* Remove the front page wrapper, thereby turning off the site tagline. */
+.site-title,
 .front-page-wrapper {
     display: none;
+}
+
+/*--------------------------------------------------------------
+# Navigation: Final Edge-to-Edge & Color Lock
+--------------------------------------------------------------*/
+
+/* 1. Global Color Lock (ID-based to beat the yellow) */
+#site-navigation a,
+#site-navigation ul li a {
+    color: var(--brand-green-dark) !important;
+    text-decoration: none !important;
+}
+
+@media screen and (min-width: 922px) {
+
+    /* 2. Top-Level Layout */
+    .main-navigation div.menu-menu-container > ul {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+    }
+
+    .main-navigation div.menu-menu-container > ul > li > a {
+        display: block !important;
+        padding: 15px 18px !important;
+        white-space: nowrap !important;
+    }
+
+    /* 3. Sub-Menu Container: The "Zero-Gutter" Fix */
+    .main-navigation ul ul.sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 99999;
+        background-color: #ffffff !important;
+        border: 2px solid var(--brand-green-dark) !important;
+        width: 280px !important;
+        /* ZERO padding ensures the links can touch the border */
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* 4. Sub-Menu Items: Force Full Width */
+    .main-navigation ul ul.sub-menu li {
+        width: 100% !important;
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .main-navigation ul ul.sub-menu li a {
+        display: block !important;
+        width: 100% !important; /* Forces link to fill the 280px */
+        box-sizing: border-box !important; /* Ensures padding stays inside the 100% width */
+        padding: 12px 20px !important;
+        white-space: normal !important;
+        line-height: 1.4 !important;
+        background-color: transparent !important;
+    }
+
+    /* 5. THE HOVER: Flush to the Border */
+    #site-navigation li a:hover,
+    #site-navigation ul li:hover > a,
+    #site-navigation ul ul.sub-menu li a:hover {
+        background-color: var(--brand-green-light) !important;
+        color: var(--brand-green-dark) !important;
+    }
+
+    /* Logic to show the menu */
+    .main-navigation ul li:hover > ul.sub-menu {
+        display: block !important;
+    }
 }
 
 /*--------------------------------------------------------------
