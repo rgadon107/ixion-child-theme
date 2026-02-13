@@ -1,9 +1,9 @@
 /*
  Theme Name:   Ixion Child
- Description:  Custom color overrides for the Ixion theme.
+ Description:  Sets a custom color palette, customizes the site navigation menus ( desktop & mobile ), event patterns, and button styles.
  Author:       Robert Gadon <https://github.com/rgadon107>
  Template:     ixion
- Version:      1.0.0
+ Version:      1.0.1
  License:      GNU General Public License v3.0 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -26,7 +26,7 @@
 /* ==========================================================================
    Gutenberg classes connected to custom background-color and color variables.
 
-   Declare the selectors below so that the background colors and text colors
+   Declare the selectors below so that the background-color and text colors
    are available for use in the block editor.
    ========================================================================== */
 
@@ -67,8 +67,146 @@
 --------------------------------------------------------------*/
 
 /* Remove the front page wrapper, thereby turning off the site tagline. */
+.site-title,
 .front-page-wrapper {
     display: none;
+}
+
+/*--------------------------------------------------------------
+# Navigation: Final Edge-to-Edge & Color Lock
+--------------------------------------------------------------*/
+
+/* 1. Global Color Lock (ID-based to beat the yellow) */
+#site-navigation a,
+#site-navigation ul li a {
+    color: var(--brand-green-dark) !important;
+    text-decoration: none !important;
+}
+
+@media screen and (min-width: 922px) {
+
+    /* 2. Top-Level Layout */
+    .main-navigation div.menu-menu-container > ul {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+    }
+
+    .main-navigation div.menu-menu-container > ul > li > a {
+        display: block !important;
+        padding: 15px 18px !important;
+        white-space: nowrap !important;
+    }
+
+    /* 3. Sub-Menu Container: The "Zero-Gutter" Fix */
+    .main-navigation ul ul.sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 99999;
+        background-color: #ffffff !important;
+        border: 2px solid var(--brand-green-dark) !important;
+        width: 280px !important;
+        /* ZERO padding ensures the links can touch the border */
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* 4. Sub-Menu Items: Force Full Width */
+    .main-navigation ul ul.sub-menu li {
+        width: 100% !important;
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .main-navigation ul ul.sub-menu li a {
+        display: block !important;
+        width: 100% !important; /* Forces link to fill the 280px */
+        box-sizing: border-box !important; /* Ensures padding stays inside the 100% width */
+        padding: 12px 20px !important;
+        white-space: normal !important;
+        line-height: 1.4 !important;
+        background-color: transparent !important;
+    }
+
+    /* 5. THE HOVER: Flush to the Border */
+    #site-navigation li a:hover,
+    #site-navigation ul li:hover > a,
+    #site-navigation ul ul.sub-menu li a:hover {
+        background-color: var(--brand-green-light) !important;
+        color: var(--brand-green-dark) !important;
+    }
+
+    /* Logic to show the menu */
+    .main-navigation ul li:hover > ul.sub-menu {
+        display: block !important;
+    }
+}
+
+/*--------------------------------------------------------------
+# Mobile Navigation: Fix Breakpoints & Scoped Border
+--------------------------------------------------------------*/
+
+/* 1. Mobile Toggle Button (Global for mobile states) */
+.main-navigation .menu-toggle {
+    background-color: var(--brand-green-dark) !important;
+    color: var(--brand-white-lime) !important;
+    position: absolute;
+    top: 1.8286em;
+    right: 1.6em;
+    border-width: 0;
+    padding: .7em 1em;
+}
+
+.main-navigation .menu-toggle::before {
+    color: var(--brand-white-lime) !important;
+}
+
+/* 2. Mobile Menu Styles (Scoped to screens below 922px) */
+@media screen and (max-width: 921px) {
+
+    /* SCOPED BORDER: Only visible on mobile menu */
+    .main-navigation ul#top-menu {
+        border-top: 3px solid var(--brand-green-dark) !important;
+    }
+
+    /* Ensure all sub-menus are visible by default in the mobile tree */
+    #site-navigation.toggled .nav-menu ul.sub-menu {
+        display: block !important;
+        visibility: visible !important;
+        height: auto !important;
+        opacity: 1 !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin-left: 15px !important;
+    }
+
+    /* Mobile Link Styling */
+    #site-navigation.toggled .nav-menu li a {
+        display: block !important;
+        width: 100% !important;
+        padding: 12px 20px !important;
+        color: var(--brand-green-dark) !important;
+        transition: background-color 0.2s ease;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Highlight on Hover/Tap/Current Page */
+    #site-navigation.toggled .nav-menu li a:hover,
+    #site-navigation.toggled .nav-menu li a:focus,
+    #site-navigation.toggled .nav-menu .current-menu-item > a {
+        background-color: var(--brand-green-light) !important;
+        color: var(--brand-green-dark) !important;
+    }
+
+    /* Kill lingering yellow text on "Current" items */
+    #site-navigation.toggled .nav-menu .current-menu-item > a,
+    #site-navigation.toggled .nav-menu .current-menu-ancestor > a {
+        color: var(--brand-green-dark) !important;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -116,6 +254,41 @@
 .custom-tight-card *:last-child,
 .custom-tight-card-home-page *:last-child									{
     margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Home and '{YYYY} Events' Pages - Location Block Padding
+--------------------------------------------------------------*/
+
+/* Target event locations specifically inside our custom card components */
+.custom-tight-card p.event-location,
+.custom-tight-card-home-page p.event-location,
+p.event-location.has-background {
+    /* 10px Top/Bottom | 15px Right | 10px Left */
+    padding: 10px 15px 10px 10px !important;
+
+    /* Optional: Makes the block feel a bit more modern */
+    border-radius: 4px;
+
+    /* Ensures the line height accommodates the padding nicely */
+    line-height: 1.5 !important;
+
+    /* Ensures the block spans the width of the card */
+    display: block;
+
+    /* Ensure it spaces away from the elements above/below */
+    margin-bottom: 1rem !important;
+}
+
+/* Ensure the link inside the location block inherits the dark green color */
+p.event-location a,
+p.event-location a strong {
+    color: var(--brand-green-dark) !important;
+    text-decoration: none;
+}
+
+p.event-location a:hover {
+    text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
