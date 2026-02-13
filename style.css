@@ -1,6 +1,6 @@
 /*
  Theme Name:   Ixion Child
- Description:  Custom color overrides for the Ixion theme.
+ Description:  Sets a custom color palette, customizes the site navigation menus ( desktop & mobile ), event patterns, and button styles.
  Author:       Robert Gadon <https://github.com/rgadon107>
  Template:     ixion
  Version:      1.0.1
@@ -26,7 +26,7 @@
 /* ==========================================================================
    Gutenberg classes connected to custom background-color and color variables.
 
-   Declare the selectors below so that the background colors and text colors
+   Declare the selectors below so that the background-color and text colors
    are available for use in the block editor.
    ========================================================================== */
 
@@ -147,6 +147,69 @@
 }
 
 /*--------------------------------------------------------------
+# Mobile Navigation: Fix Breakpoints & Scoped Border
+--------------------------------------------------------------*/
+
+/* 1. Mobile Toggle Button (Global for mobile states) */
+.main-navigation .menu-toggle {
+    background-color: var(--brand-green-dark) !important;
+    color: var(--brand-white-lime) !important;
+    position: absolute;
+    top: 1.8286em;
+    right: 1.6em;
+    border-width: 0;
+    padding: .7em 1em;
+}
+
+.main-navigation .menu-toggle::before {
+    color: var(--brand-white-lime) !important;
+}
+
+/* 2. Mobile Menu Styles (Scoped to screens below 922px) */
+@media screen and (max-width: 921px) {
+
+    /* SCOPED BORDER: Only visible on mobile menu */
+    .main-navigation ul#top-menu {
+        border-top: 3px solid var(--brand-green-dark) !important;
+    }
+
+    /* Ensure all sub-menus are visible by default in the mobile tree */
+    #site-navigation.toggled .nav-menu ul.sub-menu {
+        display: block !important;
+        visibility: visible !important;
+        height: auto !important;
+        opacity: 1 !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin-left: 15px !important;
+    }
+
+    /* Mobile Link Styling */
+    #site-navigation.toggled .nav-menu li a {
+        display: block !important;
+        width: 100% !important;
+        padding: 12px 20px !important;
+        color: var(--brand-green-dark) !important;
+        transition: background-color 0.2s ease;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Highlight on Hover/Tap/Current Page */
+    #site-navigation.toggled .nav-menu li a:hover,
+    #site-navigation.toggled .nav-menu li a:focus,
+    #site-navigation.toggled .nav-menu .current-menu-item > a {
+        background-color: var(--brand-green-light) !important;
+        color: var(--brand-green-dark) !important;
+    }
+
+    /* Kill lingering yellow text on "Current" items */
+    #site-navigation.toggled .nav-menu .current-menu-item > a,
+    #site-navigation.toggled .nav-menu .current-menu-ancestor > a {
+        color: var(--brand-green-dark) !important;
+    }
+}
+
+/*--------------------------------------------------------------
 # Event listings ( 'Home' & '{YYYY}-Events' pages
 --------------------------------------------------------------*/
 
@@ -191,6 +254,41 @@
 .custom-tight-card *:last-child,
 .custom-tight-card-home-page *:last-child									{
     margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Home and '{YYYY} Events' Pages - Location Block Padding
+--------------------------------------------------------------*/
+
+/* Target event locations specifically inside our custom card components */
+.custom-tight-card p.event-location,
+.custom-tight-card-home-page p.event-location,
+p.event-location.has-background {
+    /* 10px Top/Bottom | 15px Right | 10px Left */
+    padding: 10px 15px 10px 10px !important;
+
+    /* Optional: Makes the block feel a bit more modern */
+    border-radius: 4px;
+
+    /* Ensures the line height accommodates the padding nicely */
+    line-height: 1.5 !important;
+
+    /* Ensures the block spans the width of the card */
+    display: block;
+
+    /* Ensure it spaces away from the elements above/below */
+    margin-bottom: 1rem !important;
+}
+
+/* Ensure the link inside the location block inherits the dark green color */
+p.event-location a,
+p.event-location a strong {
+    color: var(--brand-green-dark) !important;
+    text-decoration: none;
+}
+
+p.event-location a:hover {
+    text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
