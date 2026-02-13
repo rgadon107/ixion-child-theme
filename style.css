@@ -264,8 +264,10 @@
 .custom-tight-card p.event-location,
 .custom-tight-card-home-page p.event-location,
 p.event-location.has-background {
-    /* 10px Top/Bottom | 15px Right | 10px Left */
-    padding: 10px 15px 10px 10px !important;
+    position: relative;
+
+    /* Increased left padding to 35px to accommodate placement of the map pin icon */
+    padding: 10px 15px 10px 35px !important;
 
     /* Optional: Makes the block feel a bit more modern */
     border-radius: 4px;
@@ -280,11 +282,28 @@ p.event-location.has-background {
     margin-bottom: 1rem !important;
 }
 
+/* Add a Map Pin Icon via Genericons */
+.custom-tight-card p.event-location::before,
+.custom-tight-card-home-page p.event-location::before {
+    content: "\f417"; /* Genericon code for a location pin */
+    display: inline-block;
+    font-family: "Genericons";
+    font-size: 20px;
+    font-weight: normal;
+    position: absolute;
+    left: 10px; /* Positions the pin inside the padding */
+    top: 12px;  /* Adjusts the vertical alignment */
+    color: var(--brand-green-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 /* Ensure the link inside the location block inherits the dark green color */
 p.event-location a,
 p.event-location a strong {
     color: var(--brand-green-dark) !important;
     text-decoration: none;
+    transition: border-color 0.3s ease;
 }
 
 p.event-location a:hover {
