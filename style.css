@@ -49,6 +49,37 @@
 .has-brand-text-main-color { color: var(--brand-text-main) !important; }
 
 /* ==========================================================================
+   GLOBAL LINK RESET
+   ========================================================================== */
+
+/* 1. Base Anchor behavior */
+a {
+    color: var(--brand-green-dark);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+/* 2. Global Hover/Focus */
+a:hover,
+a:focus {
+    color: var(--brand-green-dark);
+    text-decoration: underline !important;
+}
+
+/* 3. Inline Protection */
+p a, li a, span a {
+    display: inline;
+    font-weight: inherit;
+}
+
+/* 4. Inheritance Fix (Nesting-Aware & Button-Safe) */
+.entry-content a:not(.wp-block-button__link):not(.register-button a):not(.has-button a),
+.entry-summary a:not(.wp-block-button__link):not(.register-button a):not(.has-button a),
+.widget-area a:not(.wp-block-button__link):not(.register-button a):not(.has-button a) {
+    color: var(--brand-green-dark) !important;
+}
+
+/* ==========================================================================
    1. THEME OVERRIDES
    ========================================================================== */
 
