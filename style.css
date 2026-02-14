@@ -395,7 +395,23 @@ ul.register-list li.has-list-item:last-child {
     margin-bottom: 0 !important;
 }
 
-/* 2. Mobile Breakpoint (Below 922px) */
+
+/* 2. Nested List Styling */
+/* Targets the sub-list inside a parent list item */
+ul.register-list li.has-list-item ul.register-list {
+    margin-top: 0.75rem !important; /* The 'breathing room' you requested */
+    margin-bottom: 0.5rem;          /* Space before the next main item */
+    list-style-type: circle;        /* Changes bullet to a hollow circle */
+}
+
+/* Optional: Targets the specific nested list items */
+ul.register-list li.has-list-item ul.register-list li.has-list-item {
+    margin-bottom: 0.6rem !important; /* Tighter spacing for sub-items */
+    font-weight: normal;              /* Makes sub-items less 'heavy' than parents */
+}
+
+
+/* 3. Mobile Breakpoint (Below 922px) */
 @media screen and (max-width: 921px) {
 
     ul.register-list {
@@ -411,3 +427,4 @@ ul.register-list li.has-list-item:last-child {
         margin-bottom: 1.5rem !important;
     }
 }
+
