@@ -49,6 +49,37 @@
 .has-brand-text-main-color { color: var(--brand-text-main) !important; }
 
 /* ==========================================================================
+   GLOBAL LINK RESET
+   ========================================================================== */
+
+/* 1. Base Anchor behavior */
+a {
+    color: var(--brand-green-dark);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+/* 2. Global Hover/Focus */
+a:hover,
+a:focus {
+    color: var(--brand-green-dark);
+    text-decoration: underline !important;
+}
+
+/* 3. Inline Protection */
+p a, li a, span a {
+    display: inline;
+    font-weight: inherit;
+}
+
+/* 4. Inheritance Fix (Nesting-Aware & Button-Safe) */
+.entry-content a:not(.wp-block-button__link):not(.register-button a):not(.has-button a),
+.entry-summary a:not(.wp-block-button__link):not(.register-button a):not(.has-button a),
+.widget-area a:not(.wp-block-button__link):not(.register-button a):not(.has-button a) {
+    color: var(--brand-green-dark) !important;
+}
+
+/* ==========================================================================
    1. THEME OVERRIDES
    ========================================================================== */
 
@@ -334,4 +365,49 @@ p.event-location a:hover {
 
     text-decoration: none;
     outline: none;
+}
+
+/*--------------------------------------------------------------
+# List Styling
+
+Adds global list styles for an unordered list ( `.register-list` ) and
+list-items ( `.has-list-item` ) on desktop and mobile.
+--------------------------------------------------------------*/
+
+/* 1. Global Styles (Desktop & Mobile) */
+ul.register-list {
+    margin-left: 1.5rem;
+    padding-left: 0;
+}
+
+ul.register-list li.has-list-item {
+    /* Vertical space BETWEEN separate list items */
+    margin-bottom: 1.2rem !important;
+
+    /* Vertical space BETWEEN wrapped lines of the same item */
+    line-height: 1.3 !important;
+
+    vertical-align: top;
+}
+
+/* Cleanup: prevent extra gap at the very bottom of the list */
+ul.register-list li.has-list-item:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* 2. Mobile Breakpoint (Below 922px) */
+@media screen and (max-width: 921px) {
+
+    ul.register-list {
+        /* Prevents the list from sticking to the image sliding above it */
+        margin-top: 2rem !important;
+
+        /* Slight adjustment for mobile screen edges */
+        margin-left: 1.25rem !important;
+    }
+
+    ul.register-list li.has-list-item {
+        /* Slightly more space for readability on narrow screens */
+        margin-bottom: 1.5rem !important;
+    }
 }
