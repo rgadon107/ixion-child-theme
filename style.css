@@ -277,14 +277,69 @@ p a, li a, span a {
     margin-top: 1.5rem;
 }
 
-.custom-tight-card .event-description   {
+.custom-tight-card p.event-description   {
     margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.custom-tight-card p.event-description:last-child {
+    margin-bottom: 1.5rem;
 }
 
 /* Remove margin from the very last paragraph */
-.custom-tight-card *:last-child,
+/*!*.custom-tight-card .event-description *:last-child,*!
 .custom-tight-card-home-page *:last-child									{
     margin-bottom: 0;
+}*/
+
+/*-------------------------------------------------------------------
+# Style the Event Presenter Group Pattern on the '{YYYY} Events' Page
+----------------------------------------------------------------------*/
+
+/* Base Styles (Mobile First) */
+.wp-block-group.presenter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Vertical space between the presenter's name and title / organization below. */
+    margin-bottom: 1.5rem;
+    font-style: italic; /* Global italic styling for the group */
+}
+
+/* Styling the placeholder "ghost" text in the editor */
+.wp-block-group.presenter-group [data-placeholder]::before {
+    color: var(--brand-text-main);
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.wp-block-group.presenter-group p {
+    margin: 0 !important; /* Overrides theme paragraph margins */
+    line-height: 1.3 !important;
+    text-align: left;
+    color: var(--brand-text-main); /* Child theme brand color */
+}
+
+.wp-block-group.presenter-group p:first-child {
+    font-size: 1.1rem;
+}
+
+.wp-block-group.presenter-group p:last-child {
+    font-size: 0.95rem;
+}
+
+/* Tablet & Desktop Adjustments (Min-Width: 57.625em / ~922px) */
+@media (min-width: 57.625em) {
+    .wp-block-group.presenter-group {
+        gap: 2px; /* Tightens gap on larger screens */
+    }
+
+    .wp-block-group.presenter-group p:first-child {
+        font-size: 1.25rem;
+    }
+
+    .wp-block-group.presenter-group p:last-child {
+        font-size: 1rem;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -340,6 +395,8 @@ p.event-location a strong {
 p.event-location a:hover {
     text-decoration: underline;
 }
+
+
 
 /*--------------------------------------------------------------
 # Targeted Button Styles (Outline Style)
