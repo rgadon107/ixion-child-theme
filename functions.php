@@ -96,3 +96,8 @@ function register_block_editor_colors(): void   {
     // This allows the editor to see your .has-{slug}-color CSS classes.
     add_editor_style('style.css?v=' . _get_asset_version('style.css') );
 }
+
+/**
+ * Load custom pattern registrations.
+ */
+require_once get_stylesheet_directory() . '/includes/register-design-patterns.php';
