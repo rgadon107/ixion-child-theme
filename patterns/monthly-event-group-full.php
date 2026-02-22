@@ -21,11 +21,11 @@
 
     <!-- wp:group {"metadata":{"name":"Presenter Info Group Block"},"className":"presenter-group","layout":{"type":"constrained"}} -->
     <div class="wp-block-group presenter-group">
-        <!-- wp:paragraph {"metadata":{"name":"Presented by ______ "},"placeholder":"Presented by { Presenter's-Name }","className":"event-presenter","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-text-main"}}}},"textColor":"brand-text-main","lineHeight":1} -->
+        <!-- wp:paragraph {"metadata":{"name":"Presenter's Name"},"placeholder":"Presented by { Presenter's-Name }","className":"event-presenter","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-text-main"}}}},"textColor":"brand-text-main","lineHeight":1} -->
         <p class="event-presenter has-brand-text-main-color has-text-color has-link-color has-custom-lineheight" style="line-height:1"></p>
         <!-- /wp:paragraph -->
 
-        <!-- wp:paragraph {"metadata":{"name":"( Optional ) Presenter's Title, Organization "},"placeholder":"{ Presenter's-Title }, { Organization-Name }","className":"presenter-title-and-organization"} -->
+        <!-- wp:paragraph {"metadata":{"name":"Presenter's Title, Organization"},"placeholder":"{ Presenter's-Title }, { Organization-Name }","className":"presenter-title-and-organization"} -->
         <p class="presenter-title-and-organization"></p>
         <!-- /wp:paragraph -->
     </div>
@@ -39,9 +39,9 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"metadata":{"name":"Event Location Group Block"},"className":"event-location-group","layout":{"type":"constrained"},"lock":{"remove":true,"move":true}} -->
+    <!-- wp:group {"lock":{"remove":true,"move":true},"metadata":{"name":"Event Location Group Block"},"className":"event-location-group","layout":{"type":"constrained"}} -->
     <div class="wp-block-group event-location-group">
-        <!-- wp:paragraph {"metadata":{"name":"Event Location"},"placeholder":"St. Mary’s Greek Orthodox Church\n3450 Irving Ave South, Minneapolis, MN 55408\n\nDon't forget to link the address to Google Maps! In the link popup, check the box to open the link in a new tab.","className":"event-location","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-green-dark"}}}},"backgroundColor":"brand-green-light","textColor":"brand-green-dark","lock":{"remove":true,"move":true}} -->
+        <!-- wp:paragraph {"metadata":{"name":"Event Location"},"placeholder":"DEFAULT ADDRESS; Enter:\n\nSt. Mary’s Greek Orthodox Church\n3450 Irving Ave South, Minneapolis, MN 55408\n\n!IMPORTANT: PRESS [SHIFT] + [ENTER] FOR NEW LINES.\n\nTO LINK: Highlight the address, click the 'Link' icon (Ctrl+K), paste the Google Maps URL, and toggle 'Open in new tab'.","lock":{"remove":true,"move":true},"className":"event-location","style":{"spacing":{"padding":{"top":"10px","bottom":"10px"}},"elements":{"link":{"color":{"text":"var:preset|color|brand-green-dark"}}}},"backgroundColor":"brand-green-light","textColor":"brand-green-dark"} -->
         <p class="event-location has-brand-green-dark-color has-brand-green-light-background-color has-text-color has-background has-link-color"></p>
         <!-- /wp:paragraph -->
     </div>
@@ -49,7 +49,7 @@
 
     <!-- wp:group {"metadata":{"name":"Event Schedule Group Block"},"className":"event-schedule-group","layout":{"type":"constrained"},"lock":{"remove":true,"move":true}} -->
     <div class="wp-block-group event-schedule-group">
-        <!-- wp:paragraph {"metadata":{"name":"Event Schedule"},"placeholder":"6:00 PM - Dinner;  6:30 PM - Business Meeting;  7:00 PM - Program","className":"event-schedule","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-text-main"}}}},"textColor":"brand-text-main","lineHeight":1,"lock":{"remove":true,"move":true}} -->
+        <!-- wp:paragraph {"metadata":{"name":"Event Schedule"},"placeholder":"6:00 PM - Dinner; 6:30 PM - Business Meeting; 7:00 PM - Program","className":"event-schedule","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-text-main"}}}},"textColor":"brand-text-main","lineHeight":1,"lock":{"remove":true,"move":true}} -->
         <p class="event-schedule has-brand-text-main-color has-text-color has-link-color has-custom-lineheight" style="line-height:1"></p>
         <!-- /wp:paragraph -->
     </div>
@@ -69,6 +69,7 @@
 
 </div>
 <!-- /wp:group -->
-<!-- wp:spacer {"height":"20px"} -->
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+
+<!-- wp:spacer {"height":"10px"} -->
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->

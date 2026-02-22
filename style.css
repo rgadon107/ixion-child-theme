@@ -286,11 +286,10 @@ p a, li a, span a {
     margin-bottom: 1.5rem;
 }
 
-/* Remove margin from the very last paragraph */
-/*!*.custom-tight-card .event-description *:last-child,*!
-.custom-tight-card-home-page *:last-child									{
-    margin-bottom: 0;
-}*/
+.custom-tight-card p.event-schedule,
+.custom-tight-card-home-page p.event-schedule {
+    font-weight: 700;
+}
 
 /*-------------------------------------------------------------------
 # Style the Event Presenter Group Pattern on the '{YYYY} Events' Page
@@ -342,9 +341,9 @@ p a, li a, span a {
     }
 }
 
-/*--------------------------------------------------------------
-# Home and '{YYYY} Events' Pages - Location Block Padding
---------------------------------------------------------------*/
+/*------------------------------------------------------------------------
+# Home and '{YYYY} Events' Pages - Location and Event Schedule Block Styles
+--------------------------------------------------------------------------*/
 
 /* Target event locations specifically inside our custom card components */
 .custom-tight-card p.event-location,
@@ -373,7 +372,7 @@ p.event-location.has-background {
 .custom-tight-card-home-page p.event-location::before {
     content: "\f417"; /* Genericon code for a location pin */
     display: inline-block;
-    font-family: "Genericons";
+    font-family: "Genericons", serif;
     font-size: 20px;
     font-weight: normal;
     position: absolute;
@@ -385,9 +384,10 @@ p.event-location.has-background {
 }
 
 /* Ensure the link inside the location block inherits the dark green color */
-p.event-location a,
-p.event-location a strong {
+.event-location-group .event-location,
+.event-location-group .event-location a     {
     color: var(--brand-green-dark) !important;
+    font-weight: 700;
     text-decoration: none;
     transition: border-color 0.3s ease;
 }
@@ -399,7 +399,7 @@ p.event-location a:hover {
 
 
 /*--------------------------------------------------------------
-# Targeted Button Styles (Outline Style)
+    # Targeted Button Styles (Outline Style)
 --------------------------------------------------------------*/
 
 /* 1. The Base State: Let the Block Editor handle the colors.
@@ -484,4 +484,3 @@ ul.register-list li.has-list-item ul.register-list li.has-list-item {
         margin-bottom: 1.5rem !important;
     }
 }
-
