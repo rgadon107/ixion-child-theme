@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Events - FFF Show
- * Slug: ixion-child/event-fff-show
+ * Slug: ixion-child/events-fff-show
  * Categories: fff show, fff-show, food, flower, foto, photo
  * Description: A modified single event card for the FFF Show. Display on the Events and Home pages.
  * Keywords: event, fff show, food, flower, foto, photo
