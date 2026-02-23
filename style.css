@@ -277,12 +277,15 @@ p a, li a, span a {
     margin-top: 1.5rem;
 }
 
-.custom-tight-card p.event-description   {
+.custom-tight-card p.event-description,
+.custom-tight-card-home-page p.event-description    {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-style: italic;
 }
 
-.custom-tight-card p.event-description:last-child {
+.custom-tight-card p.event-description:last-child,
+.custom-tight-card-home-page p.event-description:last-child {
     margin-bottom: 1.5rem;
 }
 
