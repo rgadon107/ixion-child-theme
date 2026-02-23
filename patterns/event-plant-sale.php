@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Events - Plant Sale
- * Slug: ixion-child/event-plant-sale
- * Categories: events-plant-sale, events plant sale, plant sale, plant-sale
+ * Slug: ixion-child/events-plant-sale
+ * Categories: featured, events-plant-sale
  * Description: A modified single event card for the spring plant sale. Display on the Events and Home pages.
  * Keywords: event, plant sale, spring plant sale, garden club
  * Viewport Width: 800

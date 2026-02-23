@@ -2,7 +2,7 @@
 /**
  * Title: Monthly Event Group - Full Listing
  * Slug: ixion-child/monthly-event-group-full-listing
- * Categories: events-full-listing
+ * Categories: featured, events-full-listing
  * Description: A complete version of a single event card designed for the Events page layout.
  * Keywords: event, monthly, full, garden club
  * Viewport Width: 800
