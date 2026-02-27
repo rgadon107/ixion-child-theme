@@ -66,6 +66,10 @@ a:focus {
     text-decoration: underline !important;
 }
 
+a:visited   {
+    color: var(--brand-green-dark);
+}
+
 /* 3. Inline Protection */
 p a, li a, span a {
     display: inline;
@@ -73,10 +77,11 @@ p a, li a, span a {
 }
 
 /* 4. Inheritance Fix (Nesting-Aware & Button-Safe) */
-.entry-content a:not(.wp-block-button__link):not(.register-button a):not(.has-button a),
+/*.entry-content a:not(.wp-block-button__link):not(.register-button a):not(.has-button a),*/
 .entry-summary a:not(.wp-block-button__link):not(.register-button a):not(.has-button a),
 .widget-area a:not(.wp-block-button__link):not(.register-button a):not(.has-button a) {
     color: var(--brand-green-dark) !important;
+    text-decoration: none;
 }
 
 /* ==========================================================================
@@ -240,12 +245,13 @@ p a, li a, span a {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Event listings ( 'Home' & '{YYYY}-Events' pages
 --------------------------------------------------------------*/
 
-.custom-tight-card,
-.custom-tight-card-home-page {
+.entry-content .custom-tight-card,
+.entry-content .custom-tight-card-home-page {
     padding: 2rem;
     background-color: var(--card-background);
     border-radius: 8px;
@@ -253,46 +259,38 @@ p a, li a, span a {
     margin-bottom: 2rem;
 }
 
-.custom-tight-card-home-page {
+.entry-content .custom-tight-card-home-page {
     border-left: 1px solid var(--brand-green-dark);
     border-bottom: 2px solid var(--brand-green-dark);
 }
 
-.custom-tight-card {
+.entry-content .custom-tight-card {
     border-left: 5px solid var(--brand-green-dark);
 }
 
-.custom-tight-card h1, .custom-tight-card-home-page h1,
-.custom-tight-card h2, .custom-tight-card-home-page h2,
-.custom-tight-card h3, .custom-tight-card-home-page h3,
-.custom-tight-card p,  .custom-tight-card-home-page p   {
+.entry-content .custom-tight-card h1, .custom-tight-card-home-page h1,
+.entry-content .custom-tight-card h2, .custom-tight-card-home-page h2,
+.entry-content .custom-tight-card h3, .custom-tight-card-home-page h3,
+.entry-content .custom-tight-card p,  .custom-tight-card-home-page p   {
     line-height: 1.5;
     margin-top: 0;
     margin-bottom: 0.75rem;
     color: var(--brand-text-main);
 }
 
-.custom-tight-card .register-button,
-.custom-tight-card-home-page .register-button			{
-    margin-top: 1.5rem;
-}
-
-.custom-tight-card p.event-description,
-.custom-tight-card-home-page p.event-description    {
+.entry-content .custom-tight-card p.event-description,
+.entry-content .custom-tight-card-home-page p.event-description    {
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-style: italic;
 }
 
-.custom-tight-card p.event-description:last-child,
-.custom-tight-card-home-page p.event-description:last-child {
+.entry-content .custom-tight-card p.event-description:last-child,
+.entry-content .custom-tight-card-home-page p.event-description:last-child {
     margin-bottom: 1.5rem;
 }
 
-.custom-tight-card p.event-schedule,
-.custom-tight-card-home-page p.event-schedule {
-    font-weight: 700;
-}
+
 
 /*-------------------------------------------------------------------
 # Style the Event Presenter Group Pattern on the '{YYYY} Events' Page
@@ -348,14 +346,32 @@ p a, li a, span a {
 # Home and '{YYYY} Events' Pages - Location and Event Schedule Block Styles
 --------------------------------------------------------------------------*/
 
+/* Add a Map Pin Icon via Genericons */
+.entry-content .custom-tight-card .event-location-group .event-location::before,
+.entry-content .custom-tight-card-home-page .event-location-group .event-location::before {
+    content: "\f417"; /* Genericon code for a location pin */
+    display: inline-block;
+    font-family: "Genericons", serif;
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    left: 10px; /* Positions the pin inside the padding */
+    top: 12px;  /* Adjusts the vertical alignment */
+    color: var(--brand-green-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 /* Target event locations specifically inside our custom card components */
-.custom-tight-card p.event-location,
-.custom-tight-card-home-page p.event-location,
-p.event-location.has-background {
+.entry-content .custom-tight-card .event-location-group p.event-location,
+.entry-content .custom-tight-card-home-page .event-location-group p.event-location,
+.entry-content .event-location-group p.event-location.has-background  {
     position: relative;
 
     /* Increased left padding to 35px to accommodate placement of the map pin icon */
     padding: 10px 15px 10px 35px !important;
+
+    font-weight: 700;
 
     /* Optional: Makes the block feel a bit more modern */
     border-radius: 4px;
@@ -367,43 +383,43 @@ p.event-location.has-background {
     display: block;
 
     /* Ensure it spaces away from the elements above/below */
-    margin-bottom: 1rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
-/* Add a Map Pin Icon via Genericons */
-.custom-tight-card p.event-location::before,
-.custom-tight-card-home-page p.event-location::before {
-    content: "\f417"; /* Genericon code for a location pin */
-    display: inline-block;
-    font-family: "Genericons", serif;
-    font-size: 20px;
-    font-weight: normal;
-    position: absolute;
-    left: 10px; /* Positions the pin inside the padding */
-    top: 12px;  /* Adjusts the vertical alignment */
-    color: var(--brand-green-dark);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Ensure the link inside the location block inherits the dark green color */
-.event-location-group .event-location,
-.event-location-group .event-location a     {
+/* Target the event-location-group and child paragraph to ensure the background and text color persist */
+/*.editor-styles-wrapper .event-location-group .event-location,*/
+/*.entry-content.event-location-group .event-location,
+.entry-content.event-location-group .event-location a     {
+    background-color: var(--brand-green-light) !important;
     color: var(--brand-green-dark) !important;
     font-weight: 700;
-    text-decoration: none;
+!*    text-decoration: none;*!
     transition: border-color 0.3s ease;
+    border: none;
+}*/
+
+.entry-content .custom-tight-card .event-location-group .event-location a:hover,
+.entry-content .custom-tight-card .event-location-group .event-location a:focus {
+/*    color: var(--brand-green-dark) !important;*/
+    color: color-mix(in srgb, var(--brand-green-dark), transparent 40%) !important;
+    text-decoration: underline color-mix(in srgb, var(--brand-green-dark), transparent 40%) 2px !important;
+    text-underline-offset: 0.1em;
 }
 
-p.event-location a:hover {
-    text-decoration: underline;
+.event-content .custom-tight-card p.event-schedule,
+.event-content .custom-tight-card-home-page p.event-schedule {
+    font-weight: 700;
 }
 
-
+.entry-content .custom-tight-card .register-button,
+.entry-content .custom-tight-card-home-page .register-button			{
+    margin-top: 1.5rem;
+}
 
 /*--------------------------------------------------------------
     # Targeted Button Styles (Outline Style)
 --------------------------------------------------------------*/
+
 
 /* 1. The Base State: Let the Block Editor handle the colors.
       We only add the transition and the transparent border. */
@@ -422,7 +438,6 @@ p.event-location a:hover {
     background-color: var(--brand-green-light) !important;
     border-color: var(--brand-green-dark) !important;
     color: var(--brand-green-dark) !important;
-
     text-decoration: none;
     outline: none;
 }
