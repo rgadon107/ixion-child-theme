@@ -8,7 +8,7 @@
  * Viewport Width: 800
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Monthly Event Group - Full Listing"},"className":"custom-tight-card","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata": {"name": "Monthly Event Group - Full Listing"}, "className": "custom-tight-card", "style": {"spacing": {"margin": {"top": "0", "bottom": "0"}, "padding": {"top": "0", "bottom": "0"}}}, "layout": {"type": "constrained"}, "lock": {"remove": true, "move": false}} -->
 <div class="wp-block-group custom-tight-card">
 
     <!-- wp:heading {"level":3,"metadata":{"name":"Event Date"},"placeholder":"Presentation Date: {Month} DD, YYYY","className":"event-date","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-text-main"}}}},"textColor":"brand-text-main","lineHeight":1,"lock":{"remove":true,"move":true}} -->
@@ -39,9 +39,9 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"lock":{"remove":true,"move":true},"metadata":{"name":"Event Location Group Block"},"className":"event-location-group","layout":{"type":"constrained"}} -->
+    <!-- wp:group {"lock":{"remove": true, "move": true}, "metadata":{"name": "Event Location Group Block"}, "className": "event-location-group", "layout":{"type": "constrained"}} -->
     <div class="wp-block-group event-location-group">
-        <!-- wp:paragraph {"metadata":{"name":"Event Location"},"placeholder":"DEFAULT ADDRESS; Enter:\n\nSt. Mary’s Greek Orthodox Church\n3450 Irving Ave South, Minneapolis, MN 55408\n\n!IMPORTANT: PRESS [SHIFT] + [ENTER] FOR NEW LINES.\n\nTO LINK: Highlight the address, click the 'Link' icon (Ctrl+K), paste the Google Maps URL, and toggle 'Open in new tab'.","lock":{"remove":true,"move":true},"className":"event-location","style":{"spacing":{"padding":{"top":"10px","bottom":"10px"}},"elements":{"link":{"color":{"text":"var:preset|color|brand-green-dark"}}}},"backgroundColor":"brand-green-light","textColor":"brand-green-dark"} -->
+        <!-- wp:paragraph { "metadata": { "name": "Event Location" }, "placeholder": "DEFAULT ADDRESS; Enter:\n\nSt. Mary’s Greek Orthodox Church\n3450 Irving Ave South, Minneapolis, MN 55408\n\nTO LINK: Highlight the address, click the 'Link' icon (Ctrl+K), paste the Google Maps URL, select the checkbox to 'Open in new tab', then select 'ENTER' to save.", "remove": true, "move": true, "className": "event-location", "backgroundColor": "brand-green-light", "textColor": "brand-green-dark", "style": { "spacing": { "padding": { "top": "10px", "bottom": "10px" } }, "elements": { "link": { "color": { "text": "var(--brand-green-dark)" }, ":hover": { "color": { "text": "var(--brand-green-dark)" } } } }, "color": { "text": "var(--brand-green-dark)" } } } -->
         <p class="event-location has-brand-green-dark-color has-brand-green-light-background-color has-text-color has-background has-link-color"></p>
         <!-- /wp:paragraph -->
     </div>
