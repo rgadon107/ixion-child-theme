@@ -8,7 +8,7 @@
  * Viewport Width: 800
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Events - Plant Sale"},"className":"custom-tight-card","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata": {"name": "Events - Plant Sale"}, "className": "custom-tight-card", "style": {"spacing": {"margin": {"top": "0", "bottom": "0"}, "padding": {"top": "0", "bottom": "0"}}}, "layout": {"type": "constrained"}, "lock": {"remove": true, "move": false}} -->
 <div class="wp-block-group custom-tight-card">
     <!-- wp:heading {"level":3,"placeholder":"Presentation Date: M-Su, May DD, YYYY","lock":{"remove":true,"move":true},"metadata":{"name":"Event Date"},"className":"event-date","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-text-main"}}}},"textColor":"brand-text-main","lineHeight":1} -->
     <h3 class="wp-block-heading event-date has-brand-text-main-color has-text-color has-link-color has-custom-lineheight" style="line-height:1"></h3>
@@ -37,6 +37,6 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:spacer {"height":"20px"} -->
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- wp:spacer {"height":"10px"} -->
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
