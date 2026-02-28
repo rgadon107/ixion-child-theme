@@ -1,0 +1,30 @@
+/**
+ * Admin Stylesheet
+ * Theme: Ixion Child (Garden Club of Minneapolis)
+ * Namespace: gardenClubOfMpls\IxionChild
+ * Location: /assets/admin-style.css
+ * Description: This file contains the block editor admin styling
+ * * for the Garden Club of Minneapolis child-theme. It overrides admin styles imposed by
+ * * the Ixion parent theme. This file is enqueued in the child-theme `functions.php` file.
+ */
+
+.edit-post-visual-editor a
+.editor-block-list__block a,
+.wp-block-freeform.block-library-rich-text__tinymce a   {
+    color: var(--brand-green-dark) !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.edit-post-visual-editor a:hover,
+.edit-post-visual-editor a:focus,
+.editor-block-list__block a:hover,
+.editor-block-list__block a:focus,
+.wp-block-freeform.block-library-rich-text__tinymce a:hover,
+.wp-block-freeform.block-library-rich-text__tinymce a:focus     {
+    color: color-mix(in srgb, var(--brand-green-dark), transparent 40%) !important;
+    font-weight: bold !important;
+    text-decoration: underline color-mix(in srgb, var(--brand-green-dark), transparent 40%) 2px !important;
+    text-underline-offset: 0.1em;
+}
