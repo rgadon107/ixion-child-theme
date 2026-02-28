@@ -8,7 +8,7 @@
  * * the Ixion parent theme. This file is enqueued in the child-theme `functions.php` file.
  */
 
-.edit-post-visual-editor a
+.edit-post-visual-editor a,
 .editor-block-list__block a,
 .wp-block-freeform.block-library-rich-text__tinymce a   {
     color: var(--brand-green-dark) !important;
