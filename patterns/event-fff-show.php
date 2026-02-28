@@ -57,7 +57,7 @@
 
     <!-- wp:group {"metadata":{"name":"Event Location Group Block"},"className":"event-location-group","layout":{"type":"constrained"},"lock":{"move":true,"remove":true}} -->
     <div class="wp-block-group event-location-group">
-        <!-- wp:paragraph {"metadata":{"name":"Event Location"},"placeholder":"DEFAULT ADDRESS; Enter:\n\nBachman’s on Lyndale (Heritage Room)\n6010 Lyndale Avenue South, Minneapolis, MN 55419\n\n!IMPORTANT: PRESS [SHIFT] + [ENTER] FOR NEW LINES.\n\nTO LINK: Highlight the address, click the 'Link' icon (Ctrl+K), paste the Google Maps URL, and toggle 'Open in new tab'.","className":"event-location","style":{"spacing":{"padding":{"top":"10px","bottom":"10px"}},"elements":{"link":{"color":{"text":"var:preset|color|brand-green-dark"}}}},"backgroundColor":"brand-green-light","textColor":"brand-green-dark"} -->
+        <!-- wp:paragraph {"metadata": {"name": "Event Location" }, "placeholder": "DEFAULT ADDRESS; Enter:\n\nBachman’s on Lyndale (Heritage Room)\n6010 Lyndale Avenue South, Minneapolis, MN 55419\n\n!IMPORTANT: PRESS [SHIFT] + [ENTER] ON KEYBOARD TO ENTER A NEW LINE BELOW EXISTING.\n\nTO LINK: Highlight the address, click the 'Link' icon (Ctrl+K), paste the Google Maps URL, select the checkbox to 'Open in new tab', then select 'ENTER' to save.", "className": "event-location", "style": { "spacing": { "padding": { "top": "10px", "bottom": "10px" } }, "elements": { "link": { "color": { "text": "var:preset|color|brand-green-dark" }, ":hover": { "color": { "text": "var:preset|color|brand-green-dark" } } } }, "color": { "text": "var:preset|color|brand-green-dark" } } } -->
         <p class="event-location has-brand-green-dark-color has-brand-green-light-background-color has-text-color has-background has-link-color"></p>
         <!-- /wp:paragraph -->
     </div>
@@ -77,3 +77,7 @@
 
 </div>
 <!-- /wp:group -->
+
+<!-- wp:spacer {"height":"10px"} -->
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
