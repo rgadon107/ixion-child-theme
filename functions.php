@@ -24,25 +24,58 @@ function _get_asset_version(string $relative_path ): int|string   {
     return wp_get_theme( 'ixion-child' )->get( 'Version' );
 }
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_styles' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_frontend_styles' );
 /**
  * Enqueue the parent and child theme stylesheets to display on the front-end of the website.
  *
  * * This function ensures that the parent theme's styles are loaded first,
  * followed by the child theme's overrides to maintain correct CSS specificity.
  *
- * @since 1.0.0
+ * @since 1.0.1
  * @return void
  */
-function enqueue_styles(): void {
+function enqueue_frontend_styles(): void {
     // Load the parent theme's style
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
     // Load the child theme's style
-    wp_enqueue_style( 'child-style',
+    wp_enqueue_style(
+        'child-style',
         get_stylesheet_directory_uri() . '/style.css',
-        array( 'ixion-style' ), // This ensures child CSS loads AFTER the parent theme CSS
+        array( 'parent-style' ), // The child-theme depends on the parent theme loading first.
         _get_asset_version( 'style.css' )
+    );
+
+    $main_styles_path = 'assets/main-style.css';
+
+    wp_enqueue_style(
+        'ixion-child-main',
+        get_stylesheet_directory_uri() . '/' . $main_styles_path,
+        array(),
+        _get_asset_version( $main_styles_path )
+    );
+
+}
+
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_editor_styles' );
+/**
+ * Enqueue the block editor styles for the child-theme.
+ *
+ * Ensure that the child-theme's block editor styles override the default link styles
+ * * imposed by the parent theme.
+ *
+ * @since 1.0.0
+ * @return void
+ */
+function enqueue_block_editor_styles(): void {
+
+    $admin_styles_path = 'assets/admin-style.css';
+
+    wp_enqueue_style(
+        'ixion-child-admin',
+        get_stylesheet_directory_uri() . '/' .  $admin_styles_path,
+        array(),
+        _get_asset_version( $admin_styles_path )
     );
 }
 
