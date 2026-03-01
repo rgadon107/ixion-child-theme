@@ -14,7 +14,13 @@
     --card-background:     #f4f4f4; /* Very light gray */
     --white:               #ffffff;
 
-    /* --- B. SPACING & GEOMETRY --- */
+    /* --- B. INTERACTIVE TOKENS --- */
+    /* 60% Opacity (40% transparent) per your preference */
+    --brand-green-hover:   color-mix(in srgb, var(--brand-green-dark), transparent 40%);
+    --hover-thickness:     2px;
+    --hover-offset:        0.1em;
+
+    /* --- C. SPACING & GEOMETRY --- */
     --card-padding:        2rem;
     --card-radius:         8px;
     --section-margin:      2rem;
@@ -22,19 +28,19 @@
     --nav-padding:         15px 18px;
     --sub-menu-width:      280px;
 
-    /* --- C. BORDERS & SHADOWS --- */
+    /* --- D. BORDERS & SHADOWS --- */
     --border-thin:         1px solid var(--brand-green-dark);
     --border-medium:       2px solid var(--brand-green-dark);
     --border-thick:        5px solid var(--brand-green-dark);
     --shadow-soft:         0 4px 15px rgba(0, 0, 0, 0.05);
     --shadow-strong:       0 4px 12px rgba(0, 0, 0, 0.15);
 
-    /* --- D. ANIMATION --- */
+    /* --- E. ANIMATION --- */
     --transition-fast:     0.2s ease-in-out;
     --transition-standard: 0.3s ease;
 }
 
-/* --- E. BLOCK EDITOR COLOR UTILITY CLASSES ---
+/* --- F. BLOCK EDITOR COLOR UTILITY CLASSES ---
    Moving these here ensures the Block Editor correctly renders
    your brand colors in the backend sidebar and canvas. */
 
