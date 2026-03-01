@@ -46,18 +46,26 @@ function enqueue_frontend_styles(): void {
         _get_asset_version( 'style.css' )
     );
 
-    $main_styles_path = 'assets/main-style.css';
+    // Load the `variables.css` file first so that they can be used by the `main-style.css` file.
+    $css_variables_path = 'assets/variables.css';
+    wp_enqueue_style(
+        'ixion-child-variables',
+        get_stylesheet_directory_uri() . '/' . $css_variables_path,
+        array(),
+        _get_asset_version( $css_variables_path )
+    );
 
+    $main_styles_path = 'assets/main-style.css';
     wp_enqueue_style(
         'ixion-child-main',
         get_stylesheet_directory_uri() . '/' . $main_styles_path,
-        array(),
+        array( 'ixion-child-variables' ),
         _get_asset_version( $main_styles_path )
     );
 
 }
 
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_editor_styles' );
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_editor_assets' );
 /**
  * Enqueue the block editor styles for the child-theme.
  *
@@ -67,14 +75,24 @@ add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_edit
  * @since 1.0.0
  * @return void
  */
-function enqueue_block_editor_styles(): void {
+function enqueue_block_editor_assets(): void {
+
+    // Load the `variables.css` file first so that they can be used by the `admin-style.css` file.
+    $css_variables_path = 'assets/variables.css';
+
+    wp_enqueue_style(
+        'ixion-child-variables-admin',
+        get_stylesheet_directory_uri() . '/' . $css_variables_path,
+        array(),
+        _get_asset_version( $css_variables_path )
+    );
 
     $admin_styles_path = 'assets/admin-style.css';
 
     wp_enqueue_style(
         'ixion-child-admin',
         get_stylesheet_directory_uri() . '/' .  $admin_styles_path,
-        array(),
+        array( 'ixion-child-variables-admin' ),
         _get_asset_version( $admin_styles_path )
     );
 }
@@ -125,9 +143,9 @@ function register_block_editor_colors(): void   {
     // 2. Enable the editor styles feature
     add_theme_support('editor-styles');
 
-    // 3. Point the editor to your child-theme stylesheet
-    // This allows the editor to see your .has-{slug}-color CSS classes.
-    add_editor_style('style.css?v=' . _get_asset_version('style.css') );
+    // 3. Point the editor to the child-theme's main stylesheet so the editor looks like the front-end.
+    add_editor_style('assets/main-style.css');
+
 }
 
 /**
