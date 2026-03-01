@@ -65,17 +65,17 @@ function enqueue_frontend_styles(): void {
 
 }
 
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_editor_assets' );
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_editor_styles' );
 /**
  * Enqueue the block editor styles for the child-theme.
  *
  * Ensure that the child-theme's block editor styles override the default link styles
  * * imposed by the parent theme.
  *
- * @since 1.0.0
+ * @since 1.0.1
  * @return void
  */
-function enqueue_block_editor_assets(): void {
+function enqueue_block_editor_styles(): void {
 
     // Load the `variables.css` file first so that they can be used by the `admin-style.css` file.
     $css_variables_path = 'assets/variables.css';
