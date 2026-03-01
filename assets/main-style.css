@@ -15,10 +15,12 @@
         C. Mobile Navigation: Fix Breakpoints & Scoped Border
         D. Event listings ( 'Home' & '{YYYY}-Events' pages )
         E. Event Presenter Group Pattern
-        F. Location & Schedule Block Styles
-        G. Targeted Button Styles (Outline Style)
-        H. List Styling
-   ------------------------- */
+        F. Location Block Styles
+        G. Event Schedule Group Block Styles
+        H. Dinner Preregistration Notice styles
+        I. Targeted Button Styles
+        J. List Styling
+   --------------------------------------------------------------- */
 
 /* ==========================================================================
    1. GLOBAL LINK RESET
@@ -196,36 +198,107 @@ p a, li a, span a {
     line-height: 1.2 !important;
 }
 
-/* Optional: If you want a tiny bit more breath ONLY at the very top of the group */
-/*.wp-block-group.presenter-group p:first-child {
-    margin-top: 0.2em !important;
-}*/
+/* Target the presenter's name in the Presenter Info Group block */
+.wp-block-group.presenter-group p:first-child {
+    font-size: 1.1rem; /* Slightly larger than base font-size. */
+    color: var(--brand-text-main);
+    margin-top: 0.2em !important; /* Add a little margin above the presenter's name */
+    margin-bottom: 0 !important;
+}
 
-/* F. Location & Schedule Block Styles */
+/* Target the presenter's title and organization name in the Presenter Info Group block. */
+.wp-block-group.presenter-group p.presenter-title-and-organization {
+    font-size: 0.9rem; /* Slightly smaller than the base font-size. */
+    color: var(--brand-text-main);
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+}
+
+/* F. Location Block Styles */
 .entry-content .custom-tight-card .event-location-group .event-location::before,
 .entry-content .custom-tight-card-home-page .event-location-group .event-location::before {
     content: "\f417";
+    display: inline-block;
     font-family: "Genericons", serif;
+    font-size: 22px;
+    font-weight: 700;
     color: var(--brand-green-dark);
+    -webkit-font-smoothing: antialiased;
+
+    /* Ensure the pin doesn't shrink and stays aligned to the top */
+    flex-shrink: 0;
+    margin-top: -2px; /* Micro-adjustment to center pin with the first line of text */
 }
 
 .entry-content .custom-tight-card .event-location-group p.event-location,
 .entry-content .custom-tight-card-home-page .event-location-group p.event-location {
+    display: flex !important;
+    align-items: flex-start; /* Aligns pin with the top line of text */
+    gap: 12px;               /* Precise horizontal space between pin and text */
+    padding: 12px 15px !important; /* Balanced padding */
     position: relative;
-    padding: 10px 15px 10px 35px !important;
     font-weight: 700;
+    line-height: 1.4 !important;
+    border-radius: var(--card-radius);
     margin-bottom: var(--block-margin-bottom) !important;
+}
+
+.entry-content .custom-tight-card .event-location-group p.event-location a,
+.entry-content .custom-tight-card-home-page .event-location-group p.event-location a{
+    display: block; /* Forces the link to behave as a block for better hit area */
+    text-align: left;
 }
 
 /* The Hover/Focus standard using tokens */
 .entry-content .custom-tight-card .event-location-group .event-location a:hover,
-.entry-content .custom-tight-card .event-location-group .event-location a:focus {
+.entry-content .custom-tight-card .event-location-group .event-location a:focus,
+.entry-content .custom-tight-card-home-page .event-location-group .event-location a:hover,
+.entry-content .custom-tight-card-home-page .event-location-group .event-location a:focus   {
     color: var(--brand-green-hover) !important;
     text-decoration: underline var(--brand-green-hover) var(--hover-thickness) !important;
     text-underline-offset: var(--hover-offset);
 }
 
-/* G. Targeted Button Styles */
+/* G. The Event Schedule Group Block Styles */
+.entry-content .custom-tight-card .event-schedule-group,
+.entry-content .custom-tight-card-home-page .event-schedule-group   {
+    /* Uses the dedicated gap variable for structural separation */
+    margin-top: var(--component-gap-top) !important;
+    display: block;
+    width: 100%;
+}
+
+.entry-content .custom-tight-card .event-schedule-group p,
+.entry-content .custom-tight-card-home-page .event-schedule-group p {
+    margin: 0 !important; /* Clear default paragraph margins to let the container handle spacing */
+    line-height: 1.5;
+    color: var(--brand-text-main);
+}
+
+/* Optional: Make the "Schedule" label bold if it's the first line */
+.entry-content .custom-tight-card .event-schedule-group p strong,
+.entry-content .custom-tight-card .event-schedule-group p.event-schedule,
+.entry-content .custom-tight-card-home-page .event-schedule-group p strong,
+.entry-content .custom-tight-card-home-page .event-schedule-group p.event-schedule  {
+    font-weight: 700;
+}
+
+/* H. The Dinner Preregistration Notice styles. */
+.entry-content .custom-tight-card .dinner-preregistration-notice,
+.entry-content .custom-tight-card-home-page .dinner-preregistration-notice  {
+    margin-top: var(--component-gap-top) !important; /* Add structural gap to separate this block from `event-schedule` above. */
+    display: block;
+    width: 100%;
+}
+
+.entry-content .custom-tight-card .dinner-preregistration-notice p,
+.entry-content .custom-tight-card-home-page .dinner-preregistration-notice p    {
+    margin: 0 !important;
+    line-height: 1.5;
+    color: var(--brand-text-main);
+}
+
+/* I. Targeted Button Styles */
 .has-button .wp-block-button__link,
 .register-button .wp-block-button__link {
     border: 2px solid transparent !important;
@@ -239,7 +312,7 @@ p a, li a, span a {
     color: var(--brand-green-dark) !important;
 }
 
-/* H. List Styling */
+/* J. List Styling */
 ul.register-list li.has-list-item {
     margin-bottom: var(--list-item-margin) !important;
     line-height: 1.3 !important;
