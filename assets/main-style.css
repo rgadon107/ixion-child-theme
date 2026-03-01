@@ -183,14 +183,23 @@ p a, li a, span a {
 .wp-block-group.presenter-group {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px !important; /* This gap controls the space BETWEEN the paragraphs */
     margin-bottom: var(--block-margin-bottom);
     font-style: italic;
 }
 
+/* Eliminate the default paragraph margins that cause the "extra" space */
 .wp-block-group.presenter-group p {
     color: var(--brand-text-main);
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1.2 !important;
 }
+
+/* Optional: If you want a tiny bit more breath ONLY at the very top of the group */
+/*.wp-block-group.presenter-group p:first-child {
+    margin-top: 0.2em !important;
+}*/
 
 /* F. Location & Schedule Block Styles */
 .entry-content .custom-tight-card .event-location-group .event-location::before,
