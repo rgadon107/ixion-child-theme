@@ -2,6 +2,7 @@
  * Global Design Styles and Block Editor Utility Classes
  * Theme: Ixion-child
  * Namespace: gardenClubOfMpls\IxionChild
+ * Location: /assets/variables.css
  */
 
 :root {
@@ -21,12 +22,13 @@
     --hover-offset:        0.1em;
 
     /* --- C. SPACING & GEOMETRY --- */
-    --card-padding:        2rem;
-    --card-radius:         8px;
-    --section-margin:      2rem;
-    --list-item-margin:    1.2rem;
-    --nav-padding:         15px 18px;
-    --sub-menu-width:      280px;
+    --card-padding:         2rem;
+    --card-radius:          8px;
+    --section-margin:       2rem;      /* External space between cards/sections */
+    --block-margin-bottom:  1.5rem;    /* Internal space between elements/groups */
+    --list-item-margin:     1.2rem;
+    --nav-padding:          15px 18px;
+    --sub-menu-width:       280px;
 
     /* --- D. BORDERS & SHADOWS --- */
     --border-thin:         1px solid var(--brand-green-dark);
@@ -44,12 +46,16 @@
    Moving these here ensures the Block Editor correctly renders
    your brand colors in the backend sidebar and canvas. */
 
+/* Background Colors: .has-{slug}-background-color */
 .has-brand-strong-yellow-background-color { background-color: var(--brand-strong-yellow) !important; }
 .has-brand-green-dark-background-color    { background-color: var(--brand-green-dark) !important; }
 .has-brand-green-light-background-color   { background-color: var(--brand-green-light) !important; }
 .has-brand-white-lime-background-color    { background-color: var(--brand-white-lime) !important; }
+.has-brand-text-main-background-color     { background-color: var(--brand-text-main) !important; }
 
+/* Text Colors: .has-{slug}-color */
 .has-brand-strong-yellow-color { color: var(--brand-strong-yellow) !important; }
 .has-brand-green-dark-color    { color: var(--brand-green-dark) !important; }
 .has-brand-green-light-color   { color: var(--brand-green-light) !important; }
 .has-brand-white-lime-color    { color: var(--brand-white-lime) !important; }
+.has-brand-text-main-color     { color: var(--brand-text-main) !important; }
