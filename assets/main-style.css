@@ -15,11 +15,12 @@
         C. Mobile Navigation: Fix Breakpoints & Scoped Border
         D. Event listings ( 'Home' & '{YYYY}-Events' pages )
         E. Event Presenter Group Pattern
-        F. Location Block Styles
-        G. Event Schedule Group Block Styles
-        H. Dinner Preregistration Notice styles
-        I. Targeted Button Styles
-        J. List Styling
+        F. Event Description Block Styles
+        G. Location Block Styles
+        H. Event Schedule Group Block Styles
+        I. Dinner Preregistration Notice styles
+        J. Targeted Button Styles
+        K. List Styling
    --------------------------------------------------------------- */
 
 /* ==========================================================================
@@ -214,7 +215,27 @@ p a, li a, span a {
     margin-top: 0 !important;
 }
 
-/* F. Location Block Styles */
+/* F. Event Description Group block styles */
+.entry-content .custom-tight-card .event-description-group,
+.entry-content .custom-tight-card-home-page .event-description-group  {
+    margin-bottom: var(--block-margin-bottom);
+    display: block;
+}
+
+.entry-content .custom-tight-card .event-description-group p,
+.entry-content .custom-tight-card-home-page .event-description-group p  {
+    color: var(--brand-text-main);
+    font-style: italic;
+    line-height: 1.5rem;
+    margin-bottom: var(--block-margin-bottom);
+}
+
+.entry-content .custom-tight-card .event-description-group p:last-child,
+.entry-content .custom-tight-card-home-page .event-description-group p:last-child   {
+    margin-bottom: var(--section-margin) !important;
+}
+
+/* G. Event Location Block Styles */
 .entry-content .custom-tight-card .event-location-group .event-location::before,
 .entry-content .custom-tight-card-home-page .event-location-group .event-location::before {
     content: "\f417";
@@ -259,7 +280,7 @@ p a, li a, span a {
     text-underline-offset: var(--hover-offset);
 }
 
-/* G. The Event Schedule Group Block Styles */
+/* H. The Event Schedule Group Block Styles */
 .entry-content .custom-tight-card .event-schedule-group,
 .entry-content .custom-tight-card-home-page .event-schedule-group   {
     /* Uses the dedicated gap variable for structural separation */
@@ -283,7 +304,7 @@ p a, li a, span a {
     font-weight: 700;
 }
 
-/* H. The Dinner Preregistration Notice styles. */
+/* I. The Dinner Preregistration Notice styles. */
 .entry-content .custom-tight-card .dinner-preregistration-notice,
 .entry-content .custom-tight-card-home-page .dinner-preregistration-notice  {
     margin-top: var(--component-gap-top) !important; /* Add structural gap to separate this block from `event-schedule` above. */
@@ -298,7 +319,7 @@ p a, li a, span a {
     color: var(--brand-text-main);
 }
 
-/* I. Targeted Button Styles */
+/* J. Targeted Button Styles */
 .has-button .wp-block-button__link,
 .register-button .wp-block-button__link {
     border: 2px solid transparent !important;
@@ -312,7 +333,7 @@ p a, li a, span a {
     color: var(--brand-green-dark) !important;
 }
 
-/* J. List Styling */
+/* K. List Styling */
 ul.register-list li.has-list-item {
     margin-bottom: var(--list-item-margin) !important;
     line-height: 1.3 !important;
