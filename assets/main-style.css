@@ -23,46 +23,6 @@
    ------------------------- */
 
 /* ==========================================================================
-   1. CSS VARIABLES (Design Tokens)
-   Change these hex codes to update the site-wide branding.
-   ========================================================================== */
-
-:root {
-    --brand-strong-yellow: #c1a01e; /* strongYellow */
-    --brand-green-dark:    #527a55; /* desaturatedDarkLimeGreen */
-    --brand-green-light:   #cbd8cb; /* grayishLimeGreen */
-    --brand-white-lime:    #f8faf8; /* lightGrayishLimeGreen */
-    --card-background:     #f4f4f4; /* Very light gray */
-    --brand-text-main:     #333333; /* Dark gray for readability */
-}
-
-
-/* ==========================================================================
-   Gutenberg classes connected to custom background-color and color variables.
-
-   Declare the selectors below so that the background-color and text colors
-   are available for use in the block editor.
-   ========================================================================== */
-
-/* A. BACKGROUND COLORS
-   Syntax: .has-{slug}-background-color
------------------------------------------------- */
-.has-brand-strong-yellow-background-color { background-color: var(--brand-strong-yellow) !important; }
-.has-brand-green-dark-background-color { background-color: var(--brand-green-dark) !important; }
-.has-brand-green-light-background-color { background-color: var(--brand-green-light) !important; }
-.has-brand-white-lime-background-color { background-color: var(--brand-white-lime) !important; }
-.has-brand-text-main-background-color     { background-color: var(--brand-text-main) !important; }
-
-/* B. TEXT COLORS
-   Syntax: .has-{slug}-color
------------------------------------------------- */
-.has-brand-strong-yellow-color { color: var(--brand-strong-yellow) !important; }
-.has-brand-green-dark-color { color: var(--brand-green-dark) !important; }
-.has-brand-green-light-color { color: var(--brand-green-light) !important; }
-.has-brand-white-lime-color { color: var(--brand-white-lime) !important; }
-.has-brand-text-main-color { color: var(--brand-text-main) !important; }
-
-/* ==========================================================================
    2. GLOBAL LINK RESET
    ========================================================================== */
 
