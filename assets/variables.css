@@ -26,6 +26,7 @@
     --card-radius:          8px;
     --section-margin:       2rem;      /* External space between cards/sections */
     --block-margin-bottom:  1.0rem;    /* Internal space between elements/groups */
+    --component-gap-top:    1.25rem;   /* SPECIFIC: Separation for Schedule/Location */
     --list-item-margin:     1.2rem;
     --nav-padding:          15px 18px;
     --sub-menu-width:       280px;
