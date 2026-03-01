@@ -1,0 +1,49 @@
+/**
+ * Global Design Styles and Block Editor Utility Classes
+ * Theme: Ixion-child
+ * Namespace: gardenClubOfMpls\IxionChild
+ */
+
+:root {
+    /* --- A. BRAND COLORS --- */
+    --brand-strong-yellow: #c1a01e;
+    --brand-green-dark:    #527a55;
+    --brand-green-light:   #cbd8cb;
+    --brand-white-lime:    #f8faf8;
+    --brand-text-main:     #333333; /* Dark gray for readability */
+    --card-background:     #f4f4f4; /* Very light gray */
+    --white:               #ffffff;
+
+    /* --- B. SPACING & GEOMETRY --- */
+    --card-padding:        2rem;
+    --card-radius:         8px;
+    --section-margin:      2rem;
+    --list-item-margin:    1.2rem;
+    --nav-padding:         15px 18px;
+    --sub-menu-width:      280px;
+
+    /* --- C. BORDERS & SHADOWS --- */
+    --border-thin:         1px solid var(--brand-green-dark);
+    --border-medium:       2px solid var(--brand-green-dark);
+    --border-thick:        5px solid var(--brand-green-dark);
+    --shadow-soft:         0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-strong:       0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* --- D. ANIMATION --- */
+    --transition-fast:     0.2s ease-in-out;
+    --transition-standard: 0.3s ease;
+}
+
+/* --- E. GUTENBERG UTILITY CLASSES ---
+   Moving these here ensures the Block Editor correctly renders
+   your brand colors in the backend sidebar and canvas. */
+
+.has-brand-strong-yellow-background-color { background-color: var(--brand-strong-yellow) !important; }
+.has-brand-green-dark-background-color    { background-color: var(--brand-green-dark) !important; }
+.has-brand-green-light-background-color   { background-color: var(--brand-green-light) !important; }
+.has-brand-white-lime-background-color    { background-color: var(--brand-white-lime) !important; }
+
+.has-brand-strong-yellow-color { color: var(--brand-strong-yellow) !important; }
+.has-brand-green-dark-color    { color: var(--brand-green-dark) !important; }
+.has-brand-green-light-color   { color: var(--brand-green-light) !important; }
+.has-brand-white-lime-color    { color: var(--brand-white-lime) !important; }
