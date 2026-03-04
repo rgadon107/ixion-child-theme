@@ -8,15 +8,15 @@
  * Viewport Width: 800
  */
 ?>
-<!-- wp:group {"metadata": {"name": "Events - Plant Sale"}, "className": "custom-tight-card", "style": {"spacing": {"margin": {"top": "0", "bottom": "0"}, "padding": {"top": "0", "bottom": "0"}}}, "layout": {"type": "constrained"}, "lock": {"remove": true, "move": false}} -->
+<!-- wp:group { "metadata": { "name": "Events - Plant Sale" }, "className": "custom-tight-card", "style": { "spacing": { "margin": { "top": "0", "bottom": "0" }, "padding": { "top": "0", "bottom": "0" } } }, "layout": { "type": "constrained" }, "templateLock": "contentOnly" } -->
 <div class="wp-block-group custom-tight-card">
     <!-- wp:heading {"level":3,"placeholder":"Presentation Date: M-Su, May DD, YYYY","lock":{"remove":true,"move":true},"metadata":{"name":"Event Date"},"className":"event-date","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-text-main"}}}},"textColor":"brand-text-main","lineHeight":1} -->
     <h3 class="wp-block-heading event-date has-brand-text-main-color has-text-color has-link-color has-custom-lineheight" style="line-height:1"></h3>
     <!-- /wp:heading -->
 
     <!-- wp:heading {"placeholder":"Annual Plant Sale - Members Only; or Annual Public Plant Sale","lock":{"remove":true,"move":true},"metadata":{"name":"Event Title"},"className":"event-title","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-text-main"}}}},"textColor":"brand-text-main","lineHeight":1} -->
-    <h2 class="wp-block-heading event-title has-brand-text-main-color has-text-color has-link-color has-custom-lineheight" style="line-height:1"></h2>
-    <!-- /wp:heading -->
+    <!-- wp:group    <h2 class="wp-block-heading event-title has-brand-text-main-color has-text-color has-link-color has-custom-lineheight" style="line-height:1"></h2>
+        <!-- /wp:heading -->
 
     <!-- wp:group {"lock":{"remove":true,"move":true},"metadata":{"name":"Event Location Group Block"},"className":"event-location-group","layout":{"type":"constrained"}} -->
     <div class="wp-block-group event-location-group">

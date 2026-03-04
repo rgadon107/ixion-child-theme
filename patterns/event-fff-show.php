@@ -8,7 +8,7 @@
  * Viewport Width: 800
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Events - FFF Show Container"},"className":"custom-tight-card","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"},"lock":{"remove":true,"move":false}} -->
+<!-- wp:group { "metadata": { "name": "Events - FFF Show Container" }, "className": "custom-tight-card", "style": { "spacing": { "margin": { "top": "0", "bottom": "0" }, "padding": { "top": "0", "bottom": "0" } } }, "layout": { "type": "constrained" }, "templateLock":"contentOnly" }  -->
 <div class="wp-block-group custom-tight-card">
 
     <!-- wp:heading {"level":3,"metadata":{"name":"Event Date"},"className":"event-date","textColor":"brand-text-main","lock":{"move":true,"remove":true}} -->

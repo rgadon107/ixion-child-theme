@@ -8,7 +8,7 @@
  * Viewport Width: 800
  */
 ?>
-<!-- wp:group {"metadata": {"name": "Monthly Event Group - Full Listing"}, "className": "custom-tight-card", "style": {"spacing": {"margin": {"top": "0", "bottom": "0"}, "padding": {"top": "0", "bottom": "0"}}}, "layout": {"type": "constrained"}, "lock": {"remove": true, "move": false}} -->
+<!-- wp:group { "metadata": { "name": "Monthly Event Group - Full Listing" }, "className": "custom-tight-card", "style": { "spacing": { "margin": { "top": "0", "bottom": "0" }, "padding": { "top": "0", "bottom": "0" } } }, "layout": { "type": "constrained" }, "templateLock": "contentOnly" } -->
 <div class="wp-block-group custom-tight-card">
 
     <!-- wp:heading {"level":3,"metadata":{"name":"Event Date"},"placeholder":"Presentation Date: {Month} DD, YYYY","className":"event-date","style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-text-main"}}}},"textColor":"brand-text-main","lineHeight":1,"lock":{"remove":true,"move":true}} -->
