@@ -97,7 +97,7 @@ function enqueue_block_editor_styles(): void {
     );
 }
 
-add_action( 'after_setup_theme', __NAMESPACE__ . '\\register_block_editor_colors', 20 );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\register_theme_features', 20 );
 
 /**
  * Register a custom color palette and link editor styles for the Block Editor.
@@ -109,7 +109,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\register_block_editor_colors
  * @return void
  * @since 1.0.0
  */
-function register_block_editor_colors(): void   {
+function register_theme_features(): void   {
 
     // 1. Register the custom color palette
     add_theme_support('editor-color-palette', array(
@@ -146,6 +146,8 @@ function register_block_editor_colors(): void   {
     // 3. Point the editor to the child-theme's main stylesheet so the editor looks like the front-end.
     add_editor_style('assets/main-style.css');
 
+    // 4. Enable support for `align-wide` rendering of images.
+    add_theme_support( 'align-wide' );
 }
 
 /**
