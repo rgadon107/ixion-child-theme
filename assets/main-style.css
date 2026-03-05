@@ -332,6 +332,7 @@ p a, li a, span a {
     background-color: var(--brand-green-light) !important;
     border-color: var(--brand-green-dark) !important;
     color: var(--brand-green-dark) !important;
+    text-decoration: none !important;
 }
 
 /* K. List Styling */
