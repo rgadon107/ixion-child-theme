@@ -149,58 +149,72 @@ p a, li a, span a {
 
 @media screen and (max-width: 57.5625em) {
 
-    .main-navigation ul#top-menu {
-        border-top: 3px solid var(--brand-green-dark) !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    /* Hide sub-nav menu by default */
-    .main-navigation ul.sub-menu {
-        display: none !important;
-    }
-    /* JS adds `.is-open` class to sub-menu. */
-    .main-navigation li.is-open > ul.sub-menu {
-        display: block !important;
-    }
-
-    /* Reset all List Items and Sub-Menus to be edge-to-edge */
-    #site-navigation.toggled .nav-menu li,
-    #site-navigation.toggled .nav-menu ul.sub-menu {
+    /* STRUCTURAL RESET (Edge-to-Edge) */
+    #site-navigation.toggled .nav-menu li {
         padding: 0 !important;
         margin: 0 !important;
         width: 100% !important;
         display: block !important;
     }
 
-    /* Style the links to be block-level and fill the width */
+    /* HIDE SUB-MENUS WITH TRANSITION ABILITY */
+    /* We use max-height: 0 and opacity: 0 to allow for animation */
+    .main-navigation ul#top-menu ul.sub-menu,
+    #site-navigation.toggled .nav-menu ul.sub-menu {
+        display: block !important; /* Must be block for height to animate */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        border: none !important; /* Hide borders when closed */
+    }
+
+    /* REVEAL SUB-MENU (When JS adds .is-open) */
+    .main-navigation li.is-open > ul.sub-menu,
+    #site-navigation.toggled .nav-menu li.is-open > ul.sub-menu {
+        max-height: 2000px; /* Large enough to fit all 16+ items */
+        opacity: 1;
+        visibility: visible;
+        border-top: 1px solid #f0f0f0 !important; /* Optional: subtle separator */
+    }
+
+    /* LINK STYLING & COLORS */
+    .main-navigation ul#top-menu {
+        border-top: 3px solid var(--brand-green-dark) !important;
+    }
+
     #site-navigation.toggled .nav-menu li a {
         display: block !important;
         width: 100% !important;
         box-sizing: border-box !important;
         color: var(--brand-green-dark) !important;
         border-bottom: 1px solid #f0f0f0;
-        padding: 12px 20px; /* Adjust this to your preferred touch-target size */
+        padding: 14px 20px; /* Slightly larger for easier mobile tapping */
         text-decoration: none;
     }
 
-    /* Nav Menu Level 1: Top-level links (Home, About Us, etc.) */
+    /* INDENTATION LEVELS (Visual Hierarchy) */
+    /* Level 1: Top-level */
     #site-navigation.toggled .nav-menu > li > a {
         padding-left: 20px !important;
     }
 
-    /* Nav Menu Level 2: Sub-menu links (About the Club, Photo Show Archive, etc.) */
+    /* Level 2: Sub-menu */
     #site-navigation.toggled .nav-menu ul.sub-menu li a {
-        padding-left: 40px !important; /* Indents text, but background stays full width */
+        padding-left: 40px !important;
     }
 
-    /* Nav Menu Level 3: Nested Sub-menu links (2025 Photo Show, 2024 Photo Show, etc.) */
-    /* This targets a sub-menu that is inside another sub-menu */
+    /* Level 3: Nested Sub-menu (Photo Show years) */
     #site-navigation.toggled .nav-menu ul.sub-menu ul.sub-menu li a {
         padding-left: 60px !important;
-        font-style: italic; /* Optional: adds a visual cue that these are "items" in a list */
+        font-style: italic;
     }
 
+    /* HOVER & ACTIVE STATES */
     #site-navigation.toggled .nav-menu li a:hover,
     #site-navigation.toggled .nav-menu .current-menu-item > a {
         background-color: var(--brand-green-light) !important;
