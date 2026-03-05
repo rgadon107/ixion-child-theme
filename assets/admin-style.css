@@ -22,7 +22,16 @@
 }
 
 /* ==========================================================================
-   2. EVENT LOCATION BLOCK (The "Yellow Link" & Thickness Fix)
+   2. EVENT DESCRIPTION BLOCK
+   ========================================================================== */
+
+.editor-styles-wrapper .event-description-group .event-description {
+    font-style: italic !important;
+}
+
+
+/* ==========================================================================
+   3. EVENT LOCATION BLOCK (The "Yellow Link" & Thickness Fix)
    ========================================================================== */
 
 /* Target the paragraph within the group inside the editor wrapper */
@@ -47,7 +56,15 @@
 }
 
 /* ==========================================================================
-   3. CARD COMPONENT VISUALS
+   4. DINNER PREREGISTRATION NOTICE
+   ========================================================================== */
+
+.editor-styles-wrapper p.event-schedule {
+    font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   5. CARD COMPONENT VISUALS
    ========================================================================== */
 
 /* Ensure custom cards look like "Cards" while editing */
@@ -67,7 +84,7 @@
 }
 
 /* ==========================================================================
-   4. TEXT & TYPOGRAPHY
+   5. TEXT & TYPOGRAPHY
    ========================================================================== */
 
 /* Ensure the editor text color matches our brand text main */
