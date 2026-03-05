@@ -19,8 +19,8 @@
     <h2 class="wp-block-heading event-title has-brand-text-main-color has-text-color">Flower, Food and Foto (FFF) Show</h2>
     <!-- /wp:heading -->
 
-    <!-- wp:columns {"metadata":{"name":"Event Schedule Group Block"},"className":"event-schedule-group","lock":{"move":true,"remove":true}} -->
-    <div class="wp-block-columns event-schedule-group">
+    <!-- wp:columns { "metadata": { "name": "Event Schedule Group Block" }, "className": "event-schedule-group is-style-fff-columns", "lock": { "move": true, "remove": true } } -->
+    <div class="wp-block-columns event-schedule-group is-style-fff-columns">
 
         <!-- wp:column {"metadata":{"name":"Day 1 Schedule Group"},"className":"day-schedule-group"} -->
         <div class="wp-block-column day-schedule-group">
