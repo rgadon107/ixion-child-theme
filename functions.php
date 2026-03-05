@@ -24,29 +24,90 @@ function _get_asset_version(string $relative_path ): int|string   {
     return wp_get_theme( 'ixion-child' )->get( 'Version' );
 }
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_styles' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_frontend_styles' );
 /**
  * Enqueue the parent and child theme stylesheets to display on the front-end of the website.
+ * Enqueue JavaScript to toggle a navigation submenu list items on mobile view.
  *
  * * This function ensures that the parent theme's styles are loaded first,
  * followed by the child theme's overrides to maintain correct CSS specificity.
  *
- * @since 1.0.0
+ * @since 1.0.2
  * @return void
  */
-function enqueue_styles(): void {
+function enqueue_frontend_styles(): void {
     // Load the parent theme's style
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
     // Load the child theme's style
-    wp_enqueue_style( 'child-style',
+    wp_enqueue_style(
+        'child-style',
         get_stylesheet_directory_uri() . '/style.css',
-        array( 'ixion-style' ), // This ensures child CSS loads AFTER the parent theme CSS
+        array( 'parent-style' ), // The child-theme depends on the parent theme loading first.
         _get_asset_version( 'style.css' )
+    );
+
+    // Load the `variables.css` file first so that they can be used by the `main-style.css` file.
+    $css_variables_path = 'assets/css/variables.css';
+    wp_enqueue_style(
+        'ixion-child-variables',
+        get_stylesheet_directory_uri() . '/' . $css_variables_path,
+        array(),
+        _get_asset_version( $css_variables_path )
+    );
+
+    $main_styles_path = 'assets/css/main-style.css';
+    wp_enqueue_style(
+        'ixion-child-main',
+        get_stylesheet_directory_uri() . '/' . $main_styles_path,
+        array( 'ixion-child-variables' ),
+        _get_asset_version( $main_styles_path )
+    );
+
+    $js_nav_toggle_path ='assets/js/navigation-toggle.js';
+    wp_enqueue_script(
+        'ixion-child-nav-toggle-js',
+        get_stylesheet_directory_uri() . '/' . $js_nav_toggle_path,
+        array(),
+        _get_asset_version( $main_styles_path ),
+        true
+    );
+
+}
+
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_editor_styles' );
+/**
+ * Enqueue the block editor styles for the child-theme.
+ *
+ * Ensure that the child-theme's block editor styles override the default link styles
+ * * imposed by the parent theme.
+ *
+ * @since 1.0.1
+ * @return void
+ */
+function enqueue_block_editor_styles(): void {
+
+    // Load the `variables.css` file first so that they can be used by the `admin-style.css` file.
+    $css_variables_path = 'assets/css/variables.css';
+
+    wp_enqueue_style(
+        'ixion-child-variables-admin',
+        get_stylesheet_directory_uri() . '/' . $css_variables_path,
+        array(),
+        _get_asset_version( $css_variables_path )
+    );
+
+    $admin_styles_path = 'assets/css/admin-style.css';
+
+    wp_enqueue_style(
+        'ixion-child-admin',
+        get_stylesheet_directory_uri() . '/' .  $admin_styles_path,
+        array( 'ixion-child-variables-admin' ),
+        _get_asset_version( $admin_styles_path )
     );
 }
 
-add_action( 'after_setup_theme', __NAMESPACE__ . '\\register_block_editor_colors', 20 );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\register_theme_features', 20 );
 
 /**
  * Register a custom color palette and link editor styles for the Block Editor.
@@ -58,7 +119,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\register_block_editor_colors
  * @return void
  * @since 1.0.0
  */
-function register_block_editor_colors(): void   {
+function register_theme_features(): void   {
 
     // 1. Register the custom color palette
     add_theme_support('editor-color-palette', array(
@@ -92,7 +153,14 @@ function register_block_editor_colors(): void   {
     // 2. Enable the editor styles feature
     add_theme_support('editor-styles');
 
-    // 3. Point the editor to your child-theme stylesheet
-    // This allows the editor to see your .has-{slug}-color CSS classes.
-    add_editor_style('style.css?v=' . _get_asset_version('style.css') );
+    // 3. Point the editor to the child-theme's main stylesheet so the editor looks like the front-end.
+    add_editor_style('assets/css/main-style.css');
+
+    // 4. Enable support for `align-wide` rendering of images.
+    add_theme_support( 'align-wide' );
 }
+
+/**
+ * Load custom pattern registrations.
+ */
+require_once get_stylesheet_directory() . '/includes/register-design-patterns.php';

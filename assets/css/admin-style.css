@@ -1,0 +1,96 @@
+/**
+ * Admin Stylesheet
+ * Theme: Ixion Child (Garden Club of Minneapolis)
+ * Namespace: gardenClubOfMpls\IxionChild
+ * Location: /assets/admin-style.css
+ * Description: This file contains the block editor admin styling
+ * * for the Garden Club of Minneapolis child-theme. It overrides admin styles imposed by
+ * * the Ixion parent theme. This file is enqueued in the child-theme `functions.php` file.
+ */
+
+/* ==========================================================================
+   1. GLOBAL EDITOR LINK FIX
+   ========================================================================== */
+
+/* Overrides the parent theme's yellow link color in the editor canvas */
+.edit-post-visual-editor a,
+.editor-block-list__block a,
+.wp-block-freeform.block-library-rich-text__tinymce a {
+    color: var(--brand-green-dark) !important;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+/* ==========================================================================
+   2. EVENT DESCRIPTION BLOCK
+   ========================================================================== */
+
+.editor-styles-wrapper .event-description-group .event-description {
+    font-style: italic !important;
+}
+
+
+/* ==========================================================================
+   3. EVENT LOCATION BLOCK (The "Yellow Link" & Thickness Fix)
+   ========================================================================== */
+
+/* Target the paragraph within the group inside the editor wrapper */
+.editor-styles-wrapper .event-location-group .event-location {
+    font-weight: bold !important;
+}
+
+/* Ensure any links added to the address also stay bold */
+.editor-styles-wrapper .event-location-group .event-location a {
+    font-weight: bold !important;
+}
+
+/* Targets the specific event-location paragraph within the editor */
+.edit-post-visual-editor .event-location a:hover,
+.edit-post-visual-editor .event-location a:focus {
+    /* Uses the 60% opacity hover token */
+    color: var(--brand-green-hover) !important;
+
+    /* Applies the 2px thickness and 0.1em offset */
+    text-decoration: underline var(--brand-green-hover) var(--hover-thickness) !important;
+    text-underline-offset: var(--hover-offset) !important;
+}
+
+/* ==========================================================================
+   4. DINNER PREREGISTRATION NOTICE
+   ========================================================================== */
+
+.editor-styles-wrapper p.event-schedule {
+    font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   5. CARD COMPONENT VISUALS
+   ========================================================================== */
+
+/* Ensure custom cards look like "Cards" while editing */
+.edit-post-visual-editor .custom-tight-card,
+.edit-post-visual-editor .custom-tight-card-home-page {
+    background-color: var(--card-background) !important;
+    padding: var(--card-padding) !important;
+    border-radius: var(--card-radius) !important;
+    margin-bottom: var(--section-margin) !important;
+    /* This forces the card to stand out against the white editor background */
+    box-shadow: var(--shadow-soft) !important;
+}
+
+/* Force the thick branded border for the specific card type */
+.edit-post-visual-editor .custom-tight-card {
+    border-left: var(--border-thick) !important;
+}
+
+/* ==========================================================================
+   6. TEXT & TYPOGRAPHY
+   ========================================================================== */
+
+/* Ensure the editor text color matches our brand text main */
+.edit-post-visual-editor p,
+.edit-post-visual-editor h1,
+.edit-post-visual-editor h2,
+.edit-post-visual-editor h3 {
+    color: var(--brand-text-main) !important;
+}
