@@ -315,6 +315,7 @@ p a, li a, span a {
     /* Ensure the pin doesn't shrink and stays aligned to the top */
     flex-shrink: 0;
     margin-top: -2px; /* Micro-adjustment to center pin with the first line of text */
+    width: 24px; /* Ensures the pseudo-element is respected in the flex layout */
 }
 
 .entry-content .custom-tight-card .event-location-group p.event-location,
@@ -328,11 +329,12 @@ p a, li a, span a {
     line-height: 1.4 !important;
     border-radius: var(--card-radius);
     margin-bottom: var(--block-margin-bottom) !important;
+    overflow: visible; /* Prevents the text from squishing the icon */
 }
 
 .entry-content .custom-tight-card .event-location-group p.event-location a,
-.entry-content .custom-tight-card-home-page .event-location-group p.event-location a{
-    display: block; /* Forces the link to behave as a block for better hit area */
+.entry-content .custom-tight-card-home-page .event-location-group p.event-location a    {
+    display: inline;
     text-align: left;
 }
 
