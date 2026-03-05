@@ -27,11 +27,12 @@ function _get_asset_version(string $relative_path ): int|string   {
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_frontend_styles' );
 /**
  * Enqueue the parent and child theme stylesheets to display on the front-end of the website.
+ * Enqueue JavaScript to toggle a navigation submenu list items on mobile view.
  *
  * * This function ensures that the parent theme's styles are loaded first,
  * followed by the child theme's overrides to maintain correct CSS specificity.
  *
- * @since 1.0.1
+ * @since 1.0.2
  * @return void
  */
 function enqueue_frontend_styles(): void {
@@ -47,7 +48,7 @@ function enqueue_frontend_styles(): void {
     );
 
     // Load the `variables.css` file first so that they can be used by the `main-style.css` file.
-    $css_variables_path = 'assets/variables.css';
+    $css_variables_path = 'assets/css/variables.css';
     wp_enqueue_style(
         'ixion-child-variables',
         get_stylesheet_directory_uri() . '/' . $css_variables_path,
@@ -55,12 +56,21 @@ function enqueue_frontend_styles(): void {
         _get_asset_version( $css_variables_path )
     );
 
-    $main_styles_path = 'assets/main-style.css';
+    $main_styles_path = 'assets/css/main-style.css';
     wp_enqueue_style(
         'ixion-child-main',
         get_stylesheet_directory_uri() . '/' . $main_styles_path,
         array( 'ixion-child-variables' ),
         _get_asset_version( $main_styles_path )
+    );
+
+    $js_nav_toggle_path ='assets/js/navigation-toggle.js';
+    wp_enqueue_script(
+        'ixion-child-nav-toggle-js',
+        get_stylesheet_directory_uri() . '/' . $js_nav_toggle_path,
+        array(),
+        _get_asset_version( $main_styles_path ),
+        true
     );
 
 }
@@ -78,7 +88,7 @@ add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_edit
 function enqueue_block_editor_styles(): void {
 
     // Load the `variables.css` file first so that they can be used by the `admin-style.css` file.
-    $css_variables_path = 'assets/variables.css';
+    $css_variables_path = 'assets/css/variables.css';
 
     wp_enqueue_style(
         'ixion-child-variables-admin',
@@ -87,7 +97,7 @@ function enqueue_block_editor_styles(): void {
         _get_asset_version( $css_variables_path )
     );
 
-    $admin_styles_path = 'assets/admin-style.css';
+    $admin_styles_path = 'assets/css/admin-style.css';
 
     wp_enqueue_style(
         'ixion-child-admin',
@@ -144,7 +154,7 @@ function register_theme_features(): void   {
     add_theme_support('editor-styles');
 
     // 3. Point the editor to the child-theme's main stylesheet so the editor looks like the front-end.
-    add_editor_style('assets/main-style.css');
+    add_editor_style('assets/css/main-style.css');
 
     // 4. Enable support for `align-wide` rendering of images.
     add_theme_support( 'align-wide' );
