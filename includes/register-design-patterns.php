@@ -28,10 +28,9 @@ add_action('init', __NAMESPACE__ . '\\register_pattern_categories', 20 );
 function register_pattern_categories(): void    {
     $categories = array(
         'events-full-listing'       => array('label' => __('Events: Full Listing', 'ixion-child')),
-        /*'events-compact-home-page'  => array('label' => __('Events: Home Page', 'ixion-child')),*/
+        'events-general-home-page'  => array('label' => __('Events: Home Page', 'ixion-child')),
         'events-plant-sale'         => array('label' => __('Events: Plant Sale', 'ixion-child')),
         'events-fff-show'           => array('label' => __('Events: FFF Show', 'ixion-child')),
-
     );
 
     foreach ($categories as $slug => $settings) {
