@@ -305,6 +305,21 @@ p a, li a, span a {
     font-weight: 700;
 }
 
+/* Special case: FFF Show event-schedule-group */
+@media (min-width: 37.5em) {
+    .event-schedule-group.is-style-fff-columns {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    /* Ensures the Saturday/Sunday columns take up equal space */
+    .is-style-fff-columns > .wp-block-column {
+        flex: 1 1 300px;
+    }
+}
+
 /* I. The Dinner Preregistration Notice styles. */
 .entry-content .custom-tight-card .dinner-preregistration-notice,
 .entry-content .custom-tight-card-home-page .dinner-preregistration-notice  {
