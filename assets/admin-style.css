@@ -25,6 +25,16 @@
    2. EVENT LOCATION BLOCK (The "Yellow Link" & Thickness Fix)
    ========================================================================== */
 
+/* Target the paragraph within the group inside the editor wrapper */
+.editor-styles-wrapper .event-location-group .event-location {
+    font-weight: bold !important;
+}
+
+/* Ensure any links added to the address also stay bold */
+.editor-styles-wrapper .event-location-group .event-location a {
+    font-weight: bold !important;
+}
+
 /* Targets the specific event-location paragraph within the editor */
 .edit-post-visual-editor .event-location a:hover,
 .edit-post-visual-editor .event-location a:focus {
