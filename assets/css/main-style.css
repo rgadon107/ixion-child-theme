@@ -7,9 +7,10 @@
  */
 
 /* --- Table of Contents ---
-   1. Global Link Resets
+   1. Global Resets
    2. Theme Overrides
-   3. Custom Components
+   3. Gutenberg Alignment Utilities
+   4. Custom Components
         A. Header
         B. Navigation: Final Edge-to-Edge & Color Lock
         C. Mobile Navigation: Fix Breakpoints & Scoped Border
@@ -21,10 +22,11 @@
         I. Dinner Preregistration Notice styles
         J. Targeted Button Styles
         K. List Styling
+        L. Footer
    --------------------------------------------------------------- */
 
 /* ==========================================================================
-   1. GLOBAL LINK RESET
+   1. GLOBAL RESETS
    ========================================================================== */
 
 a {
@@ -42,6 +44,12 @@ a:focus {
 
 a:visited {
     color: var(--brand-green-dark);
+}
+
+/* Prevent horizontal scroll caused by 100vw logic on some browsers. */
+body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 p a, li a, span a {
@@ -66,7 +74,37 @@ p a, li a, span a {
 }
 
 /* ==========================================================================
-   3. CUSTOM COMPONENTS
+   3. GLOBAL LINK RESET
+   ========================================================================== */
+/**
+ * Full Width Breakout
+ * Uses the calc(50% - 50vw) technique to ignore parent container widths.
+ */
+.alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+/**
+ * Wide Width Breakout
+ * Centers the block at 1100px.
+ */
+@media (min-width: 1140px) {
+    .alignwide {
+        margin-left: calc(50% - (var(--site-width) / 2));
+        margin-right: calc(50% - (var(--site-width) / 2));
+        max-width: var(--site-width);
+        width: var(--site-width);
+    }
+}
+
+/* ==========================================================================
+   4. CUSTOM COMPONENTS
    ========================================================================== */
 
 /* A. Header */
@@ -423,7 +461,25 @@ ul.register-list li.has-list-item {
     line-height: 1.3 !important;
 }
 
-/* Temporary Debug: This SHOULD hide everything. If it doesn't,
-   the file isn't loading or a parent theme rule is extremely aggressive. */
-/*
-.sub-menu { display: none !important; }*/
+/* L. Footer */
+.site-footer {
+    max-width: 100% !important;
+    padding: 0;
+}
+
+.footer-cta-wrapper.alignfull,
+.footer-sitemap-wrapper.alignfull {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.site-info-wrapper {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
