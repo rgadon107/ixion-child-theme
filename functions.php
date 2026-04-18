@@ -158,6 +158,9 @@ function register_theme_features(): void   {
 
     // 4. Enable support for `align-wide` rendering of images.
     add_theme_support( 'align-wide' );
+
+    // 5. Enable responsive embedded content to maintain a proper aspect ratio across devices.
+    add_theme_support( 'responsive-embeds' );
 }
 
 /**
