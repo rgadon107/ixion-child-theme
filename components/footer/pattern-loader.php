@@ -30,11 +30,13 @@ $pattern_post = get_page_by_path( $slug, OBJECT, 'wp_block' );
 
 if ( $pattern_post instanceof WP_Post ) {
 
-
-    // Construct the block markup string.
-    $block_markup = '<!-- wp:block {"ref":' . $pattern_post->ID . '} / -->';
-
     printf( '<section class="%s">', esc_attr( $wrapper_class ) );
-    echo do_blocks( $block_markup );
+    echo do_blocks( $pattern_post->post_content );
     echo '</section>';
+
+} else {
+
+    // Inspect the browser's "View Source" if the post_content does not render.
+    echo "";
+
 }
