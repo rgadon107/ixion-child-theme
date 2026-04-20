@@ -9,7 +9,7 @@
  * @link https://developer.wordpress.org/reference/functions/register_block_pattern_category/
  *
  * @package Ixion_Child
- * @since 1.0.0
+ * @since 1.0.1
  */
 
 namespace gardenClubOfMpls;
@@ -27,6 +27,7 @@ add_action('init', __NAMESPACE__ . '\\register_pattern_categories', 20 );
  */
 function register_pattern_categories(): void    {
     $categories = array(
+        'footer-sections'           => array('label' => __('Footer: Site-Wide', 'ixion-child')),
         'events-full-listing'       => array('label' => __('Events: Full Listing', 'ixion-child')),
         'events-general-home-page'  => array('label' => __('Events: Home Page', 'ixion-child')),
         'events-plant-sale'         => array('label' => __('Events: Plant Sale', 'ixion-child')),

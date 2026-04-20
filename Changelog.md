@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 - `/footer.php`: Add file to serve as a view file for the site footer.
 - `/components/footer/pattern-loader.php`: Add file to manage the logic for loading synched block patterns passed to `/footer.php`.
 - `/functions.php`: Add theme support for responsive embeds (images, icons) passed into the footer.
+- `/includes/register-design-patterns.php`: Register design pattern category for footer sections (call-to-action, site map, and site info).
 - Add `Changelog.md` file to document changes to the theme.
 
 ### Changed
