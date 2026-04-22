@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased] Version 1.0.7 - 2026-XX-XX
+## [Version 1.0.7 - 2026-04-22](https://github.com/rgadon107/ixion-child-theme/pull/8)
 ### Added
 - `/footer.php`: Add file to serve as a view for the site footer.
 - `/components/footer/pattern-loader.php`: Add file to manage the logic for loading synched block patterns passed to `/footer.php`.
