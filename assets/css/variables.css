@@ -11,7 +11,7 @@
     --site-width: 1100px;
 
     /* --- B. BRAND COLORS --- */
-    --brand-strong-yellow: #c1a01e;
+    --brand-soft-orange:   #f3bd50;
     --brand-green-dark:    #527a55;
     --brand-green-light:   #cbd8cb;
     --brand-white-lime:    #f8faf8;
@@ -52,14 +52,14 @@
    your brand colors in the backend sidebar and canvas. */
 
 /* Background Colors: .has-{slug}-background-color */
-.has-brand-strong-yellow-background-color { background-color: var(--brand-strong-yellow) !important; }
+.has-brand-soft-orange-background-color   { background-color: var(--brand-soft-orange) !important; }
 .has-brand-green-dark-background-color    { background-color: var(--brand-green-dark) !important; }
 .has-brand-green-light-background-color   { background-color: var(--brand-green-light) !important; }
 .has-brand-white-lime-background-color    { background-color: var(--brand-white-lime) !important; }
 .has-brand-text-main-background-color     { background-color: var(--brand-text-main) !important; }
 
 /* Text Colors: .has-{slug}-color */
-.has-brand-strong-yellow-color { color: var(--brand-strong-yellow) !important; }
+.has-brand-soft-orange-color   { color: var(--brand-soft-orange) !important; }
 .has-brand-green-dark-color    { color: var(--brand-green-dark) !important; }
 .has-brand-green-light-color   { color: var(--brand-green-light) !important; }
 .has-brand-white-lime-color    { color: var(--brand-white-lime) !important; }

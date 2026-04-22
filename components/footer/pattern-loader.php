@@ -12,9 +12,9 @@
  * @param array $args {
  * An associative array of arguments passed from get_template_part().
  *
- * @type string $slug   The slug of the wp_block pattern to retrieve.
- * @type string $class  The CSS class name(s) to apply to the section wrapper.
- * @type string $id     The ID attribute to apply to the section wrapper.
+ * @type string $slug           The slug of the wp_block pattern to retrieve.
+ * @type string $wrapper_class  The CSS class name(s) to apply to the section wrapper.
+ * @type string $anchor_id      The ID attribute to apply to the section wrapper.
  * }
  */
 
