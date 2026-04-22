@@ -537,11 +537,27 @@ ul.register-list li.has-list-item {
     box-sizing: border-box;
 }
 
+.footer-site-info.alignfull::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px; /* The "thickness" of your line */
+    background: linear-gradient(
+            to right,
+            transparent,
+            color-mix(in srgb, var(--brand-soft-orange), transparent 50%) 20%,
+            color-mix(in srgb, var(--brand-soft-orange), transparent 50%) 80%,
+            transparent
+    );
+}
+
 .footer-site-info.alignfull {
+    position: relative;
     background-color: var(--brand-green-dark);
-    /* Less top padding since it follows the sitemap vertically */
-    padding: 20px 40px 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle divider */
+    padding: 30px 40px 50px;
+    border-top: none;
 }
 
 .footer-cta-wrapper.alignfull {
@@ -550,10 +566,27 @@ ul.register-list li.has-list-item {
     overflow: hidden;
 }
 
+.footer-sitemap-wrapper.alignfull::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+            to right,
+            transparent,
+            color-mix(in srgb, var(--brand-soft-orange), transparent 50%) 20%,
+            color-mix(in srgb, var(--brand-soft-orange), transparent 50%) 80%,
+            transparent
+    ); /* Fades at the edges (0% and 100%) and is fully visible between 20% and 80%  */
+}
+
 .footer-sitemap-wrapper.alignfull {
+    position: relative;
     padding: 80px 40px;
     background-color: var(--brand-green-dark);
-    border-top: 3px solid color-mix( in srgb, var(--brand-soft-orange), transparent 50% );
+    border-top: none;
 }
 
 /* ii. Container and Content Positioning */
@@ -616,6 +649,17 @@ ul.register-list li.has-list-item {
     text-align: center;
     margin: 0;
     letter-spacing: 0.5px;
+}
+
+.footer-site-info a {
+    color: var(--brand-green-light) !important;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer-site-info a:hover {
+    color: var(--brand-soft-orange) !important;
+    text-decoration: none;
 }
 
 /* iii. Default Column Layout (Mobile-First / Stacked) */
@@ -897,11 +941,14 @@ ul.register-list li.has-list-item {
         width: auto !important;
         flex-basis: 0 !important;
     }
-}
 
-.site-info-wrapper {
-    max-width: var(--content-width);
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    text-align: center;
+    .footer-site-info .wp-block-columns {
+        max-width: 1100px;
+        margin: 0 auto !important;
+        align-items: center;
+    }
+
+    .footer-site-info .wp-block-column:nth-child(1) p { text-align: left; }
+    .footer-site-info .wp-block-column:nth-child(2) p { text-align: center; }
+    .footer-site-info .wp-block-column:nth-child(3) p { text-align: right; }
 }
