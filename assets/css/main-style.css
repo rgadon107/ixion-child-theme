@@ -537,6 +537,13 @@ ul.register-list li.has-list-item {
     box-sizing: border-box;
 }
 
+.footer-site-info.alignfull {
+    background-color: var(--brand-green-dark);
+    /* Less top padding since it follows the sitemap vertically */
+    padding: 20px 40px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle divider */
+}
+
 .footer-cta-wrapper.alignfull {
     padding: 60px 40px;
     background-color: var(--brand-green-light);
@@ -549,7 +556,7 @@ ul.register-list li.has-list-item {
     border-top: 3px solid color-mix( in srgb, var(--brand-soft-orange), transparent 50% );
 }
 
-/* ii. Container Centering */
+/* ii. Container and Content Positioning */
 .footer-cta-heading,
 .footer-cta-columns {
     max-width: 1100px;
@@ -601,6 +608,14 @@ ul.register-list li.has-list-item {
     mask-repeat: no-repeat;
     -webkit-mask-size: contain;
     mask-size: contain;
+}
+
+.footer-site-info p {
+    color: var(--brand-green-light) !important;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.5px;
 }
 
 /* iii. Default Column Layout (Mobile-First / Stacked) */

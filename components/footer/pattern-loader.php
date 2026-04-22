@@ -33,7 +33,7 @@ $pattern_post = get_page_by_path( $slug, OBJECT, 'wp_block' );
 if ( $pattern_post instanceof WP_Post ) {
 
     printf( '<section id="%s" class="%s">', esc_attr( $anchor_id ), esc_attr( $wrapper_class ) );
-    echo do_blocks( $pattern_post->post_content );
+    echo do_shortcode( do_blocks( $pattern_post->post_content ) );
     echo '</section>';
 
 } else {

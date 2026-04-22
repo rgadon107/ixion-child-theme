@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ### Fixed
 - `/assets/css/main-style.css`: Mobile view - Fixed margin and text-alignment for media and text blocks on the front page.
 - Desktop view - Changed the position of the 3rd level navigation sub-menu named 'Photo Show Archives' from right to left. 
+- `/includes/register-design-patterns.php`: Modify the view to run `do_shortcode()`. This renders the `[current_year]` shortcode. 
 
 ## [Version 1.0.6 - 2026-03-05](https://github.com/rgadon107/ixion-child-theme/pull/7)
 ### Added
