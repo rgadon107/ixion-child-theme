@@ -56,18 +56,25 @@
         'class' => 'footer-sitemap-wrapper alignfull',
         'id'    => 'site-map'
     ] );
-?>
-        <div class="site-info-wrapper">
-    <?php
+
         /**
-         * Load the Legacy Site Info component.
+         * Load the Site Info component.
          *
          * Displays copyright information, credits, and theme-specific
-         * footer details. Mirroring the parent theme's component structure.
+         * footer details.
+         *
+         * @param array $args {
+         * @type string $slug               The slug of the wp_block post type.
+         * @type string $wrapper_class      CSS classes for the container.
+         * @type string $anchor_id          The anchor ID to be applied to the section wrapper.
+         * }
          */
-        get_template_part( 'components/footer/site-info' );
+        get_template_part( 'components/footer/pattern-loader', null, [
+            'slug'  => 'footer-site-info',
+            'class' => 'footer-site-info alignfull',
+            'id'    => 'site-info'
+        ] );
     ?>
-        </div>
     </footer>
 </div>
 <?php wp_footer(); ?>

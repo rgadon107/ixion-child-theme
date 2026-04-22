@@ -10,14 +10,18 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 - `/footer.php`: Add file to serve as a view for the site footer.
 - `/components/footer/pattern-loader.php`: Add file to manage the logic for loading synched block patterns passed to `/footer.php`.
 - `/functions.php`: Add theme support for responsive embeds (images, icons) passed into the footer.
-- `/includes/register-design-patterns.php`: Register design pattern category for footer sections (call-to-action, site map, and site info).
-- `/assets/css/main-style.css`: Add footer styles including global reset, and media queries for mobile and desktop view.
+- `/includes/register-design-patterns.php`: Register design pattern category `Footer: Site-Wide` for footer sections .
+- `/assets/css/main-style.css`: Add footer styles for global reset, and media queries for mobile and desktop view. Add <svg> icon styles.
+- `/assets/css/variables.css`: Add color variable for soft-orange and update block editor color palette.
+- Added 3 design patterns to child theme for footer sections; `Footer Email Signup`, `Footer Site Map`, and `Footer Site Info`.
 - Add `Changelog.md` file to document changes to the theme.
 
 ### Changed
 - `/components/footer/site-info.php`: File added to theme to update site info at the bottom of each page or post.
 
 ### Fixed
+- `/assets/css/main-style.css`: Mobile view - Fixed margin and text-alignment for media and text blocks on the front page.
+- Desktop view - Changed the position of the 3rd level navigation sub-menu named 'Photo Show Archives' from right to left. 
 
 ## [Version 1.0.6 - 2026-03-05](https://github.com/rgadon107/ixion-child-theme/pull/7)
 ### Added
