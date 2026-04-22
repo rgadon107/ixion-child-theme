@@ -28,13 +28,15 @@
      * pattern-loader view. This section is intended for marketing conversions.
      *
      * @param array $args {
-     * @type string $slug  The slug of the wp_block post type.
-     * @type string $class CSS classes to be applied to the section wrapper.
+     * @type string $slug       The slug of the wp_block post type.
+     * @type string $class      CSS classes to be applied to the section wrapper.
+     * @type string $anchor_id  The anchor ID to be applied to the section wrapper.
      * }
      */
     get_template_part( 'components/footer/pattern-loader', null, [
-        'slug'  => 'footer-email-signup',
-        'class' => 'footer-cta-wrapper alignfull',
+        'slug'      => 'footer-email-signup',
+        'class'     => 'footer-cta-wrapper alignfull',
+        'id'        => 'join-email-list'
     ] );
 
     /**
