@@ -6,8 +6,12 @@
  */
 
 :root {
-    /* --- A. BRAND COLORS --- */
-    --brand-strong-yellow: #c1a01e;
+    /* --- A. LAYOUT CONSTANTS --- */
+    --content-width: 800px;
+    --site-width: 1100px;
+
+    /* --- B. BRAND COLORS --- */
+    --brand-soft-orange:   #f3bd50;
     --brand-green-dark:    #527a55;
     --brand-green-light:   #cbd8cb;
     --brand-white-lime:    #f8faf8;
@@ -15,13 +19,13 @@
     --card-background:     #f4f4f4; /* Very light gray */
     --white:               #ffffff;
 
-    /* --- B. INTERACTIVE TOKENS --- */
+    /* --- C. INTERACTIVE TOKENS --- */
     /* 60% Opacity (40% transparent) per your preference */
     --brand-green-hover:   color-mix(in srgb, var(--brand-green-dark), transparent 40%);
     --hover-thickness:     2px;
     --hover-offset:        0.1em;
 
-    /* --- C. SPACING & GEOMETRY --- */
+    /* --- D. SPACING & GEOMETRY --- */
     --card-padding:         2rem;
     --card-radius:          8px;
     --section-margin:       2rem;      /* External space between cards/sections */
@@ -31,31 +35,31 @@
     --nav-padding:          15px 18px;
     --sub-menu-width:       280px;
 
-    /* --- D. BORDERS & SHADOWS --- */
+    /* --- E. BORDERS & SHADOWS --- */
     --border-thin:         1px solid var(--brand-green-dark);
     --border-medium:       2px solid var(--brand-green-dark);
     --border-thick:        5px solid var(--brand-green-dark);
     --shadow-soft:         0 4px 15px rgba(0, 0, 0, 0.05);
     --shadow-strong:       0 4px 12px rgba(0, 0, 0, 0.15);
 
-    /* --- E. ANIMATION --- */
+    /* --- F. ANIMATION --- */
     --transition-fast:     0.2s ease-in-out;
     --transition-standard: 0.3s ease;
 }
 
-/* --- F. BLOCK EDITOR COLOR UTILITY CLASSES ---
+/* --- G. BLOCK EDITOR COLOR UTILITY CLASSES ---
    Moving these here ensures the Block Editor correctly renders
    your brand colors in the backend sidebar and canvas. */
 
 /* Background Colors: .has-{slug}-background-color */
-.has-brand-strong-yellow-background-color { background-color: var(--brand-strong-yellow) !important; }
+.has-brand-soft-orange-background-color   { background-color: var(--brand-soft-orange) !important; }
 .has-brand-green-dark-background-color    { background-color: var(--brand-green-dark) !important; }
 .has-brand-green-light-background-color   { background-color: var(--brand-green-light) !important; }
 .has-brand-white-lime-background-color    { background-color: var(--brand-white-lime) !important; }
 .has-brand-text-main-background-color     { background-color: var(--brand-text-main) !important; }
 
 /* Text Colors: .has-{slug}-color */
-.has-brand-strong-yellow-color { color: var(--brand-strong-yellow) !important; }
+.has-brand-soft-orange-color   { color: var(--brand-soft-orange) !important; }
 .has-brand-green-dark-color    { color: var(--brand-green-dark) !important; }
 .has-brand-green-light-color   { color: var(--brand-green-light) !important; }
 .has-brand-white-lime-color    { color: var(--brand-white-lime) !important; }

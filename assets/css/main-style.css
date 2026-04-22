@@ -7,9 +7,12 @@
  */
 
 /* --- Table of Contents ---
-   1. Global Link Resets
+   1. Global Resets
    2. Theme Overrides
-   3. Custom Components
+   3. Gutenberg Alignment Utilities
+   4. Navigation
+   5. Media & Text Blocks
+   6. Custom Components
         A. Header
         B. Navigation: Final Edge-to-Edge & Color Lock
         C. Mobile Navigation: Fix Breakpoints & Scoped Border
@@ -19,12 +22,13 @@
         G. Location Block Styles
         H. Event Schedule Group Block Styles
         I. Dinner Preregistration Notice styles
-        J. Targeted Button Styles
+        J. Targeted Button Styles (Pages & Footer)
         K. List Styling
+        L. Footer (Call-To-Action, Site Map & Site Info)
    --------------------------------------------------------------- */
 
 /* ==========================================================================
-   1. GLOBAL LINK RESET
+   1. GLOBAL RESETS
    ========================================================================== */
 
 a {
@@ -42,6 +46,12 @@ a:focus {
 
 a:visited {
     color: var(--brand-green-dark);
+}
+
+/* Prevent horizontal scroll caused by 100vw logic on some browsers. */
+body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 p a, li a, span a {
@@ -66,7 +76,90 @@ p a, li a, span a {
 }
 
 /* ==========================================================================
-   3. CUSTOM COMPONENTS
+   3. GLOBAL LINK RESET
+   ========================================================================== */
+/**
+ * Full Width Breakout
+ * Uses the calc(50% - 50vw) technique to ignore parent container widths.
+ */
+.alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+/**
+ * Wide Width Breakout
+ * Centers the block at 1100px.
+ */
+@media (min-width: 1140px) {
+    .alignwide {
+        margin-left: calc(50% - (var(--site-width) / 2));
+        margin-right: calc(50% - (var(--site-width) / 2));
+        max-width: var(--site-width);
+        width: var(--site-width);
+    }
+}
+
+/* ==========================================================================
+   4. NAVIGATION
+   ========================================================================== */
+
+/*  Desktop View
+
+    Reposition the 3rd-level sub-menu for Photo Show Archive to the left.
+    When a 'Photo Show' custom post type is activated, these styles can be removed.
+    ------------------------------------------------------------------------------*/
+@media screen and (min-width: 57.5625em) {
+
+    #menu-item-17127 .sub-menu {
+        left: auto !important;   /* Reset the default 'left: 100%' */
+        right: 100% !important;  /* Position the sub-menu to the left of the parent link */
+        top: 0;                  /* Align the sub-menu vertically with the 'Photo Show Archive' link */
+
+        /* Optional: Add a subtle border to distinguish it from the level 2 menu */
+        border-right: 1px solid rgba(0,0,0,0.1);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+    }
+}
+
+/*  Mobile View Reset ( Accordion Style )
+
+    On mobile, the 3rd-level sub-menu should stack and indent, not fly left.
+    --------------------------------------------------------------------------*/
+@media screen and (max-width: 57.5625em) {
+
+    #menu-item-17127 .sub-menu {
+        left: 0 !important;
+        right: auto !important;
+        position: relative !important;
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   5. MEDIA AND TEXT BLOCKS ( Mobile View )
+   ========================================================================== */
+@media screen and (max-width: 57.5625em) {
+
+    /* Add vertical spacing between an image and the text when the block stacks on mobile screens. */
+    .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+        margin-top: 2.5rem !important; /* Adjust this value for more/less 'breath' */
+    }
+
+    /* Ensure the heading within these blocks is perfectly aligned with the centered style as used elsewhere. */
+    .wp-block-media-text.is-stacked-on-mobile h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   6. CUSTOM COMPONENTS
    ========================================================================== */
 
 /* A. Header */
@@ -315,6 +408,7 @@ p a, li a, span a {
     /* Ensure the pin doesn't shrink and stays aligned to the top */
     flex-shrink: 0;
     margin-top: -2px; /* Micro-adjustment to center pin with the first line of text */
+    width: 24px; /* Ensures the pseudo-element is respected in the flex layout */
 }
 
 .entry-content .custom-tight-card .event-location-group p.event-location,
@@ -328,11 +422,12 @@ p a, li a, span a {
     line-height: 1.4 !important;
     border-radius: var(--card-radius);
     margin-bottom: var(--block-margin-bottom) !important;
+    overflow: visible; /* Prevents the text from squishing the icon */
 }
 
 .entry-content .custom-tight-card .event-location-group p.event-location a,
-.entry-content .custom-tight-card-home-page .event-location-group p.event-location a{
-    display: block; /* Forces the link to behave as a block for better hit area */
+.entry-content .custom-tight-card-home-page .event-location-group p.event-location a    {
+    display: inline;
     text-align: left;
 }
 
@@ -400,9 +495,10 @@ p a, li a, span a {
     color: var(--brand-text-main);
 }
 
-/* J. Targeted Button Styles */
+/* J. Targeted Button Styles (Pages & Footer) */
 .has-button .wp-block-button__link,
-.register-button .wp-block-button__link {
+.register-button .wp-block-button__link,
+.footer-cta-wrapper .has-button .wp-block-button__link  {
     border: 2px solid transparent !important;
     transition: all var(--transition-standard);
 }
@@ -421,7 +517,438 @@ ul.register-list li.has-list-item {
     line-height: 1.3 !important;
 }
 
-/* Temporary Debug: This SHOULD hide everything. If it doesn't,
-   the file isn't loading or a parent theme rule is extremely aggressive. */
-/*
-.sub-menu { display: none !important; }*/
+/* L. Footer (Call-To-Action, Site Map & Site Info) */
+
+/* ============================================================
+   i. STRUCTURAL RESETS ( Global / Shared Styles )
+   ============================================================ */
+
+.site-footer {
+    max-width: 100% !important;
+    padding: 0;
+}
+
+.footer-cta-wrapper.alignfull,
+.footer-sitemap-wrapper.alignfull   {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+.footer-site-info.alignfull::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px; /* The "thickness" of your line */
+    background: linear-gradient(
+            to right,
+            transparent,
+            color-mix(in srgb, var(--brand-soft-orange), transparent 50%) 20%,
+            color-mix(in srgb, var(--brand-soft-orange), transparent 50%) 80%,
+            transparent
+    );
+}
+
+.footer-site-info.alignfull {
+    position: relative;
+    background-color: var(--brand-green-dark);
+    padding: 30px 40px 50px;
+    border-top: none;
+}
+
+.footer-cta-wrapper.alignfull {
+    padding: 60px 40px;
+    background-color: var(--brand-green-light);
+    overflow: hidden;
+}
+
+.footer-sitemap-wrapper.alignfull::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+            to right,
+            transparent,
+            color-mix(in srgb, var(--brand-soft-orange), transparent 50%) 20%,
+            color-mix(in srgb, var(--brand-soft-orange), transparent 50%) 80%,
+            transparent
+    ); /* Fades at the edges (0% and 100%) and is fully visible between 20% and 80%  */
+}
+
+.footer-sitemap-wrapper.alignfull {
+    position: relative;
+    padding: 80px 40px;
+    background-color: var(--brand-green-dark);
+    border-top: none;
+}
+
+/* ii. Container and Content Positioning */
+.footer-cta-heading,
+.footer-cta-columns {
+    max-width: 1100px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.footer-site-map-columns {
+    max-width: 1100px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: column !important; /* Default stacked */
+    gap: 40px;
+}
+
+/* Target the paragraphs labeled 'Home' and 'Contact Us' in the footer site-map. */
+.footer-site-map-col-1 p:first-child,
+.footer-site-map-col-4 p:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+}
+
+.footer-site-map-col-1 p:first-child::before,
+.footer-site-map-col-4 p:nth-of-type(2)::before {
+    content: "";
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 12px;
+    background-color: var(--brand-soft-orange);
+}
+
+/* Font Awesome 'Home' SVG Mask */
+.footer-site-map-col-1 p:first-child::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2 0 205.3c0 35.3-28.7 64-64 64l-288 0c-35.3 0-64-28.7-64-64l0-205.3-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9L240 6.1zm16 50.1L96 199.7 96 448c0 8.8 7.2 16 16 16l48 0 0-104c0-39.8 32.2-72 72-72l48 0c39.8 0 72 32.2 72 72l0 104 48 0c8.8 0 16-7.2 16-16l0-248.3-160-143.4zM208 464l96 0 0-104c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24l0 104z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2 0 205.3c0 35.3-28.7 64-64 64l-288 0c-35.3 0-64-28.7-64-64l0-205.3-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9L240 6.1zm16 50.1L96 199.7 96 448c0 8.8 7.2 16 16 16l48 0 0-104c0-39.8 32.2-72 72-72l48 0c39.8 0 72 32.2 72 72l0 104 48 0c8.8 0 16-7.2 16-16l0-248.3-160-143.4zM208 464l96 0 0-104c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24l0 104z'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+/* Font Awesome 'Envelope' SVG Mask */
+.footer-site-map-col-4 p:nth-of-type(2)::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.footer-site-info p {
+    color: var(--brand-green-light) !important;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.footer-site-info a {
+    color: var(--brand-green-light) !important;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer-site-info a:hover {
+    color: var(--brand-soft-orange) !important;
+    text-decoration: none;
+}
+
+/* iii. Default Column Layout (Mobile-First / Stacked) */
+.footer-cta-columns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px;
+}
+
+.footer-cta-column-left,
+.footer-cta-column-right {
+    width: 100% !important;
+    flex-basis: auto !important;
+}
+
+.footer-cta-column-left .wp-block-list {
+    list-style: none !important; /* Remove the square boxes in the unordered list. */
+    padding-left: 0 !important;   /* Align <ul> with the text above. */
+}
+
+.footer-cta-column-left .wp-block-list li {
+    position: relative;
+    padding-left: 2.5rem; /* Space for the icon */
+    margin-bottom: 1rem;
+}
+
+/* Create a <ul> list-item icon using a pseudo-element */
+.footer-cta-column-left .wp-block-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.75rem; /* Adjust to vertically align with your large text */
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: none;
+    background-color: var(--brand-green-dark); /* Use the `mask-image` property for the <svg> icon so that the `background-color` value can be easily changed. */
+
+    /* Font Awesome 'Leaf-Solid' SVG Mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M471.3 6.7C477.7 .6 487-1.6 495.6 1.2 505.4 4.5 512 13.7 512 24l0 186.9c0 131.2-108.1 237.1-238.8 237.1-77 0-143.4-49.5-167.5-118.7-35.4 30.8-57.7 76.1-57.7 126.7 0 13.3-10.7 24-24 24S0 469.3 0 456C0 381.1 38.2 315.1 96.1 276.3 131.4 252.7 173.5 240 216 240l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-80 0c-39.7 0-77.3 8.8-111 24.5 23.3-70 89.2-120.5 167-120.5 66.4 0 115.8-22.1 148.7-44 19.2-12.8 35.5-28.1 50.7-45.3z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M471.3 6.7C477.7 .6 487-1.6 495.6 1.2 505.4 4.5 512 13.7 512 24l0 186.9c0 131.2-108.1 237.1-238.8 237.1-77 0-143.4-49.5-167.5-118.7-35.4 30.8-57.7 76.1-57.7 126.7 0 13.3-10.7 24-24 24S0 469.3 0 456C0 381.1 38.2 315.1 96.1 276.3 131.4 252.7 173.5 240 216 240l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-80 0c-39.7 0-77.3 8.8-111 24.5 23.3-70 89.2-120.5 167-120.5 66.4 0 115.8-22.1 148.7-44 19.2-12.8 35.5-28.1 50.7-45.3z'/%3E%3C/svg%3E");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.footer-site-map-columns p {
+    color: var(--brand-soft-orange) !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-sitemap-wrapper ul + p {
+    margin-top: 3.5rem !important;
+}
+
+/* iv. Titan Scale Typography (Desktop Defaults) */
+.footer-cta-wrapper .footer-cta-heading {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--brand-green-dark);
+    margin-top: 0;      /* Resets any default h3 margins */
+    margin-bottom: 2rem;
+    font-weight: 900
+}
+
+.footer-cta-wrapper p,
+.footer-cta-wrapper li {
+    font-size: 1.85rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: var( --brand-text-main);
+}
+
+.footer-cta-wrapper p strong {
+    font-size: 2.1rem;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: var(--brand-green-dark);
+}
+
+.footer-cta-wrapper ul.wp-block-list {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem; /* Ensures bullets have enough room */
+}
+
+.footer-cta-wrapper li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-sitemap-wrapper ul.wp-block-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0;
+}
+
+.footer-sitemap-wrapper li {
+    color: var(--brand-green-light) !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.85rem;
+}
+
+.footer-sitemap-wrapper li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-sitemap-wrapper li a:hover {
+    color: var(--brand-soft-orange);
+    text-decoration: underline;
+}
+
+/* v. The BIG BUTTON (Desktop Defaults) */
+.footer-cta-wrapper .footer-cta-column-right .has-button .wp-block-button__link {
+    background-color: var(--brand-green-dark) !important;
+    color: var(--brand-white-lime) !important;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 40px 80px;
+    font-size: 2.25rem;
+    letter-spacing: 1px;
+    line-height: 1.875rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.footer-cta-wrapper .footer-cta-column-right .has-button .wp-block-button__link:hover {
+    background-color: var(--brand-white-lime) !important;
+    border-color: var(--brand-green-dark) !important;
+    color: var(--brand-green-dark) !important;
+    text-decoration: none !important;
+}
+
+.footer-cta-wrapper .cta-button-wrap {
+    margin-top: 4.5rem !important;
+    justify-content: center !important;
+    display: flex;
+}
+
+/* ============================================================
+   vi. MOBILE ZONE (max-width: 57.5625em)
+   ============================================================ */
+@media screen and (max-width: 57.5625em) {
+
+    .footer-cta-wrapper.alignfull {
+        padding: 40px 20px;
+    }
+
+    .footer-sitemap-wrapper.alignfull {
+        padding: 60px 20px;
+    }
+
+    /* Align heading and column paragraphs to center */
+    .footer-cta-wrapper .footer-cta-heading,
+    .footer-cta-column-left p,
+    .footer-cta-column-right p {
+        text-align: center;
+    }
+
+    /* Reset the list item padding so the <li> text can truly center in the column. */
+    .footer-cta-column-left .wp-block-list li {
+        padding-left: 0 !important;
+        text-align: center;
+    }
+
+    /* Change the <svg> leaf icon to inline-block so it flows with the centered text. */
+    .footer-cta-column-left .wp-block-list li::before {
+        position: relative !important; /* Switch from absolute positioning. */
+        display: inline-block;
+        left: auto;
+        top: -2px; /* Fine-tune vertical alignment with text. */
+        margin-right: 12px; /* Space between the leaf and the words of the <li>. */
+        vertical-align: middle;
+    }
+
+    /* Ensure the list itself doesn't have a left-side bias. */
+    .footer-cta-wrapper ul.wp-block-list {
+        padding-left: 0 !important;
+        list-style-position: inside;
+        text-align: center;
+    }
+
+    .footer-site-map-columns {
+        text-align: center;
+        gap: 60px; /* Space between the 4 stacked columns */
+    }
+
+    /* Downsize typography for smaller screens ---> */
+    .footer-cta-wrapper .footer-cta-heading {
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-cta-wrapper p,
+    .footer-cta-wrapper li {
+        font-size: 1.25rem;
+    }
+
+    .footer-cta-wrapper p strong {
+        font-size: 1.4rem;
+    }
+
+    /* Optional: Centers the list bullets/items to match the paragraphs */
+    .footer-cta-wrapper ul.wp-block-list {
+        padding-left: 0;
+        list-style-position: inside;
+        text-align: center;
+    }
+
+    .footer-site-map-col-1 p:first-child,
+    .footer-site-map-col-4 p:nth-of-type(2) {
+        justify-content: center;
+    }
+
+    .footer-sitemap-wrapper ul.wp-block-list {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    /* Resize the CTA button to prevent collision/wrapping */
+    .footer-cta-wrapper .footer-cta-column-right .has-button .wp-block-button__link {
+        font-size: 1.5rem;
+        padding: 20px 40px;
+        line-height: 1.4;
+    }
+
+    .footer-cta-wrapper .cta-button-wrap {
+        margin-top: 2.5rem !important;
+    }
+}
+
+/* ============================================================
+   vii. DESKTOP ZONE (min-width: 57.5625em)
+   ============================================================ */
+@media screen and (min-width: 57.5625em) {
+
+    .footer-cta-columns {
+        flex-direction: row !important; /* Overrides stacking */
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: 60px;
+    }
+
+    .footer-cta-column-right p {
+        text-align: center;
+        max-width: 500px; /* Optional: Keeps the lines from getting too long/thin */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-site-map-columns {
+        flex-direction: row !important; /* Side-by-side */
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    /* Override inline styles from the block editor to a force 50/50 split between columns. */
+    .footer-cta-column-left,
+    .footer-cta-column-right {
+        flex: 1 !important;
+        width: auto !important;
+        flex-basis: 0 !important;
+    }
+
+    .footer-site-map-col-1,
+    .footer-site-map-col-2,
+    .footer-site-map-col-3,
+    .footer-site-map-col-4 {
+        flex: 1 !important;
+        width: auto !important;
+        flex-basis: 0 !important;
+    }
+
+    .footer-site-info .wp-block-columns {
+        max-width: 1100px;
+        margin: 0 auto !important;
+        align-items: center;
+    }
+
+    .footer-site-info .wp-block-column:nth-child(1) p { text-align: left; }
+    .footer-site-info .wp-block-column:nth-child(2) p { text-align: center; }
+    .footer-site-info .wp-block-column:nth-child(3) p { text-align: right; }
+}
