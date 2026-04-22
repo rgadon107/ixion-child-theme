@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased Version 1.0.8 - 2026-XX-XX]()
+### Added
+
+### Changed
+- Did not add `/components/footer/site-info.php` from parent theme in version 1.0.7. 
+- Child theme relies instead on a registered design pattern for `footer-site-info` and a view rendered by `/footer.php`.
+
+### Fixed
+
 ## [Version 1.0.7 - 2026-04-22](https://github.com/rgadon107/ixion-child-theme/pull/8)
 ### Added
 - `/footer.php`: Add file to serve as a view for the site footer.
