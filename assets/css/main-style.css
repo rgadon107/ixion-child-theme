@@ -607,13 +607,13 @@ ul.register-list li.has-list-item {
 }
 
 /* Target the paragraphs labeled 'Home' and 'Contact Us' in the footer site-map. */
-.footer-site-map-col-1 p:first-child,
+.footer-site-map-col-1 p:nth-of-type(1),
 .footer-site-map-col-4 p:nth-of-type(2) {
     display: flex;
     align-items: center;
 }
 
-.footer-site-map-col-1 p:first-child::before,
+.footer-site-map-col-1 p:nth-of-type(1)::before,
 .footer-site-map-col-4 p:nth-of-type(2)::before {
     content: "";
     display: inline-block;
@@ -641,6 +641,27 @@ ul.register-list li.has-list-item {
     mask-repeat: no-repeat;
     -webkit-mask-size: contain;
     mask-size: contain;
+}
+
+.footer-site-map-col-1 p:nth-of-type(1) a,
+.footer-site-map-col-4 p:nth-of-type(2) a   {
+    color: var(--brand-soft-orange);
+}
+
+.footer-site-map-col-1 p:nth-of-type(1) a:hover,
+.footer-site-map-col-1 p:nth-of-type(1) a:focus,
+.footer-site-map-col-1 p:nth-of-type(1) a:visited,
+.footer-site-map-col-4 p:nth-of-type(2) a:hover,
+.footer-site-map-col-4 p:nth-of-type(2) a:focus,
+.footer-site-map-col-4 p:nth-of-type(2) a:visited   {
+    color: var(--brand-soft-orange);
+}
+
+.footer-site-map-col-1 p:nth-of-type(1) a:hover,
+.footer-site-map-col-1 p:nth-of-type(1) a:focus,
+.footer-site-map-col-4 p:nth-of-type(2) a:hover,
+.footer-site-map-col-4 p:nth-of-type(2) a:focus     {
+    text-decoration: underline var(--brand-soft-orange) var(--hover-thickness) !important;
 }
 
 .footer-site-info p {
