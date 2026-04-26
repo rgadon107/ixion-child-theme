@@ -5,14 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.0.8 - 2026-XX-XX]()
+## [Unreleased Version 1.0.8 - 2026-04-26]()
 ### Added
+- `/assets/css/main-style.css`: Target selective top-level nav links in footer. Override default link behavior for text color.
 
-### Changed
-- Did not add `/components/footer/site-info.php` from parent theme in version 1.0.7. 
-- Child theme relies instead on a registered design pattern for `footer-site-info` and a view rendered by `/footer.php`.
+## Changed
+- `/style.css`: Increase child theme version number to `1.0.8`.
+- Added site navigation links to the navigation list items in the `footer-site-map` design pattern.
 
-### Fixed
+### Correction
+- Version 1.0.7 - `/components/footer/pattern-loader.php`: Modify the view to run `do_shortcode()`. This renders the `[current_year]` shortcode.
+- Version 1.0.7 - Did not add `/components/footer/site-info.php` from parent theme into child theme in version 1.0.7.
+  - Child theme relies instead on a registered design pattern for `footer-site-info` and a view rendered by `/components/footer/pattern-loader.php`.
 
 ## [Version 1.0.7 - 2026-04-22](https://github.com/rgadon107/ixion-child-theme/pull/8)
 ### Added
@@ -20,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 - `/components/footer/pattern-loader.php`: Add file to manage the logic for loading synched block patterns passed to `/footer.php`.
 - `/functions.php`: Add theme support for responsive embeds (images, icons) passed into the footer.
 - `/includes/register-design-patterns.php`: Register design pattern category `Footer: Site-Wide` for footer sections .
-- `/assets/css/main-style.css`: Add footer styles for global reset, and media queries for mobile and desktop view. Add <svg> icon styles.
+- `/assets/css/main-style.css`: Add footer styles for global reset, and media queries for mobile and desktop view. Add `<svg>` icon styles.
 - `/assets/css/variables.css`: Add color variable for soft-orange and update block editor color palette.
 - Added 3 design patterns to child theme for footer sections; `Footer Email Signup`, `Footer Site Map`, and `Footer Site Info`.
 - Add `Changelog.md` file to document changes to the theme.
