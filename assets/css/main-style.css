@@ -794,9 +794,13 @@ ul.register-list li.has-list-item {
     text-decoration: none;
 }
 
-.footer-sitemap-wrapper li a:hover {
+.footer-sitemap-wrapper ul.wp-block-list li a:hover,
+.footer-sitemap-wrapper ul.wp-block-list li a:focus {
     color: var(--brand-soft-orange);
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid var(--brand-soft-orange);
+    padding-bottom: 1px;
+    margin-bottom: -1px; /* Prevents layout shift */
 }
 
 /* v. The BIG BUTTON (Desktop Defaults) */
