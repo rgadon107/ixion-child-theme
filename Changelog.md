@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unrelease Version 1.1.0 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/11)
+### Added
+
+### Changed
+
+### Fixed
+
+### Correction
+
 ## [Version 1.0.9 - 2026-04-29](https://github.com/rgadon107/ixion-child-theme/pull/10)
 ### Added
 - `/assets/css/main-style.css`: Target the sub-navigation links in the footer site-map section. Add an underline to the active link using the `border-bottom` property.
