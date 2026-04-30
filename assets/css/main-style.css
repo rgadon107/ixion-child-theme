@@ -116,7 +116,7 @@ p a, li a, span a {
     ------------------------------------------------------------------------------*/
 @media screen and (min-width: 57.5625em) {
 
-    #menu-item-17127 .sub-menu {
+    .sub-menu-reposition-left .sub-menu {
         left: auto !important;   /* Reset the default 'left: 100%' */
         right: 100% !important;  /* Position the sub-menu to the left of the parent link */
         top: 0;                  /* Align the sub-menu vertically with the 'Photo Show Archive' link */
@@ -133,7 +133,7 @@ p a, li a, span a {
     --------------------------------------------------------------------------*/
 @media screen and (max-width: 57.5625em) {
 
-    #menu-item-17127 .sub-menu {
+    .sub-menu-reposition-left .sub-menu {
         left: 0 !important;
         right: auto !important;
         position: relative !important;
