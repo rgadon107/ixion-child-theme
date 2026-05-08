@@ -5,14 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.1.1 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/12)
-### Added
-
+## [Version 1.1.1 - 2026-05-08](https://github.com/rgadon107/ixion-child-theme/pull/12)
 ### Changed
+- `/style.css`: Increase child theme version number to `1.1.1`.
 
 ### Fixed
-
-### Correction
+- `assets/css/main-style.css`: Fixed a selector targeting the style of the event schedule placed on the home page. 
 
 ## [Version 1.1.0 - 2026-04-29](https://github.com/rgadon107/ixion-child-theme/pull/11)
 ### Changed
