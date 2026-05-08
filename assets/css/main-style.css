@@ -453,7 +453,7 @@ p a, li a, span a {
 .entry-content .custom-tight-card .event-schedule-group p,
 .entry-content .custom-tight-card-home-page .event-schedule-group p {
     margin: 0 !important; /* Clear default paragraph margins to let the container handle spacing */
-    line-height: 1.5;
+    line-height: 1.5 !important;
     color: var(--brand-text-main);
 }
 
