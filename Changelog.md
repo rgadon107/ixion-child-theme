@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.1.2 - 2026-05-16](https://github.com/rgadon107/ixion-child-theme/pull/13)
+### Added
+- `assets/css/main-style.css`: Added a selector to target list items within an event description group.
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.1.2`.
+
 ## [Version 1.1.1 - 2026-05-08](https://github.com/rgadon107/ixion-child-theme/pull/12)
 ### Changed
 - `/style.css`: Increase child theme version number to `1.1.1`.
