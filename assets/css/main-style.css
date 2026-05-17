@@ -389,7 +389,8 @@ p a, li a, span a {
     margin-bottom: var(--block-margin-bottom);
 }
 
-.entry-content .custom-tight-card .event-description-group ul.event-description-list li  {
+.entry-content .custom-tight-card .event-description-group ul.event-description-list li,
+.entry-content .custom-tight-card-home-page .event-description-group ul.event-description-list li   {
     color: var(--brand-text-main);
     font-style: italic;
     line-height: 1.5rem;
