@@ -5,16 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unrelease Version 1.2.0 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/14)
+## [Version 1.2.0 - 2026-05-23](https://github.com/rgadon107/ixion-child-theme/pull/14)
 
 ### Added
+- `/includes/register-design-patterns.php`: Update custom configuration to register a design pattern for the progressive garden tour event. 
 
 ### Changed
-
-### Fixed
-
-### Correction
-
+- `/patterns/garden-tour-progressive.php`: Duplicated and modified the `events-full-listing.php` pattern file to create a new pattern for the progressive garden tour event.
+- `/style.css`: Updated child theme version number to `1.2.0`.
 
 ## [Version 1.1.2 - 2026-05-16](https://github.com/rgadon107/ixion-child-theme/pull/13)
 ### Added
