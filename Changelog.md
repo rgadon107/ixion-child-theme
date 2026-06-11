@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased Version 1.4.0 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/16)
+### Added
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.4.0`.
+
+### Fixed
+
+### Correction
+
 ## [Version 1.3.0 - 2026-06-11](https://github.com/rgadon107/ixion-child-theme/pull/15)
 ### Added
 - `assets/css/main-style.css`: Add a line-height property to targeted <p> tags in the right-side column of the footer CTA.
