@@ -704,6 +704,14 @@ ul.register-list li.has-list-item {
     flex-basis: auto !important;
 }
 
+.footer-cta-column-right p.wp-block-paragraph:nth-of-type(2) {
+    line-height: 1.8;
+}
+
+.footer-cta-column-right .wp-block-button.cta-button a.wp-block-button__link {
+    line-height: 1.5;
+}
+
 .footer-cta-column-left .wp-block-list {
     list-style: none !important; /* Remove the square boxes in the unordered list. */
     padding-left: 0 !important;   /* Align <ul> with the text above. */
