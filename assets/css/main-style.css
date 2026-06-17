@@ -365,6 +365,17 @@ p a, li a, span a {
     margin-bottom: 0 !important;
 }
 
+.wp-block-group.presenter-group p:first-child a:visited {
+    color: var(--brand-green-dark);
+}
+
+.wp-block-group.presenter-group p:first-child a:hover,
+.wp-block-group.presenter-group p:first-child a:focus   {
+    color: var(--brand-green-dark);
+    text-decoration: underline var(--brand-green-dark) var(--hover-thickness) !important;
+    text-underline-offset: var(--hover-offset);
+}
+
 /* Target the presenter's title and organization name in the Presenter Info Group block. */
 .wp-block-group.presenter-group p.presenter-title-and-organization {
     font-size: 0.9rem; /* Slightly smaller than the base font-size. */
