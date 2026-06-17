@@ -5,15 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.4.0 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/16)
+## [Version 1.3.1 - 2026-06-15](https://github.com/rgadon107/ixion-child-theme/pull/17)
 ### Added
+- `assets/css/main-style.css`: Added a link selector in the event card presenter group. 
+  - Added color and underline to the link on focus, hover, and visited states. 
 
 ### Changed
-- `/style.css`: Increase child theme version number to `1.4.0`.
-
-### Fixed
-
-### Correction
+- `/style.css`: Increase child theme version number to `1.3.1`.
 
 ## [Version 1.3.0 - 2026-06-11](https://github.com/rgadon107/ixion-child-theme/pull/15)
 ### Added
