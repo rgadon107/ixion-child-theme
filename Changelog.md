@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Version 1.3.1 - 2026-06-15](https://github.com/rgadon107/ixion-child-theme/pull/17)
+## [Version 1.3.1 - 2026-06-15](https://github.com/rgadon107/ixion-child-theme/pull/16)
 ### Added
 - `assets/css/main-style.css`: Added a link selector in the event card presenter group. 
   - Added color and underline to the link on focus, hover, and visited states. 
