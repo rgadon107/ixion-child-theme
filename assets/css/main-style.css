@@ -73,6 +73,35 @@ p a, li a, span a {
     .main-navigation ul li {
         margin-left: 1.2em;
     }
+
+    /* Mission Statement Blockquote Styling */
+    blockquote.mission-statement {
+        position: relative;
+        background-color: var(--brand-green-light);
+        font-style: italic;
+        line-height: 1.6rem;
+        padding: 1.5rem 2rem 1.5rem 3.5rem; /* Extra left padding to make room for the quote */
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--brand-green-dark); /* Optional: A darker green accent bar on the left */
+        border-radius: 4px;
+    }
+
+    blockquote.mission-statement p:last-child {
+        margin-bottom: 0rem;
+    }
+
+    /* Oversized Left-Oriented Double Quotation Mark */
+    blockquote.mission-statement::before {
+        content: "\201C"; /* Unicode character for left double quotation mark */
+        position: absolute;
+        top: -0.2rem; /* Pulls it up slightly for alignment */
+        left: 1rem;
+        font-size: 6rem;
+        line-height: 1;
+        font-family: Georgia, serif; /* Using a serif font ensures an elegant curved quote shape */
+        color: var(--brand-green-dark);
+        opacity: 0.6;
+    }
 }
 
 /* ==========================================================================
@@ -534,6 +563,16 @@ p a, li a, span a {
 ul.register-list li.has-list-item {
     margin-bottom: var(--list-item-margin) !important;
     line-height: 1.3 !important;
+}
+
+ol.register-list li  {
+    line-height: 1.3 !important;
+    margin-bottom: var(--list-item-margin, 1.2rem) !important;
+}
+
+/* Optional: Removes the margin from the very last item to prevent extra gap at the bottom of the list */
+ol.register-list li:last-child {
+    margin-bottom: 0 !important;
 }
 
 /* L. Footer (Call-To-Action, Site Map & Site Info) */

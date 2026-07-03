@@ -5,11 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Version 1.3.X - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/17)
+## [Version 1.3.2 - 2026-07-03](https://github.com/rgadon107/ixion-child-theme/pull/17)
+
 ### Added
+- `assets/css/main-style.css`:
+  - Added a child-theme selector to target the `<blockquote>` tag on the Deane Fund page.
+  - Added a pseudo-element to style the left-handed quotation mark on the `<blockquote>` tag.
+  - Added a child-theme selector to target the styling of ordered lists.
 
 ### Changed
-- `/style.css`: Increase child theme version number to `1.3.X`.
+- `/style.css`: Increase child theme version number to `1.3.2`.
 
 ### Fixed
 
