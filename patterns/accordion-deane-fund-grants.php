@@ -14,8 +14,8 @@
         <!-- /wp:accordion-heading -->
 
         <!-- wp:accordion-panel {"metadata":{"name":"Dean Fund Awards - Accordion Panel"}} -->
-        <div role="region" class="wp-block-accordion-panel"><!-- wp:table {"hasFixedLayout":true,"className":"deane-fund-grants-table","metadata":{"name":"Dean Fund Awards Table"}} -->
-            <figure class="wp-block-table is-style-regular"><table class="has-fixed-layout deane-fund-grants-table"><thead><tr><th>Award Year</th><th>Project Description</th></tr></thead><tbody><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table></figure>
+        <div role="region" class="wp-block-accordion-panel"><!-- wp:table {"hasFixedLayout":true,"className":"is-style-regular deane-fund-grants-table","metadata":{"name":"Dean Fund Awards Table"}} -->
+            <figure class="wp-block-table is-style-regular deane-fund-grants-table"><table class="has-fixed-layout"><thead><tr><th>Award Year</th><th>Project Description</th></tr></thead><tbody><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table></figure>
             <!-- /wp:table --></div>
         <!-- /wp:accordion-panel --></div>
     <!-- /wp:accordion-item --></div>
