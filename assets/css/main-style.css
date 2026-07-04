@@ -22,10 +22,10 @@
         G. Location Block Styles
         H. Event Schedule Group Block Styles
         I. Dinner Preregistration Notice styles
-        J. Targeted Button Styles (Pages & Footer)
+        J. Targeted Button Styles (Pages, Accordion, and Footer)
         K. List Styling
         L. Footer (Call-To-Action, Site Map & Site Info)
-        M. Accordion Styles
+        M. Accordion and Table Styles
    --------------------------------------------------------------- */
 
 /* ==========================================================================
@@ -544,7 +544,7 @@ p a, li a, span a {
     color: var(--brand-text-main);
 }
 
-/* J. Targeted Button Styles (Pages & Footer) */
+/* J. Targeted Button Styles (Pages, Accordion, & Footer) */
 .has-button .wp-block-button__link,
 .register-button .wp-block-button__link,
 .footer-cta-wrapper .has-button .wp-block-button__link  {
@@ -558,6 +558,24 @@ p a, li a, span a {
     border-color: var(--brand-green-dark) !important;
     color: var(--brand-green-dark) !important;
     text-decoration: none !important;
+}
+
+/* Target the toggle button inside the Deane Fund Grants Table accordion class */
+.wp-block-accordion.accordion-deane-fund-grants-table .wp-block-accordion-heading__toggle:hover,
+.wp-block-accordion.accordion-deane-fund-grants-table .wp-block-accordion-heading__toggle:focus {
+    /* Replace these with your actual child-theme CSS variables or hex codes */
+    color: var(--brand-green-dark) !important;
+    background-color: var(--brand-green-light) !important;
+
+    /* Optional: Ensure the outline looks clean on focus */
+    outline: 2px solid var(--brand-green-dark);
+    outline-offset: -2px;
+}
+
+/* If the parent theme targets the h3 that wraps the accordion toggle button, cover your bases here */
+.wp-block-accordion.accordion-deane-fund-grants-table .wp-block-accordion-heading:hover,
+.wp-block-accordion.accordion-deane-fund-grants-table .wp-block-accordion-heading:focus-within {
+    background-color: var(--brand-green-light) !important;
 }
 
 /* K. List Styling */
@@ -1045,7 +1063,7 @@ ol.register-list li:last-child {
     .footer-site-info .wp-block-column:nth-child(3) p { text-align: right; }
 }
 
-/* M. Accordion Styles */
+/* M. Accordion and Table Styles */
 
 /* ===========================================================================
    i. Override default WordPress accordion icon and replace with svg caret icon.
@@ -1100,6 +1118,7 @@ ol.register-list li:last-child {
 .accordion-deane-fund-grants-table .deane-fund-grants-table table {
     table-layout: auto !important; /* Disables browser-forced equal column sizing */
     width: 100% !important;
+    background-color: var(--brand-green-light);
 }
 
 /* Year Column (1st column, left-to-right) */
