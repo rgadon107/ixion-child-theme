@@ -1097,10 +1097,9 @@ ol.register-list li:last-child {
    ii. Table styles (tables contained within an accordion block)
    ============================================================ */
 
-.accordion-deane-fund-grants-table .deane-fund-grants-table {
-    width: 100%;
-    table-layout: fixed; /* Ensures strict adherence to column width percentages */
-    border-collapse: collapse;
+.accordion-deane-fund-grants-table .deane-fund-grants-table table {
+    table-layout: auto !important; /* Disables browser-forced equal column sizing */
+    width: 100% !important;
 }
 
 /* Year Column (1st column, left-to-right) */

@@ -15,7 +15,7 @@
 
         <!-- wp:accordion-panel {"metadata":{"name":"Dean Fund Awards - Accordion Panel"}} -->
         <div role="region" class="wp-block-accordion-panel">
-            <!-- wp:table {"className":"is-style-regular deane-fund-grants-table","metadata":{"name":"Dean Fund Awards Table"}} -->
+            <!-- wp:table {"hasFixedLayout":false,"className":"is-style-regular deane-fund-grants-table","metadata":{"name":"Dean Fund Awards Table"}} -->
             <figure class="wp-block-table is-style-regular deane-fund-grants-table">
                 <table>
                     <thead>
