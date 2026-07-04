@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Accordion: Deane Fund Grants
- * Slug: accordion-deane-fund-grants
+ * Slug: ixion-child/accordion-deane-fund-grants
  * Categories: accordion-deane-fund-grants, featured
  * Description: Style the accordion and table that renders current and past Deane Fund grants.
  * Keywords: featured, accordion, deane fund, deane fund grants
