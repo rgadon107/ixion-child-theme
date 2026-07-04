@@ -25,6 +25,7 @@
         J. Targeted Button Styles (Pages & Footer)
         K. List Styling
         L. Footer (Call-To-Action, Site Map & Site Info)
+        M. Accordion Styles
    --------------------------------------------------------------- */
 
 /* ==========================================================================
@@ -1042,4 +1043,28 @@ ol.register-list li:last-child {
     .footer-site-info .wp-block-column:nth-child(1) p { text-align: left; }
     .footer-site-info .wp-block-column:nth-child(2) p { text-align: center; }
     .footer-site-info .wp-block-column:nth-child(3) p { text-align: right; }
+}
+
+/* M. Accordion Styles */
+
+/* ============================================================
+   i. Table styles (tables contained within an accordion block)
+   ============================================================ */
+
+.accordion-deane-fund-grants-table .deane-fund-grants-table {
+    width: 100%;
+    table-layout: fixed; /* Ensures strict adherence to column width percentages */
+    border-collapse: collapse;
+}
+
+/* Year Column (1st column, left-to-right) */
+.deane-fund-grants-data-table th:nth-of-type(1),
+.deane-fund-grants-data-table td:nth-of-type(1) {
+    width: 20%;
+}
+
+/* Project Description Column (2nd column, left-to-right) */
+.deane-fund-grants-data-table th:nth-of-type(2),
+.deane-fund-grants-data-table td:nth-of-type(2) {
+    width: 80%;
 }
