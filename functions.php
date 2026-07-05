@@ -167,3 +167,18 @@ function register_theme_features(): void   {
  * Load custom pattern registrations.
  */
 require_once get_stylesheet_directory() . '/includes/register-design-patterns.php';
+
+/**
+ * Disable 'Content-Only Mode' isolation for unsynced patterns in WordPress 7.0.
+ *
+ * This restores unrestricted, immediate access to the full block structure.
+ *
+ * @since 1.3.2
+ *
+ * @param array $settings The current block editor settings.
+ * @return array The updated block editor settings.
+ */
+add_filter( 'block_editor_settings_all', function( $settings ) {
+    $settings['disableContentOnlyForUnsyncedPatterns'] = true;
+    return $settings;
+} );
