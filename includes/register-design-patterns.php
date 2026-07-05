@@ -27,14 +27,13 @@ add_action('init', __NAMESPACE__ . '\\register_pattern_categories', 20 );
  */
 function register_pattern_categories(): void    {
     $categories = array(
-        'footer-sections'               => array('label' => __('Footer: Site-Wide', 'ixion-child')),
-        'events-full-listing'           => array('label' => __('Events: Full Listing', 'ixion-child')),
-        'events-general-home-page'      => array('label' => __('Events: Home Page', 'ixion-child')),
-        'events-plant-sale'             => array('label' => __('Events: Plant Sale', 'ixion-child')),
-        'events-fff-show'               => array('label' => __('Events: FFF Show', 'ixion-child')),
-        'garden-tour-progressive'       => array('label' => __('Garden Tour: Progressive', 'ixion-child')),
-        'accordion-deane-fund-grants'   => array('label' => __('Accordion: Deane Fund Grants', 'ixion-child')),
-        'coblocks-accordion-deane-fund-grants' => array('label' => __('Coblocks Accordion: Deane Fund Grants', 'ixion-child')),
+        'footer-sections'                       => array('label' => __('Footer: Site-Wide', 'ixion-child')),
+        'events-full-listing'                   => array('label' => __('Events: Full Listing', 'ixion-child')),
+        'events-general-home-page'              => array('label' => __('Events: Home Page', 'ixion-child')),
+        'events-plant-sale'                     => array('label' => __('Events: Plant Sale', 'ixion-child')),
+        'events-fff-show'                       => array('label' => __('Events: FFF Show', 'ixion-child')),
+        'garden-tour-progressive'               => array('label' => __('Garden Tour: Progressive', 'ixion-child')),
+        'coblocks-accordion-deane-fund-grants'  => array('label' => __('Coblocks Accordion: Deane Fund Grants', 'ixion-child')),
     );
 
     foreach ($categories as $slug => $settings) {
