@@ -1134,3 +1134,9 @@ ol.register-list li:last-child {
     width: 80%;
     text-align: left;
 }
+
+/* Add vertical spacing between rows inside the Deane Fund Grants table */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns + .wp-block-columns {
+    margin-top: 1.5rem;
+}
+
