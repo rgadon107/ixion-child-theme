@@ -95,4 +95,4 @@
 /* Ensure paragraph text inside EVEN rows also inherits the dark text color */
 .coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(even) .wp-block-paragraph {
     color: var(--brand-green-dark) !important;
-}}
+}
