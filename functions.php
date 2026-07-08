@@ -56,6 +56,14 @@ function enqueue_frontend_styles(): void {
         _get_asset_version( $css_variables_path )
     );
 
+    $accordion_styles_path = 'assets/css/accordion-styles.css';
+    wp_enqueue_style(
+        'ixion-child-coblocks-accordion-styles',
+        get_stylesheet_directory_uri() . '/' . $accordion_styles_path,
+        array( 'ixion-child-variables' ),
+        _get_asset_version( $accordion_styles_path )
+    );
+
     $main_styles_path = 'assets/css/main-style.css';
     wp_enqueue_style(
         'ixion-child-main',
