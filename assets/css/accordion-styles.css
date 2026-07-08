@@ -1,7 +1,11 @@
 /* The styles for the `Coblocks Accordion: Dean Fund Grants` custom design pattern. */
 
-.wp-block-coblocks-accordion.wp-block-coblocks-accordion-item.coblocks-accordion-deane-fund-grants-table {
+.wp-block-coblocks-accordion .coblocks-accordion-deane-fund-grants-table {
     background-color: var(--brand-green-dark) !important;
+    color: var(--brand-white-lime) !important;
+}
+
+.coblocks-accordion-deane-fund-grants-table .wp-block-paragraph {
     color: var(--brand-white-lime) !important;
 }
 
