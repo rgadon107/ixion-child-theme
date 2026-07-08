@@ -1,5 +1,6 @@
 /* The styles for the `Coblocks Accordion: Dean Fund Grants` custom design pattern. */
 
+/* Target the background-color and color of the accordion table. */
 .wp-block-coblocks-accordion .coblocks-accordion-deane-fund-grants-table {
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-white-lime) !important;
@@ -9,26 +10,17 @@
     color: var(--brand-white-lime) !important;
 }
 
-.coblocks-accordion-deane-fund-grants-table {
-    /* Rule for the first column (Award Year) */
-    .wp-block-column:first-child {
-        display: flex;
-        justify-content: center; /* Centers horizontally */
-        align-items: flex-end;   /* Keeps bottom alignment */
-    }
-
-    /* Rule for the second column (Project Description) */
-    .wp-block-column:nth-child(2) {
+/* Rule for the second column (Project Description) */
+.coblocks-accordion-deane-fund-grants-table .wp-block-column:nth-child(2) {
         display: flex;
         justify-content: flex-start; /* Aligns left */
         align-items: flex-end;       /* Keeps bottom alignment */
-    }
+}
 
     /* Clean up the paragraph margins */
-    .wp-block-column .wp-block-paragraph {
+.coblocks-accordion-deane-fund-grants-table .wp-block-column .wp-block-paragraph {
         margin: 0;
     }
-}
 
 /* Style the Coblocks Accordion table so that the browser does not jump when the accordion opens */
 .coblocks-accordion-deane-fund-grants-table .wp-block-coblocks-accordion-item__content {
@@ -54,8 +46,11 @@
 }
 
 /* 3. Horizontal alignment for the specific columns */
-.coblocks-accordion-deane-fund-grants-table .wp-block-column:first-child {
-    justify-content: center !important;
+/* Rule for the first column (Award Year) */
+.coblocks-accordion-deane-fund-grants-table .wp-block-column:first-child    {
+    display: flex;
+    justify-content: center !important; /* Centers horizontally */
+    align-items: flex-end;   /* Keeps bottom alignment */
 }
 
 .coblocks-accordion-deane-fund-grants-table .wp-block-column:nth-child(2) {
