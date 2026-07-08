@@ -1,0 +1,45 @@
+/* The styles for the `Coblocks Accordion: Dean Fund Grants` custom design pattern. */
+
+.coblocks-accordion-deane-fund-grants-table {
+    /* Rule for the first column (Award Year) */
+    .wp-block-column:first-child {
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: flex-end;   /* Keeps bottom alignment */
+    }
+
+    /* Rule for the second column (Project Description) */
+    .wp-block-column:nth-child(2) {
+        display: flex;
+        justify-content: flex-start; /* Aligns left */
+        align-items: flex-end;       /* Keeps bottom alignment */
+    }
+
+    /* Clean up the paragraph margins */
+    .wp-block-column .wp-block-paragraph {
+        margin: 0;
+    }
+}
+
+/* Style the Coblocks Accordion table so that the browser does not jump when the accordion opens */
+.coblocks-accordion-deane-fund-grants-table .wp-block-coblocks-accordion-item__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+    overflow: hidden;
+}
+
+.coblocks-accordion-deane-fund-grants-table[open] .wp-block-coblocks-accordion-item__content {
+    grid-template-rows: 1fr;
+}
+
+/* Align paragraph content to the bottom of the flex columns */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns.is-layout-flex {
+    align-items: flex-end;
+}
+
+/* Ensure the paragraph itself does not have extra bottom margin
+   that interferes with the vertical alignment */
+.coblocks-accordion-deane-fund-grants-table .wp-block-column .wp-block-paragraph {
+    margin-bottom: 0;
+}
