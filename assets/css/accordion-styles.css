@@ -63,3 +63,73 @@
     line-height: 1.3 !important;
     margin-bottom: 0 !important;
 }
+
+/* --- Coblocks Accordion Dean Fund Grants Table Zebra-Striping --- */
+
+/* Base styles for all "rows" (Column Blocks) in this table */
+.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 12px 20px; /* Adds padding so background color doesn't hug the text */
+}
+
+.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns > .wp-block-column:nth-child(2) p,
+.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns > .wp-block-column:nth-child(3) p	{
+    line-height: 1.5rem !important;
+}
+
+/* Style the Header and every ODD row (1, 3, 5...) */
+/* This applies the Dark Blue background */
+.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(odd) {
+    background-color: var(--brand-green-dark) !important;
+    color: var(--brand-white-lime);
+}
+
+/* Style every EVEN row (2, 4, 6...) */
+/* This applies the Light Greyish Blue background */
+.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(even) {
+    background-color: var(--brand-green-light) !important;
+    /* Dark green text provides the best contrast/readability on the light background */
+    color: var(--brand-green-dark);
+}
+
+/* Fix for the Italicizing selector */
+/* Your previous selector used [class*="meeting-topics-table-row-"].
+   Since your data rows use "data-row-", we'll broaden this to "meeting-topics-table-"
+   so the italics apply correctly to _all accordion item rows_.
+
+   Targets the second column of DATA rows only.
+   By including "-data-", we automatically exclude the "header-row".
+*/
+.wp-block-coblocks-accordion.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group div[class*="meeting-topics-table-data-row-"] .wp-block-column:nth-child(2) p {
+    font-style: italic !important;
+}
+
+/* Clean up paragraph spacing inside the table */
+.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group p {
+    margin: 0 !important;
+}
+
+/* Adjust Column Widths to prevent text wrapping (e.g., "September") */
+
+/* Target the Month Column (1st child) */
+.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns > .wp-block-column:nth-child(1) {
+    flex-basis: 15% !important;
+}
+
+/* Target the Meeting Topic Column (2nd child) to compensate */
+.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns > .wp-block-column:nth-child(2) {
+    flex-basis: 80% !important;
+}
+
+/* Vertically center the content in the header row */
+.wp-block-columns.meeting-topics-table-header-row {
+    align-items: center !important;
+}
+
+/* Ensure paragraphs inside the header don't have bottom margins
+   that would push the text off-center */
+.meeting-topics-table-header-row .wp-block-column p {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
