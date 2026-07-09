@@ -1,98 +1,182 @@
-/* The styles for the `Coblocks Accordion: Dean Fund Grants` custom design pattern. */
+/*!* The styles for the `Coblocks Accordion: Dean Fund Grants` custom design pattern. *!*/
 
-/* Target the background-color and color of the accordion table. */
-.wp-block-coblocks-accordion .coblocks-accordion-deane-fund-grants-table {
-    background-color: var(--brand-green-dark) !important;
-    color: var(--brand-white-lime) !important;
+/*!* Target the background-color and color of the accordion table. *!*/
+/*.wp-block-coblocks-accordion .coblocks-accordion-deane-fund-grants-table {*/
+/*    background-color: var(--brand-green-dark) !important;*/
+/*    color: var(--brand-white-lime) !important;*/
+/*}*/
+
+/*.coblocks-accordion-deane-fund-grants-table .wp-block-paragraph {*/
+/*    color: var(--brand-white-lime) !important;*/
+/*}*/
+
+/*!* Rule for the second column (Project Description) *!*/
+/*.coblocks-accordion-deane-fund-grants-table .wp-block-column:nth-child(2) {*/
+/*        display: flex;*/
+/*        justify-content: flex-start; !* Aligns left *!*/
+/*        align-items: flex-end;       !* Keeps bottom alignment *!*/
+/*}*/
+
+/*    !* Clean up the paragraph margins *!*/
+/*.coblocks-accordion-deane-fund-grants-table .wp-block-column .wp-block-paragraph {*/
+/*        margin: 0;*/
+/*    }*/
+
+/*!* Style the Coblocks Accordion table so that the browser does not jump when the accordion opens *!*/
+/*.coblocks-accordion-deane-fund-grants-table .wp-block-coblocks-accordion-item__content {*/
+/*    display: grid;*/
+/*    grid-template-rows: 0fr;*/
+/*    transition: grid-template-rows 0.3s ease-out;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.coblocks-accordion-deane-fund-grants-table[open] .wp-block-coblocks-accordion-item__content {*/
+/*    grid-template-rows: 1fr;*/
+/*}*/
+
+/*!* Align paragraph content to the bottom of the flex columns *!*/
+/*.coblocks-accordion-deane-fund-grants-table .wp-block-columns.is-layout-flex {*/
+/*    align-items: flex-end !important;*/
+/*}*/
+
+/*!* 2. Force the columns themselves to be flex containers *!*/
+/*.coblocks-accordion-deane-fund-grants-table .wp-block-column {*/
+/*    display: flex !important;*/
+/*    align-items: flex-end !important;*/
+/*}*/
+
+/*!* 3. Horizontal alignment for the specific columns *!*/
+/*!* Rule for the first column (Award Year) *!*/
+/*.coblocks-accordion-deane-fund-grants-table .wp-block-column:first-child    {*/
+/*    display: flex;*/
+/*    justify-content: center !important; !* Centers horizontally *!*/
+/*    align-items: flex-end;   !* Keeps bottom alignment *!*/
+/*}*/
+
+/*.coblocks-accordion-deane-fund-grants-table .wp-block-column:nth-child(2) {*/
+/*    justify-content: flex-start !important;*/
+/*}*/
+
+/*!* Ensure the paragraph itself does not have extra bottom margin*/
+/*   that interferes with the vertical alignment *!*/
+/*.coblocks-accordion-deane-fund-grants-table .wp-block-column .wp-block-paragraph {*/
+/*    line-height: 1.3 !important;*/
+/*    margin-bottom: 0 !important;*/
+/*}*/
+
+/*!* --- Coblocks Accordion Deane Fund Grants Table Zebra-Striping --- *!*/
+
+/*!* Base styles for all "rows" (Column Blocks) in this table *!*/
+/*.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns {*/
+/*    margin-top: 0 !important;*/
+/*    margin-bottom: 0 !important;*/
+/*    padding: 12px 20px;*/
+/*}*/
+
+/*!* 1. Style the Header and every ODD row (1, 3, 5...) *!*/
+/*!* Background: dark green, Text: white/lime *!*/
+/*.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(odd) {*/
+/*    background-color: var(--brand-green-dark) !important;*/
+/*    color: var(--brand-white-lime) !important;*/
+/*}*/
+
+/*!* Ensure paragraph text inside ODD rows also inherits the light text color *!*/
+/*.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(odd) .wp-block-paragraph {*/
+/*    color: var(--brand-white-lime) !important;*/
+/*}*/
+
+/*!* 2. Style every EVEN row (2, 4, 6...) *!*/
+/*!* Background: light green, Text: dark green *!*/
+/*.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(even) {*/
+/*    background-color: var(--brand-green-light) !important;*/
+/*    color: var(--brand-green-dark) !important;*/
+/*}*/
+
+/*!* Ensure paragraph text inside EVEN rows also inherits the dark text color *!*/
+/*.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(even) .wp-block-paragraph {*/
+/*    color: var(--brand-green-dark) !important;*/
+/*}*/
+
+/* ==========================================================================
+   COBLOCKS ACCORDION: DEANE FUND GRANTS TABLE
+   ========================================================================== */
+
+/**
+ * 1. Parent Accordion Component Scope
+ * Keeps all nested rules safely isolated to this specific table design pattern.
+ */
+.wp-block-coblocks-accordion-item.coblocks-accordion-deane-fund-grants-table {
+    margin-bottom: 1.5rem;
 }
 
-.coblocks-accordion-deane-fund-grants-table .wp-block-paragraph {
-    color: var(--brand-white-lime) !important;
+/**
+ * 2. Table Row Wrappers (The Flex Containers)
+ * Target both the header row and the content rows inside this component.
+ */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns {
+    display: flex !important; /* Force flex layouts to prevent core block collapses */
+    flex-flow: row wrap;
+    width: 100%;
+    gap: 0; /* Ensures control over width percentages */
+    margin-bottom: 0; /* Handled by rows instead */
 }
 
-/* Rule for the second column (Project Description) */
-.coblocks-accordion-deane-fund-grants-table .wp-block-column:nth-child(2) {
-        display: flex;
-        justify-content: flex-start; /* Aligns left */
-        align-items: flex-end;       /* Keeps bottom alignment */
+/* Give individual rows a subtle border separator */
+.coblocks-accordion-deane-fund-grants-table .deane-fund-table-row {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.75rem 0;
 }
 
-    /* Clean up the paragraph margins */
-.coblocks-accordion-deane-fund-grants-table .wp-block-column .wp-block-paragraph {
-        margin: 0;
-    }
+/**
+ * 3. Table Cells (The Flex Items)
+ * Define structural widths explicitly using nth-child selectors.
+ */
 
-/* Style the Coblocks Accordion table so that the browser does not jump when the accordion opens */
-.coblocks-accordion-deane-fund-grants-table .wp-block-coblocks-accordion-item__content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease-out;
-    overflow: hidden;
-}
+/* First Column (Award Year Cell) */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns .wp-block-column:nth-child(1) {
+    flex: 0 0 20% !important;
+    max-width: 15%;
 
-.coblocks-accordion-deane-fund-grants-table[open] .wp-block-coblocks-accordion-item__content {
-    grid-template-rows: 1fr;
-}
-
-/* Align paragraph content to the bottom of the flex columns */
-.coblocks-accordion-deane-fund-grants-table .wp-block-columns.is-layout-flex {
-    align-items: flex-end !important;
-}
-
-/* 2. Force the columns themselves to be flex containers */
-.coblocks-accordion-deane-fund-grants-table .wp-block-column {
+    /* Turn the cell into a flex container to align items vertically along a center axis */
     display: flex !important;
-    align-items: flex-end !important;
+    flex-direction: column;
+    align-items: center;      /* Horizontally centers the text block within the 15% width */
+    text-align: center;       /* Center justifies the text strings */
 }
 
-/* 3. Horizontal alignment for the specific columns */
-/* Rule for the first column (Award Year) */
-.coblocks-accordion-deane-fund-grants-table .wp-block-column:first-child    {
-    display: flex;
-    justify-content: center !important; /* Centers horizontally */
-    align-items: flex-end;   /* Keeps bottom alignment */
+/* HEADER CELL SPECIFIC: Position content at the bottom */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns:first-child .wp-block-column:nth-child(1) {
+    justify-content: flex-end; /* Pushes "Award Year" to the bottom of the header cell */
 }
 
-.coblocks-accordion-deane-fund-grants-table .wp-block-column:nth-child(2) {
-    justify-content: flex-start !important;
+/* DATA CELLS SPECIFIC (Remaining rows): Center vertically */
+.coblocks-accordion-deane-fund-grants-table .deane-fund-table-row .wp-block-column:nth-child(1) {
+    justify-content: center;   /* Vertically centers the years (2026, 2025, etc.) */
 }
 
-/* Ensure the paragraph itself does not have extra bottom margin
-   that interferes with the vertical alignment */
-.coblocks-accordion-deane-fund-grants-table .wp-block-column .wp-block-paragraph {
-    line-height: 1.3 !important;
-    margin-bottom: 0 !important;
+/* Force "Award Year" to break into two lines */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns:first-child .wp-block-column:nth-child(1) p {
+    max-width: 50px;           /* Constrains width so "Year" is forced to wrap beneath "Award" */
+    word-break: break-word;
 }
 
-/* --- Coblocks Accordion Deane Fund Grants Table Zebra-Striping --- */
+/* Second Column (Project Description Cell) */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns .wp-block-column:nth-child(2) {
+    flex: 0 0 80% !important;
+    max-width: 80%;
 
-/* Base styles for all "rows" (Column Blocks) in this table */
-.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding: 12px 20px;
+    /* Standard text alignment for descriptions */
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center; /* Keeps description vertically balanced if rows are tall */
 }
 
-/* 1. Style the Header and every ODD row (1, 3, 5...) */
-/* Background: dark green, Text: white/lime */
-.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(odd) {
-    background-color: var(--brand-green-dark) !important;
-    color: var(--brand-white-lime) !important;
-}
-
-/* Ensure paragraph text inside ODD rows also inherits the light text color */
-.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(odd) .wp-block-paragraph {
-    color: var(--brand-white-lime) !important;
-}
-
-/* 2. Style every EVEN row (2, 4, 6...) */
-/* Background: light green, Text: dark green */
-.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(even) {
-    background-color: var(--brand-green-light) !important;
-    color: var(--brand-green-dark) !important;
-}
-
-/* Ensure paragraph text inside EVEN rows also inherits the dark text color */
-.coblocks-accordion-deane-fund-grants-table .deane-fund-grants-table-group .wp-block-columns:nth-child(even) .wp-block-paragraph {
-    color: var(--brand-green-dark) !important;
+/**
+ * 4. Typography & Internal Clean Up
+ * Stripping block margins inside cells to ensure vertical alignment control.
+ */
+.coblocks-accordion-deane-fund-grants-table .wp-block-column p {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.2; /* Tighter line-height looks cleaner on stacked header text */
 }
