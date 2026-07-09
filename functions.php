@@ -56,6 +56,14 @@ function enqueue_frontend_styles(): void {
         _get_asset_version( $css_variables_path )
     );
 
+    $accordion_styles_path = 'assets/css/accordion-styles.css';
+    wp_enqueue_style(
+        'ixion-child-coblocks-accordion-styles',
+        get_stylesheet_directory_uri() . '/' . $accordion_styles_path,
+        array( 'ixion-child-variables' ),
+        _get_asset_version( $accordion_styles_path )
+    );
+
     $main_styles_path = 'assets/css/main-style.css';
     wp_enqueue_style(
         'ixion-child-main',
@@ -167,3 +175,18 @@ function register_theme_features(): void   {
  * Load custom pattern registrations.
  */
 require_once get_stylesheet_directory() . '/includes/register-design-patterns.php';
+
+/**
+ * Disable 'Content-Only Mode' isolation for unsynced patterns in WordPress 7.0.
+ *
+ * This restores unrestricted, immediate access to the full block structure.
+ *
+ * @since 1.3.2
+ *
+ * @param array $settings The current block editor settings.
+ * @return array The updated block editor settings.
+ */
+add_filter( 'block_editor_settings_all', function( $settings ) {
+    $settings['disableContentOnlyForUnsyncedPatterns'] = true;
+    return $settings;
+} );

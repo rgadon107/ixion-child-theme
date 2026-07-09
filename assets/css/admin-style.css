@@ -94,3 +94,13 @@
 .edit-post-visual-editor h3 {
     color: var(--brand-text-main) !important;
 }
+
+/* ==========================================================================
+   7. COBLOCKS ACCORDION EDITOR STYLES
+   ========================================================================== */
+
+/* Add vertical spacing between rows of the Coblocks Accordion block for the Deane Fund. */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns + .wp-block-columns,
+.coblocks-accordion-deane-fund-grants-table [data-type="core/columns"] + [data-type="core/columns"] {
+    margin-top: 1.5rem !important;
+}

@@ -22,9 +22,10 @@
         G. Location Block Styles
         H. Event Schedule Group Block Styles
         I. Dinner Preregistration Notice styles
-        J. Targeted Button Styles (Pages & Footer)
+        J. Targeted Button Styles (Pages, Accordion, and Footer)
         K. List Styling
         L. Footer (Call-To-Action, Site Map & Site Info)
+        M. Accordion and Table Styles
    --------------------------------------------------------------- */
 
 /* ==========================================================================
@@ -72,6 +73,35 @@ p a, li a, span a {
 @media screen and (min-width: 37.5em) {
     .main-navigation ul li {
         margin-left: 1.2em;
+    }
+
+    /* Mission Statement Blockquote Styling */
+    blockquote.mission-statement {
+        position: relative;
+        background-color: var(--brand-green-light);
+        font-style: italic;
+        line-height: 1.6rem;
+        padding: 1.5rem 2rem 1.5rem 3.5rem; /* Extra left padding to make room for the quote */
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--brand-green-dark); /* Optional: A darker green accent bar on the left */
+        border-radius: 4px;
+    }
+
+    blockquote.mission-statement p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Oversized Left-Oriented Double Quotation Mark */
+    blockquote.mission-statement::before {
+        content: "\201C"; /* Unicode character for left double quotation mark */
+        position: absolute;
+        top: -0.2rem; /* Pulls it up slightly for alignment */
+        left: 1rem;
+        font-size: 6rem;
+        line-height: 1;
+        font-family: Georgia, serif; /* Using a serif font ensures an elegant curved quote shape */
+        color: var(--brand-green-dark);
+        opacity: 0.6;
     }
 }
 
@@ -514,7 +544,7 @@ p a, li a, span a {
     color: var(--brand-text-main);
 }
 
-/* J. Targeted Button Styles (Pages & Footer) */
+/* J. Targeted Button Styles (Pages, Accordion, & Footer) */
 .has-button .wp-block-button__link,
 .register-button .wp-block-button__link,
 .footer-cta-wrapper .has-button .wp-block-button__link  {
@@ -530,10 +560,38 @@ p a, li a, span a {
     text-decoration: none !important;
 }
 
+/* Target the toggle button inside the Deane Fund Grants Table accordion class */
+.wp-block-accordion.accordion-deane-fund-grants-table .wp-block-accordion-heading__toggle:hover,
+.wp-block-accordion.accordion-deane-fund-grants-table .wp-block-accordion-heading__toggle:focus {
+    /* Replace these with your actual child-theme CSS variables or hex codes */
+    color: var(--brand-green-dark) !important;
+    background-color: var(--brand-green-light) !important;
+
+    /* Optional: Ensure the outline looks clean on focus */
+    outline: 2px solid var(--brand-green-dark);
+    outline-offset: -2px;
+}
+
+/* If the parent theme targets the h3 that wraps the accordion toggle button, cover your bases here */
+.wp-block-accordion.accordion-deane-fund-grants-table .wp-block-accordion-heading:hover,
+.wp-block-accordion.accordion-deane-fund-grants-table .wp-block-accordion-heading:focus-within {
+    background-color: var(--brand-green-light) !important;
+}
+
 /* K. List Styling */
 ul.register-list li.has-list-item {
     margin-bottom: var(--list-item-margin) !important;
     line-height: 1.3 !important;
+}
+
+ol.register-list li  {
+    line-height: 1.3 !important;
+    margin-bottom: var(--list-item-margin, 1.2rem) !important;
+}
+
+/* Optional: Removes the margin from the very last item to prevent extra gap at the bottom of the list */
+ol.register-list li:last-child {
+    margin-bottom: 0 !important;
 }
 
 /* L. Footer (Call-To-Action, Site Map & Site Info) */
@@ -1004,3 +1062,81 @@ ul.register-list li.has-list-item {
     .footer-site-info .wp-block-column:nth-child(2) p { text-align: center; }
     .footer-site-info .wp-block-column:nth-child(3) p { text-align: right; }
 }
+
+/* M. Accordion and Table Styles */
+
+/* ===========================================================================
+   i. Override default WordPress accordion icon and replace with svg caret icon.
+   =========================================================================== */
+
+/* --------------------------------------------------------
+   Native WordPress 7.0 Accordion Caret Customizations
+-------------------------------------------------------- */
+
+/* Hide the default native "+" text indicator */
+.accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle-icon {
+    display: none !important;
+}
+
+/* Base style for injecting our custom SVG mask onto the button trigger */
+.accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 12px;
+    vertical-align: middle;
+    background-color: var(--brand-green-dark); /* Default closed icon color */
+
+    /* Apply caret-right SVG as a mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath d='M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath d='M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: background-color 0.2s ease, -webkit-mask-image 0.2s ease;
+}
+
+/* Caret Down (Open State matching Interactivity API state tracking attributes) */
+.wp-block-accordion-item[data-wp-class--is-open="context.isOpen"] .accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle::before,
+.accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle[aria-expanded="true"]::before {
+    background-color: var(--brand-green-dark); /* Open icon color */
+
+    /* Apply caret-down SVG as a mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+}
+
+
+/* ============================================================
+   ii. Table styles (tables contained within an accordion block)
+   ============================================================ */
+
+.accordion-deane-fund-grants-table .deane-fund-grants-table table {
+    table-layout: auto !important; /* Disables browser-forced equal column sizing */
+    width: 100% !important;
+    background-color: var(--brand-green-light);
+}
+
+/* Year Column (1st column, left-to-right) */
+.deane-fund-grants-table th:nth-of-type(1),
+.deane-fund-grants-table td:nth-of-type(1) {
+    width: 20%;
+    text-align: center;
+}
+
+/* Project Description Column (2nd column, left-to-right) */
+.deane-fund-grants-table th:nth-of-type(2),
+.deane-fund-grants-table td:nth-of-type(2) {
+    width: 80%;
+    text-align: left;
+}
+
+/* Add vertical spacing between rows inside the Deane Fund Grants table */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns + .wp-block-columns {
+    margin-top: 1.5rem;
+}
+

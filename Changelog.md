@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.3.2 - 2026-07-09](https://github.com/rgadon107/ixion-child-theme/pull/17)
+
+### Added
+- `/assets/css/main-style.css`:
+  - Added a child-theme selector to target the `<blockquote>` tag on the Deane Fund page.
+  - Added a pseudo-element to style the left-handed quotation mark on the `<blockquote>` tag.
+  - Added a child-theme selector to target the styling of ordered lists.
+
+- `/functions.php`: Enqueued the `accordion-styles.css` stylesheet on the `wp_enqueue_scripts` hook.
+  
+- `/assets/css/accordion-styles.css`:
+  - Created a new CSS stylesheet to style the Coblocks Accordion Dean Fund Grant design pattern.
+  - Added media queries to restyle the accordion on mobile and tablet views.
+
+- `/patterns/coblocks-accordion-dean-fund-grants.php`: Added a new pattern file to style the Coblocks Accordion Dean Fund Grant design pattern.
+
+### Changed
+- `/functions.php`: Added a filter to restore unrestricted, immediate access to a full, unsynced block structure in the WP block editor. 
+- `/includes/register-design-patterns.php`: Updated the `register_design_pattern` function to register a design pattern for the Coblocks Accordion Dean Fund Grant design pattern.
+- `/style.css`: Increase child theme version number to `1.3.2`.
+
 ## [Version 1.3.1 - 2026-06-15](https://github.com/rgadon107/ixion-child-theme/pull/16)
 ### Added
 - `assets/css/main-style.css`: Added a link selector in the event card presenter group. 
