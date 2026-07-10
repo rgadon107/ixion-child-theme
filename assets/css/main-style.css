@@ -70,38 +70,69 @@ p a, li a, span a {
    2. THEME OVERRIDES
    ========================================================================== */
 
+/* ==========================================================================
+   MISSION STATEMENT BLOCKQUOTE STYLING (GLOBAL BASE)
+   Applies to ALL screens first, establishing the box and the large quote mark.
+   ========================================================================== */
+
+blockquote.mission-statement {
+    position: relative;
+    background-color: var(--brand-green-light) !important; /* Forces your theme color variable */
+    font-style: italic;
+    line-height: 1.6rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--brand-green-dark); /* Accent bar */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+blockquote.mission-statement p {
+    margin: 0 !important; /* Cleans up theme paragraphs inside the quote */
+}
+
+/* Base style for the oversized quotation mark */
+blockquote.mission-statement::before {
+    content: "\201C"; /* Unicode for left double quotation mark */
+    position: absolute;
+    font-family: Georgia, serif;
+    color: var(--brand-green-dark);
+    opacity: 0.6;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   MOBILE-SPECIFIC SPECIFICATIONS (Up to 37.5em / 600px)
+   ========================================================================== */
+@media screen and (max-width: 37.4375em) {
+    blockquote.mission-statement {
+        /* Extra left padding to guarantee text never hits the large mobile quote mark */
+        padding: 1.25rem 1.25rem 1.25rem 2.75rem;
+    }
+
+    blockquote.mission-statement::before {
+        font-size: 4.5rem; /* Slightly smaller scale so it fits on mobile screens */
+        top: -0.4rem;      /* Tweak vertical offset to center align cleanly */
+        left: 0.6rem;      /* Pulls the quote safely inside the colored background padding box */
+    }
+}
+
+/* ==========================================================================
+   DESKTOP RESPONSIVE ADJUSTMENTS (37.5em / 600px and Up)
+   ========================================================================== */
 @media screen and (min-width: 37.5em) {
     .main-navigation ul li {
         margin-left: 1.2em;
     }
 
-    /* Mission Statement Blockquote Styling */
     blockquote.mission-statement {
-        position: relative;
-        background-color: var(--brand-green-light);
-        font-style: italic;
-        line-height: 1.6rem;
-        padding: 1.5rem 2rem 1.5rem 3.5rem; /* Extra left padding to make room for the quote */
-        margin: 1.5rem 0;
-        border-left: 4px solid var(--brand-green-dark); /* Optional: A darker green accent bar on the left */
-        border-radius: 4px;
+        /* Roomier padding layout for spacious desktop monitors */
+        padding: 1.5rem 2rem 1.5rem 3.5rem;
     }
 
-    blockquote.mission-statement p:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Oversized Left-Oriented Double Quotation Mark */
     blockquote.mission-statement::before {
-        content: "\201C"; /* Unicode character for left double quotation mark */
-        position: absolute;
-        top: -0.2rem; /* Pulls it up slightly for alignment */
-        left: 1rem;
         font-size: 6rem;
-        line-height: 1;
-        font-family: Georgia, serif; /* Using a serif font ensures an elegant curved quote shape */
-        color: var(--brand-green-dark);
-        opacity: 0.6;
+        top: -0.2rem;
+        left: 1rem;
     }
 }
 
