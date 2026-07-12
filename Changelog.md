@@ -5,11 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unrelease Version 1.3.X - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/19)
+## [Version 1.3.4 - 2026-07-11](https://github.com/rgadon107/ixion-child-theme/pull/19)
 
 ### Added
+- `/assets/css/main-style.css`: Added styles for the event schedule H2 heading.
 
 ### Changed
+- `/style.css`: Increase child theme version number to `1.3.4`.
 
 ### Fixed
 

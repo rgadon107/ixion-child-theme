@@ -545,6 +545,15 @@ blockquote.mission-statement::before {
     font-weight: 700;
 }
 
+/* Event Schedule Header on FFF Show page */
+.wp-block-heading.event-schedule-header {
+    font-size: clamp(1.5rem, 5vw, 2.0rem);
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 1.5rem; /* Optional: adds a clean gap before the columns */
+}
+
 /* Special case: FFF Show event-schedule-group */
 @media (min-width: 37.5em) {
     .event-schedule-group.is-style-fff-columns {
