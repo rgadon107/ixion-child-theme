@@ -96,7 +96,7 @@ function enqueue_frontend_styles(): void    {
  * Enqueue JavaScript to toggle the primary navigation submenu list items on mobile view.
  *
  * @since 1.3.4 Refactor to separate the enqueuing of scripts and styles.
- * 
+ *
  * @return void
  */
 function enqueue_frontend_scripts(): void {
