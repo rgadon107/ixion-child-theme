@@ -25,6 +25,7 @@ function _get_asset_version(string $relative_path ): int|string   {
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_frontend_styles' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_frontend_scripts');
 /**
  * Enqueue the parent and child theme stylesheets to display on the front-end of the website.
  * Enqueue JavaScript to toggle a navigation submenu list items on mobile view.
@@ -35,52 +36,98 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_frontend_styles' );
  * @since 1.0.2
  * @return void
  */
-function enqueue_frontend_styles(): void {
-    // Load the parent theme's style
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+function enqueue_frontend_styles(): void    {
 
-    // Load the child theme's style
-    wp_enqueue_style(
-        'child-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( 'parent-style' ), // The child-theme depends on the parent theme loading first.
-        _get_asset_version( 'style.css' )
-    );
+    $scripts = [
+        'parent-style' => [
+            'file'      => '/style.css',
+            'deps'      => [],
+            'condition' => true,
+            'is_parent' => true // A flag to tell the loop this belongs to the parent theme
+        ],
+        'child-style' => [
+            'file'      => '/style.css',
+            'deps'      => ['parent-style'],
+            'condition' => true
+        ],
+        'ixion-child-variables' => [
+            'file'      => '/assets/css/variables.css',
+            'deps'      => [],
+            'condition' => true
+        ],
+        'ixion-child-accordion-styles' => [
+            'file'      => '/assets/css/accordion-styles.css',
+            'deps'      => ['ixion-child-variables'],
+            'condition' => true
+        ],
+        'ixion-child-main' => [
+            'file'      => '/assets/css/main-style.css',
+            'deps'      => ['ixion-child-variables'],
+            'condition' => true
+        ],
+    ];
 
-    // Load the `variables.css` file first so that they can be used by the `main-style.css` file.
-    $css_variables_path = 'assets/css/variables.css';
-    wp_enqueue_style(
-        'ixion-child-variables',
-        get_stylesheet_directory_uri() . '/' . $css_variables_path,
-        array(),
-        _get_asset_version( $css_variables_path )
-    );
+    foreach ($scripts as $handle => $config) {
+        if (!$config['condition']) {
+            continue;
+        }
 
-    $accordion_styles_path = 'assets/css/accordion-styles.css';
-    wp_enqueue_style(
-        'ixion-child-coblocks-accordion-styles',
-        get_stylesheet_directory_uri() . '/' . $accordion_styles_path,
-        array( 'ixion-child-variables' ),
-        _get_asset_version( $accordion_styles_path )
-    );
+        // Resolve native WordPress directory paths and URLs
+        if (!empty($config['is_parent'])) {
+            $file_path = get_template_directory() . $config['file'];
+            $file_url  = get_template_directory_uri() . $config['file'];
+        } else {
+            $file_path = get_stylesheet_directory() . $config['file'];
+            $file_url  = get_stylesheet_directory_uri() . $config['file'];
+        }
 
-    $main_styles_path = 'assets/css/main-style.css';
-    wp_enqueue_style(
-        'ixion-child-main',
-        get_stylesheet_directory_uri() . '/' . $main_styles_path,
-        array( 'ixion-child-variables' ),
-        _get_asset_version( $main_styles_path )
-    );
+        if (file_exists($file_path)) {
+            wp_enqueue_style(
+                $handle,
+                $file_url,
+                $config['deps'],
+                _get_asset_version($config['file']),
+            );
+        }
+    }
+}
 
-    $js_nav_toggle_path ='assets/js/navigation-toggle.js';
-    wp_enqueue_script(
-        'ixion-child-nav-toggle-js',
-        get_stylesheet_directory_uri() . '/' . $js_nav_toggle_path,
-        array(),
-        _get_asset_version( $main_styles_path ),
-        true
-    );
+/**
+ * Enqueue JavaScript to toggle the primary navigation submenu list items on mobile view.
+ *
+ * @since 1.3.4 Refactor enqueue_frontend_styles() to separate the enqueuing of scripts and styles.
+ * @return void
+ */
+function enqueue_frontend_scripts(): void {
 
+    $js_scripts = [
+        'ixion-child-nav-toggle-js' => [
+            'file' => '/assets/js/navigation-toggle.js',
+            'deps' => [],
+            'in_footer' => true,
+            'condition' => true,
+        ],
+    ];
+
+    foreach ($js_scripts as $handle => $config) {
+
+        if (!$config['condition']) {
+            continue;
+        }
+
+        $file_path = get_stylesheet_directory() . $config['file'];
+        $file_url  = get_stylesheet_directory_uri() . $config['file'];
+
+        if (file_exists($file_path)) {
+            wp_enqueue_script(
+                $handle,
+                $file_url,
+                $config['deps'],
+                _get_asset_version($config['file']),
+                $config['in_footer']
+            );
+        }
+    }
 }
 
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_editor_styles' );
