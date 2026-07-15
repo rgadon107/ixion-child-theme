@@ -73,7 +73,7 @@ function enqueue_frontend_styles(): void    {
         }
 
         // Resolve native WordPress directory paths and URLs
-        if (!empty($config['is_parent'])) {
+        if ( $config['is_parent'] ?? false ) {
             $file_path = get_template_directory() . $config['file'];
             $file_url  = get_template_directory_uri() . $config['file'];
         } else {
