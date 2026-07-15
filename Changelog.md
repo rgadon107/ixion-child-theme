@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Added
 
+- `/includes/register-design-patterns.php`: Register `faq-accordion` design pattern. 
+- `/patterns/faq-accordion.php`: Add custom design pattern file to directory.
+
 ### Changed
 - `/style.css`: Increase child theme version number to `1.3.5`.
 
