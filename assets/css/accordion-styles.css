@@ -259,3 +259,109 @@
         max-width: 80%;
     }
 }
+
+/* ==========================================================================
+   NATIVE WORDPRESS ACCORDION - FAQ ACCORDION PATTERN
+   ========================================================================== */
+
+/* 1. Parent Wrapper Styles */
+.wp-block-accordion.faq-accordion {
+    border: 1px solid var(--brand-green-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+/* 2. Individual Item / Row Styles */
+.wp-block-accordion-item.faq-accordion__item {
+    background-color: var(--brand-green-light);
+    border-bottom: 1px solid var(--brand-green-dark);
+}
+
+.wp-block-accordion-item.faq-accordion__item:last-child {
+    border-bottom: none; /* Clean up the last row border */
+}
+
+/* 3. Header Text & Toggle Area */
+.faq-accordion__item .wp-block-accordion-heading__toggle {
+    color: var(--brand-text-main);
+    padding: 1.25rem;
+}
+
+/* Soft background shift when hovering over a question */
+.faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:hover,
+.faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:focus,
+.faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:active  {
+    background-color: var(--brand-white-lime);
+    color: var(--brand-text-main);             /* Protects text color from turning white */
+    box-shadow: none;
+    text-decoration: none;
+    transition: background-color 0.1s ease;
+}
+
+/* ==========================================================================
+   FAQ CUSTOM SVG CARET STYLES
+   ========================================================================== */
+
+/* 1. Hide the native text icon (+ / -) safely within FAQs */
+.faq-accordion .wp-block-accordion-heading__toggle-icon {
+    /*font-size: 0 !important;   !* Hides the native literal '+' text completely *!*/
+    display: inline-flex;      /* Keeps it inline with the text */
+    align-items: center;
+    justify-content: center;
+
+    /* Moves the default WordPress `+` icon off-screen while keeping the stylesheet em dimensions intact */
+    text-indent: -9999px;
+    line-height: 0;
+    overflow: hidden; /* Prevents the off-screen text from causing layout spill */
+
+    width: 0.9375em;             /* Give the container explicit width */
+    height: 1.875em;             /* Give the container explicit height */
+    position: relative;
+    vertical-align: middle;
+    margin-right: 1em;        /* Spacing between icon and title text */
+}
+
+/* 2. Inject your custom SVG caret */
+.faq-accordion .wp-block-accordion-heading__toggle-icon::before {
+    content: '';
+    display: block;
+    text-indent: 0;   /* Crucial: Pulls the pseudo-element back to center layout */
+    width: 0.9375em;
+    height: 1.875em;
+
+    /* Uses your specific child-theme color variable */
+    background-color: var(--brand-green-dark);
+
+    /* Apply the SVG Mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath d='M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath d='M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z'/%3E%3C/svg%3E");
+
+    -webkit-mask-size: 75%;
+    mask-size: 75%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    /* Smooth rotation transition */
+    transition: transform 0.1s ease-in-out;
+}
+
+/* 3. Rotate the caret downwards when the block is expanded */
+.faq-accordion [aria-expanded="true"] .wp-block-accordion-heading__toggle-icon::before {
+    transform: rotate(90deg);
+}
+
+.wp-block-accordion-heading__toggle-title   {
+    line-height: 1.4em;
+}
+
+/* Overrides the inline style attribute using relative text units */
+.faq-accordion__item .wp-block-accordion-panel .wp-block-paragraph {
+    line-height: 1.4rem;
+    padding-left: 2.25rem !important; /* ~36px - lines up beautifully with the question text */
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1.5em;
+}
