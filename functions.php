@@ -28,12 +28,12 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_frontend_styles' );
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_frontend_scripts');
 /**
  * Enqueue the parent and child theme stylesheets to display on the front-end of the website.
- * Enqueue JavaScript to toggle a navigation submenu list items on mobile view.
  *
  * * This function ensures that the parent theme's styles are loaded first,
  * followed by the child theme's overrides to maintain correct CSS specificity.
  *
  * @since 1.0.2
+ * @since 1.3.4 Refactor enqueue_frontend_styles() to separate the enqueuing of scripts and styles.
  * @return void
  */
 function enqueue_frontend_styles(): void    {
@@ -95,7 +95,8 @@ function enqueue_frontend_styles(): void    {
 /**
  * Enqueue JavaScript to toggle the primary navigation submenu list items on mobile view.
  *
- * @since 1.3.4 Refactor enqueue_frontend_styles() to separate the enqueuing of scripts and styles.
+ * @since 1.3.4 Refactor to separate the enqueuing of scripts and styles.
+ * 
  * @return void
  */
 function enqueue_frontend_scripts(): void {
