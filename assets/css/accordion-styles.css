@@ -1,8 +1,77 @@
-/* ==========================================================================
-   COBLOCKS ACCORDION: DEANE FUND GRANTS TABLE
+/* =========================================================
+   Coblocks Accordion and native WordPress Accordion Styles
+   ======================================================= */
 
-   DESKTOP BASE STYLES & LAYOUT SPECIFICATIONS
-   ========================================================================== */
+/* --------------------------------------------------------
+   Native WordPress 7.0 Accordion Caret Customizations
+-------------------------------------------------------- */
+
+/* Hide the default native "+" text indicator */
+.accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle-icon {
+    display: none !important;
+}
+
+/* Base style for injecting our custom SVG mask onto the button trigger */
+.accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 12px;
+    vertical-align: middle;
+    background-color: var(--brand-green-dark); /* Default closed icon color */
+
+    /* Apply caret-right SVG as a mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath d='M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath d='M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: background-color 0.2s ease, -webkit-mask-image 0.2s ease;
+}
+
+/* Caret Down (Open State matching Interactivity API state tracking attributes) */
+.wp-block-accordion-item[data-wp-class--is-open="context.isOpen"] .accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle::before,
+.accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle[aria-expanded="true"]::before {
+    background-color: var(--brand-green-dark); /* Open icon color */
+
+    /* Apply caret-down SVG as a mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+}
+
+
+/* ============================================================
+   ii. Table styles (tables contained within an accordion block)
+   ============================================================ */
+
+.accordion-deane-fund-grants-table .deane-fund-grants-table table {
+    table-layout: auto !important; /* Disables browser-forced equal column sizing */
+    width: 100% !important;
+    background-color: var(--brand-green-light);
+}
+
+/* Year Column (1st column, left-to-right) */
+.deane-fund-grants-table th:nth-of-type(1),
+.deane-fund-grants-table td:nth-of-type(1) {
+    width: 20%;
+    text-align: center;
+}
+
+/* Project Description Column (2nd column, left-to-right) */
+.deane-fund-grants-table th:nth-of-type(2),
+.deane-fund-grants-table td:nth-of-type(2) {
+    width: 80%;
+    text-align: left;
+}
+
+/* Add vertical spacing between rows inside the Deane Fund Grants table */
+.coblocks-accordion-deane-fund-grants-table .wp-block-columns + .wp-block-columns {
+    margin-top: 1.5rem;
+}
 
 /**
  * 1. Parent Accordion Component Scope
@@ -34,7 +103,7 @@
  * Define structural widths explicitly using nth-child selectors.
  */
 
-/* First Column (Award Year Cell) */
+/* Deane Fund Grant Coblocks Accordion First Column (Award Year Cell) */
 .coblocks-accordion-deane-fund-grants-table .wp-block-columns .wp-block-column:nth-child(1) {
     flex: 0 0 20% !important;
     max-width: 20%;
@@ -63,11 +132,9 @@
     overflow-wrap: normal;     /* Guarantees words stay whole */
 }
 
-/* ==========================================
-   COLUMN 2: PROJECT DESCRIPTION (80% Width)
-   ========================================== */
 
-/* All the cells in the second column */
+
+/* Deane Fund Grant Coblocks Accordion Second Column (Project Description) */
 .coblocks-accordion-deane-fund-grants-table .wp-block-columns .wp-block-column:nth-child(2) {
     flex: 0 0 80% !important;
     max-width: 80%;
@@ -175,7 +242,7 @@
 
 
 /* ==========================================================================
-   MOBILE & TABLET RESPONSIVE MEDIA QUERIES
+   COBLOCKS ACCORDION - MOBILE & TABLET RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 
 /* --- MOBILE VIEW: Up to 600px (37.5rem) --- */
@@ -266,6 +333,8 @@
 
 /* 1. Parent Wrapper Styles */
 .wp-block-accordion.faq-accordion {
+    background-color: var(--brand-green-dark);
+    color: var(--brand-white-lime);
     border: 1px solid var(--brand-green-dark);
     border-radius: 8px;
     overflow: hidden;
@@ -274,29 +343,43 @@
 
 /* 2. Individual Item / Row Styles */
 .wp-block-accordion-item.faq-accordion__item {
-    background-color: var(--brand-green-light);
-    border-bottom: 1px solid var(--brand-green-dark);
+    background-color: var(--brand-green-dark); /* Keeps the grid system cohesive */
+    border-bottom: 1px solid var(--brand-white-lime); /* Light accent row separation */
 }
 
 .wp-block-accordion-item.faq-accordion__item:last-child {
     border-bottom: none; /* Clean up the last row border */
 }
 
-/* 3. Header Text & Toggle Area */
+/* 3. Header Text & Toggle Area (Default State) */
 .faq-accordion__item .wp-block-accordion-heading__toggle {
-    color: var(--brand-text-main);
+    color: var(--brand-white-lime);
     padding: 1.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-/* Soft background shift when hovering over a question */
+/* 4. Complete Interactive Pseudo-State Overrides (Ixion Reset) */
 .faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:hover,
 .faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:focus,
-.faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:active  {
-    background-color: var(--brand-white-lime);
-    color: var(--brand-text-main);             /* Protects text color from turning white */
+.faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:active {
+    background-color: var(--brand-green-dark);
     box-shadow: none;
     text-decoration: none;
-    transition: background-color 0.1s ease;
+    outline: none;
+}
+
+/* 5. Synchronized Soft-Orange Focus & Open Matrix Rule */
+.faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:hover .wp-block-accordion-heading__toggle-title,
+.faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:focus .wp-block-accordion-heading__toggle-title,
+.faq-accordion__item .wp-block-accordion-heading__toggle.wp-block-accordion-heading__toggle:active .wp-block-accordion-heading__toggle-title,
+.faq-accordion [aria-expanded="true"] .wp-block-accordion-heading__toggle-title {
+    color: var(--brand-soft-orange);
+}
+
+/* 6. Underline Trigger on Hover Only */
+.faq-accordion__item .wp-block-accordion-heading__toggle:hover .wp-block-accordion-heading__toggle-title {
+    text-decoration: underline;
+    text-decoration-color: var(--brand-soft-orange);
 }
 
 /* ==========================================================================
@@ -305,33 +388,31 @@
 
 /* 1. Hide the native text icon (+ / -) safely within FAQs */
 .faq-accordion .wp-block-accordion-heading__toggle-icon {
-    /*font-size: 0 !important;   !* Hides the native literal '+' text completely *!*/
-    display: inline-flex;      /* Keeps it inline with the text */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    /* Moves the default WordPress `+` icon off-screen while keeping the stylesheet em dimensions intact */
+    /* Moves default '+' icon off-screen */
     text-indent: -9999px;
     line-height: 0;
-    overflow: hidden; /* Prevents the off-screen text from causing layout spill */
+    overflow: hidden;
 
-    width: 0.9375em;             /* Give the container explicit width */
-    height: 1.875em;             /* Give the container explicit height */
+    width: 0.9375em;
+    height: 1.875em;
     position: relative;
     vertical-align: middle;
-    margin-right: 1em;        /* Spacing between icon and title text */
+    margin-right: 1em;
 }
 
-/* 2. Inject your custom SVG caret */
+/* 2. Inject your custom SVG caret (Default State: White-Lime) */
 .faq-accordion .wp-block-accordion-heading__toggle-icon::before {
     content: '';
     display: block;
-    text-indent: 0;   /* Crucial: Pulls the pseudo-element back to center layout */
+    text-indent: 0;
     width: 0.9375em;
     height: 1.875em;
 
-    /* Uses your specific child-theme color variable */
-    background-color: var(--brand-green-dark);
+    background-color: var(--brand-white-lime);
 
     /* Apply the SVG Mask */
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath d='M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z'/%3E%3C/svg%3E");
@@ -344,24 +425,84 @@
     -webkit-mask-position: center;
     mask-position: center;
 
-    /* Smooth rotation transition */
-    transition: transform 0.1s ease-in-out;
+    /* Smooth rotation & color transitions */
+    transition: transform 0.1s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-/* 3. Rotate the caret downwards when the block is expanded */
+/* 3. Caret Color Rules (Synchronized Interaction States) */
+.faq-accordion__item .wp-block-accordion-heading__toggle:hover .wp-block-accordion-heading__toggle-icon::before,
+.faq-accordion__item .wp-block-accordion-heading__toggle:focus .wp-block-accordion-heading__toggle-icon::before,
+.faq-accordion__item .wp-block-accordion-heading__toggle:active .wp-block-accordion-heading__toggle-icon::before,
+.faq-accordion [aria-expanded="true"] .wp-block-accordion-heading__toggle-icon::before {
+    background-color: var(--brand-soft-orange);
+}
+
+/* 4. Rotate the caret downwards when expanded */
 .faq-accordion [aria-expanded="true"] .wp-block-accordion-heading__toggle-icon::before {
     transform: rotate(90deg);
 }
 
-.wp-block-accordion-heading__toggle-title   {
+/* ==========================================================================
+   CONTENT PANEL STYLING (TWO-TONE REGION)
+   ========================================================================== */
+
+.wp-block-accordion-heading__toggle-title {
     line-height: 1.4em;
 }
 
-/* Overrides the inline style attribute using relative text units */
-.faq-accordion__item .wp-block-accordion-panel .wp-block-paragraph {
+/* Target the wrapper container of the hidden answer area */
+.faq-accordion__item .wp-block-accordion-panel {
+    background-color: var(--brand-green-light); /* Sets the panel to light green */
+    padding-top: 1rem;                         /* Adds clean buffer spacing */
+    padding-bottom: 0.5rem;
+}
+
+/* Clean text alignment using relative rem properties overriding inner blocks */
+.faq-accordion__item .wp-block-accordion-panel .wp-block-paragraph  {
     line-height: 1.4rem;
-    padding-left: 2.25rem !important; /* ~36px - lines up beautifully with the question text */
+    padding-left: 2.25rem !important;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 1.5em;
+    color: var(--brand-text-main);
 }
+
+/* --------------------------------------------------------------------------
+   INNER CONTENT LIST ELEMENTS (CUSTOM FLORET ACCENT)
+-------------------------------------------------------------------------- */
+
+/* 1. Target the main list wrapper, hide default markers, and align left edges */
+.faq-accordion__item .wp-block-accordion-panel .wp-block-list {
+    list-style: none !important;      /* Banishes the native square bullets entirely */
+    padding-left: 2.25rem !important; /* Resets to line up perfectly with the paragraph line */
+    padding-right: 2.25rem !important;/* Keeps layout cushion balance on the right edge */
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    color: var(--brand-text-main);
+}
+
+/* 2. Style individual items to make structural room for the custom floret icon */
+.faq-accordion__item .wp-block-accordion-panel .wp-block-list li {
+    position: relative;
+    padding-left: 1.5rem;             /* Leaves an exact layout gap for the incoming icon */
+    margin-bottom: 0.8rem;            /* Comfortable breathing room between list rows */
+    line-height: 1.45rem;
+}
+
+/* 3. Inject and style the black floret Unicode character (✿) as the new bullet */
+.faq-accordion__item .wp-block-accordion-panel .wp-block-list li::before {
+    content: "✿";                     /* The floret glyph character */
+    position: absolute;
+    left: 0;
+    top: 0.05em;                      /* Micro-adjusts the icon vertically to match the text baseline */
+    font-size: 0.85em;                /* Scales down slightly so it behaves like an elegant ornament */
+
+    /* 🚀 BRAND COLOR SYNC */
+    color: var(--brand-green-dark);   /* Paints the ornament in your rich dark green brand color */
+}
+
+/* 4. Strip margin off the last item to keep card padding clean */
+.faq-accordion__item .wp-block-accordion-panel .wp-block-list li:last-child {
+    margin-bottom: 0;
+}
+
