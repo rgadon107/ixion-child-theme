@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: FAQ Accordion
+ * Title: FAQ Accordion With Text
  * Slug: ixion-child/faq-accordion
  * Categories: faq-accordion, featured
  * Description: Style the native WordPress accordion block to display a set of frequently asked questions.
