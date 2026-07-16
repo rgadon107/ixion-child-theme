@@ -5,21 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.3.5 - 2026-07-XX](https://github.com/rgadon107/ixion-child-theme/pull/21)
+## [Version 1.3.5 - 2026-07-XX](https://github.com/rgadon107/ixion-child-theme/pull/21)
 
 ### Added
 
 - `/includes/register-design-patterns.php`: Register `faq-accordion` design pattern. 
 - `/patterns/faq-accordion.php`: Add custom design pattern file to directory.
-- `/assets/css/faq-accordion.css`: Style the native WP accordion block. 
+- `/patterns/faq-accordion-with-media-grid.php`: Add file to include a 33%/67% 2-column media grid in the Accordion Component of the registered block.
+- `/assets/css/accordion-styles.css`: Style the native WP accordion block. 
 
 ### Changed
+- `/assets/css/main-style.css`: Move styles targeting the Coblocks Accordion block to the `/assets/css/accordion-styles.css` stylesheet.
+- `/includes/register-design-patterns.php`: Update the title of a design pattern from `FAQ Accordion` to `FAQ Accordion With Text`.
+- `/patterns/faq-accordion.php`: Change filename to `/faq-accordion-with-text.php` and update title in PHP metadata to distinguish this pattern from 'FAQ Accordion With Media Grid'.
 - `/style.css`: Increase child theme version number to `1.3.5`.
-
-### Fixed
-
-### Corrections
-
 
 ## [Version 1.3.4 - 2026-07-14](https://github.com/rgadon107/ixion-child-theme/pull/20)
 
