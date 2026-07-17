@@ -36,6 +36,7 @@ function register_pattern_categories(): void    {
         'coblocks-accordion-deane-fund-grants'  => array('label' => __('Coblocks Accordion: Deane Fund Grants', 'ixion-child')),
         'faq-accordion'                         => array('label' => __('FAQ Accordion With Text', 'ixion-child')),
         'faq-accordion-with-media-grid'         => array('label' => __('FAQ Accordion With Media Grid', 'ixion-child')),
+        'document-resource-grid'                => array('label' => __('PDF Document Resource Grid', 'ixion-child')),
     );
 
     foreach ($categories as $slug => $settings) {
