@@ -506,3 +506,129 @@
     margin-bottom: 0;
 }
 
+/* ==========================================================================
+   FAQ ACCORDION WITH MEDIA GRID - BLOCK STYLES
+   ========================================================================== */
+
+/* 1. Add breathing room to the left side of the image column */
+.faq-accordion__media-panel .wp-block-column:first-child {
+    padding-left: 1.5rem;
+}
+
+/* 2. Style the image block caption cleanly */
+.faq-accordion__media-panel .wp-element-caption {
+    color: var(--brand-text-main);
+    line-height: 1.35rem;     /* Restricts vertical height tightly */
+    margin-top: 0.5rem;       /* Adds neat spacing right below the picture */
+    font-size: 0.85rem;       /* Optional: keeps caption scale visually elegant */
+}
+
+/* 3. Re-enforce your custom floret list styles inside the grid layout */
+.faq-accordion__media-panel .wp-block-list {
+    margin-top: 0;            /* Aligns the top bullet perfectly with the top of the image */
+    padding-left: 1.5rem;     /* Gives bullet room relative to the column break */
+}
+
+/* 4. Reset nested lists to align perfectly with the parent list container margin */
+.faq-accordion__media-panel .wp-block-list .wp-block-list {
+    padding-left: 0 !important;
+    margin-left: 0;
+    margin-top: 1.5rem;
+}
+
+/* 5. Vertically center the image on desktop viewports */
+@media (min-width: 37.5625rem) {
+    /* Target the columns wrapper to ensure it uses flex layout and expands fully */
+    .faq-accordion__media-panel .wp-block-columns {
+        display: flex !important;
+        align-items: center; /* This vertically centers all column contents naturally */
+    }
+
+    /* Keep the first column filling the height but allowing center alignment */
+    .faq-accordion__media-panel .wp-block-column:first-child {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-self: stretch; /* Stretches the column box to match the list height */
+    }
+
+    /* Force the figure element inside the flow layout to respect vertical margins */
+    .faq-accordion__media-panel .wp-block-column:first-child .wp-block-image {
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+    }
+}
+
+@media (max-width: 37.5rem) {
+    /* 1. Force the columns container to stack vertically */
+    .faq-accordion__media-panel .wp-block-columns {
+        flex-direction: column !important;
+        gap: 1.5rem; /* Adds a nice breathing space between the image and the list below */
+    }
+
+    /* 2. Reset both column widths to span the full width */
+    .faq-accordion__media-panel .wp-block-column {
+        flex-basis: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. Center and constrain the image so it behaves beautifully */
+    .faq-accordion__media-panel .wp-block-image {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 280px; /* Constrains the 400px image slightly on tiny mobile screens like 320px wide phones */
+    }
+
+    .faq-accordion__media-panel .wp-block-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   PDF RESOURCE GRID - BLOCK STYLES
+   ========================================================================== */
+/* 1. Base Grid Layout & Responsiveness */
+.pdf-resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Adjusts the spacing between rows and columns */
+    margin-bottom: 2rem;
+}
+
+/* Force 1 column on tablets and mobile screens */
+@media (max-width: 768px) {
+    .pdf-resource-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* 2. Cell Content Styling */
+.pdf-resource-grid p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* 3. PDF Link Alignment & Icon Prepended Styling */
+.pdf-link-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between the SVG icon and the link text */
+    margin-top: 0.5rem;
+}
+
+/* Standardize the inline SVG size and color */
+.pdf-link-wrapper svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0; /* Prevents the icon from squeezing if text wraps */
+    fill: currentColor; /* Inherits the link text color automatically */
+    transition: transform 0.2s ease;
+}
+
+/* Optional subtle hover effect to make it feel dynamic */
+.pdf-link-wrapper:hover svg {
+    transform: translateY(-1px);
+}
