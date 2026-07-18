@@ -611,24 +611,31 @@
     line-height: 1.6;
 }
 
-/* 3. PDF Link Alignment & Icon Prepended Styling */
+/* 1. Target the actual layout wrapper inside the group block */
+.pdf-link-wrapper .wp-block-group__inner-container {
+    display: flex !important;
+    flex-direction: row;
+    align-items: flex-start; /* Aligns the SVG icon with the first line of text */
+    gap: 0.75rem;            /* Clean horizontal space between icon and text */
+}
+
+/* 2. Outer block spacing adjustments */
 .pdf-link-wrapper {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem; /* Space between the SVG icon and the link text */
-    margin-top: 0.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
 }
 
-/* Standardize the inline SVG size and color */
+/* 3. Configure the SVG sizing (scaled up 25%) and apply your brand color variable */
 .pdf-link-wrapper svg {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0; /* Prevents the icon from squeezing if text wraps */
-    fill: currentColor; /* Inherits the link text color automatically */
-    transition: transform 0.2s ease;
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;          /* Guarantees the icon won't squish when text gets long */
+    color: var(--brand-green-dark); /* Applies your dark green variable */
+    margin-top: 0.15rem;      /* Adjusted alignment nudge for the larger asset size */
 }
 
-/* Optional subtle hover effect to make it feel dynamic */
-.pdf-link-wrapper:hover svg {
-    transform: translateY(-1px);
+/* 4. Ensure the paragraph handles its spacing cleanly inside the flex alignment */
+.pdf-link-wrapper p {
+    margin: 0 !important;
+    line-height: 1.5;
 }
