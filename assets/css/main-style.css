@@ -25,7 +25,6 @@
         J. Targeted Button Styles (Pages, Accordion, and Footer)
         K. List Styling
         L. Footer (Call-To-Action, Site Map & Site Info)
-        M. Accordion and Table Styles
    --------------------------------------------------------------- */
 
 /* ==========================================================================
@@ -546,12 +545,11 @@ blockquote.mission-statement::before {
 }
 
 /* Event Schedule Header on FFF Show page */
-.wp-block-heading.event-schedule-header {
-    font-size: clamp(1.5rem, 5vw, 2.0rem);
+.wp-block-heading.fff-show-section-heading    {
     line-height: 1.2;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    margin-bottom: 1.5rem; /* Optional: adds a clean gap before the columns */
+    margin-bottom: 2.0rem; /* Optional: adds a clean gap before the columns */
 }
 
 /* Special case: FFF Show event-schedule-group */
@@ -632,6 +630,75 @@ ol.register-list li  {
 /* Optional: Removes the margin from the very last item to prevent extra gap at the bottom of the list */
 ol.register-list li:last-child {
     margin-bottom: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   USEFUL DOCUMENTS & LINKS WITH CUSTOM FLORET ACCENT ON LIST ITEMS
+-------------------------------------------------------------------------- */
+
+/* 1. Base Columns Architecture */
+.useful-docs-columns {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 3rem; /* Generous horizontal space between the two lists */
+}
+
+/* 2. Column Heading Adjustments */
+.useful-docs-columns h3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* 3. Target the main list wrapper, banish standard discs, and balance spacing */
+.useful-docs-columns .wp-block-list {
+    list-style: none !important;      /* Banishes the native bullets entirely */
+    padding-left: 0 !important;       /* Resets default browser indent */
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* 4. Style individual items to leave an exact layout gap for the incoming icon */
+.useful-docs-columns .wp-block-list li {
+    position: relative;
+    padding-left: 1.75rem;            /* Leaves exact room for the floret icon */
+    margin-bottom: 1.25rem;           /* Comfortable breathing room between rows */
+    line-height: 1.45;
+}
+
+/* 5. Inject and style the floret Unicode character (✿) as the new bullet */
+.useful-docs-columns .wp-block-list li::before {
+    content: "✿";                     /* The floret glyph character */
+    position: absolute;
+    left: 0;
+    top: 0.05em;                      /* Micro-adjusts the ornament to match the text baseline */
+    font-size: 0.85em;                /* Scales down slightly for an elegant look */
+    color: var(--brand-green-dark);   /* Paints the ornament in your brand color */
+}
+
+/* 6. Targeting the optional description text beneath the main link */
+.useful-docs-columns .wp-block-list li span.description {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.9em;                 /* Creates a clean visual hierarchy */
+    opacity: 0.85;                    /* Subtly de-emphasizes the block relative to the link */
+    line-height: 1.5;
+}
+
+/* 7. Strip margin off the last item to keep padding clean */
+.useful-docs-columns .wp-block-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* 8. Seamless Flow Mobile Stack (Tablets & Phones) */
+@media (max-width: 37.5rem) {
+    .useful-docs-columns {
+        gap: 2.5rem; /* Space adjustment when columns stack vertically */
+    }
+
+    /* Provide a defensive cushion on the right side of the screen */
+    .useful-docs-columns .wp-block-list {
+        padding-right: 1.25rem !important;
+    }
 }
 
 /* L. Footer (Call-To-Action, Site Map & Site Info) */
@@ -1103,80 +1170,22 @@ ol.register-list li:last-child {
     .footer-site-info .wp-block-column:nth-child(3) p { text-align: right; }
 }
 
-/* M. Accordion and Table Styles */
-
-/* ===========================================================================
-   i. Override default WordPress accordion icon and replace with svg caret icon.
-   =========================================================================== */
-
-/* --------------------------------------------------------
-   Native WordPress 7.0 Accordion Caret Customizations
--------------------------------------------------------- */
-
-/* Hide the default native "+" text indicator */
-.accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle-icon {
-    display: none !important;
+/* Deane Fund Grant Application Modifications for Number Field. */
+#nf-field-1765-container.first.one-quarter,
+#nf-field-1766-container.first.one-quarter  {
+    width: 25% !important;
+    float: left !important;
+    clear: none !important;
+    position: relative; /* Establish a layout anchor */
 }
 
-/* Base style for injecting our custom SVG mask onto the button trigger */
-.accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle::before {
-    content: "";
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-right: 12px;
-    vertical-align: middle;
-    background-color: var(--brand-green-dark); /* Default closed icon color */
-
-    /* Apply caret-right SVG as a mask */
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath d='M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath d='M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z'/%3E%3C/svg%3E");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-position: center;
-    mask-position: center;
-    transition: background-color 0.2s ease, -webkit-mask-image 0.2s ease;
-}
-
-/* Caret Down (Open State matching Interactivity API state tracking attributes) */
-.wp-block-accordion-item[data-wp-class--is-open="context.isOpen"] .accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle::before,
-.accordion-heading-deane-fund-grants-table .wp-block-accordion-heading__toggle[aria-expanded="true"]::before {
-    background-color: var(--brand-green-dark); /* Open icon color */
-
-    /* Apply caret-down SVG as a mask */
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
-}
-
-
-/* ============================================================
-   ii. Table styles (tables contained within an accordion block)
-   ============================================================ */
-
-.accordion-deane-fund-grants-table .deane-fund-grants-table table {
-    table-layout: auto !important; /* Disables browser-forced equal column sizing */
-    width: 100% !important;
-    background-color: var(--brand-green-light);
-}
-
-/* Year Column (1st column, left-to-right) */
-.deane-fund-grants-table th:nth-of-type(1),
-.deane-fund-grants-table td:nth-of-type(1) {
-    width: 20%;
-    text-align: center;
-}
-
-/* Project Description Column (2nd column, left-to-right) */
-.deane-fund-grants-table th:nth-of-type(2),
-.deane-fund-grants-table td:nth-of-type(2) {
-    width: 80%;
-    text-align: left;
-}
-
-/* Add vertical spacing between rows inside the Deane Fund Grants table */
-.coblocks-accordion-deane-fund-grants-table .wp-block-columns + .wp-block-columns {
-    margin-top: 1.5rem;
+/* Corrected selectors: Target the IDs directly and force them out of the 25% box */
+#nf-description-1765,
+#nf-description-1766 {
+    display: block !important;
+    width: 400% !important; /* Over-corrects the 25% width constraint (25% x 4 = 100%) */
+    max-width: 80vw !important; /* Keeps it perfectly bounded to the browser window viewport */
+    clear: both !important;
+    float: left !important;
 }
 

@@ -34,6 +34,9 @@ function register_pattern_categories(): void    {
         'events-fff-show'                       => array('label' => __('Events: FFF Show', 'ixion-child')),
         'garden-tour-progressive'               => array('label' => __('Garden Tour: Progressive', 'ixion-child')),
         'coblocks-accordion-deane-fund-grants'  => array('label' => __('Coblocks Accordion: Deane Fund Grants', 'ixion-child')),
+        'faq-accordion'                         => array('label' => __('FAQ Accordion With Text', 'ixion-child')),
+        'faq-accordion-with-media-grid'         => array('label' => __('FAQ Accordion With Media Grid', 'ixion-child')),
+        'two-column-layout-with-header'         => array('label' => __('Two Column Layout With Header', 'ixion-child')),
     );
 
     foreach ($categories as $slug => $settings) {
