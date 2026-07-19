@@ -5,13 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Version 1.3.5 - 2026-07-XX](https://github.com/rgadon107/ixion-child-theme/pull/21)
+## [Version 1.3.5 - 2026-07-18](https://github.com/rgadon107/ixion-child-theme/pull/21)
 
 ### Added
 
+Register categories and design patterns to redesign the Flower, Food & Foto Show page. 
+
 - `/includes/register-design-patterns.php`: Register `faq-accordion` design pattern. 
+- `/includes/register-design-patterns.php`: Register `two-column-layout-with-header` design pattern..
 - `/patterns/faq-accordion.php`: Add custom design pattern file to directory.
 - `/patterns/faq-accordion-with-media-grid.php`: Add file to include a 33%/67% 2-column media grid in the Accordion Component of the registered block.
+- `/patterns/two-column-layout-with-header.php`: Add design pattern file that includes a 2-column grid layout with section and column headings.
+- `/assets/css/main-style.css`: Add styles for the custom class `.useful-docs-columns` and descendent selectors.
 - `/assets/css/accordion-styles.css`: Style the native WP accordion block. 
 
 ### Changed
