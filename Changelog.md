@@ -16,7 +16,9 @@ Register categories and design patterns to redesign the Flower, Food & Foto Show
 - `/patterns/faq-accordion.php`: Add custom design pattern file to directory.
 - `/patterns/faq-accordion-with-media-grid.php`: Add file to include a 33%/67% 2-column media grid in the Accordion Component of the registered block.
 - `/patterns/two-column-layout-with-header.php`: Add design pattern file that includes a 2-column grid layout with section and column headings.
-- `/assets/css/main-style.css`: Add styles for the custom class `.useful-docs-columns` and descendent selectors.
+- `/assets/css/main-style.css`: 
+  - Add styles for the custom class `.useful-docs-columns` and descendent selectors.
+  - Ninja Forms custom styles: Add styles to target a container id attribute surrounding a number field used on the Deane Fund grant application form.
 - `/assets/css/accordion-styles.css`: Style the native WP accordion block. 
 
 ### Changed
