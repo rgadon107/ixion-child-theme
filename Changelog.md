@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased Version 1.3.6 - 2026-07-26](https://github.com/rgadon107/ixion-child-theme/pull/22)
+
+### Added 
+
+- `/assets/css/lists.css`: Added styles for <ol> and <ul> tags.
+
+### Changed
+- `/functions.php`: Added custom configuration to enqueue the `lists.css` stylesheet.
+- `/style.css`: Increase child theme version number to `1.3.6`.
+
+### Fixed
+
+### Corrections
+
+
 ## [Version 1.3.5 - 2026-07-18](https://github.com/rgadon107/ixion-child-theme/pull/21)
 
 ### Added
