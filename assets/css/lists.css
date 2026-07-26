@@ -1,0 +1,52 @@
+/* ==================================
+    STYLE UNORDERED AND ORDERED LISTS
+   =================================== */
+
+/* Target ordered lists using a "circled-list" class attribute */
+
+/* 1. Reset the default list styling and set up the counter */
+ol.circled-list {
+    list-style: none;
+    counter-reset: circled-counter;
+    padding-left: 0;
+}
+
+/* 2. Increment the counter for every list item */
+ol.circled-list li {
+    counter-increment: circled-counter;
+    position: relative;
+    padding-left: 3.5rem; /* Make room for the circle */
+    margin-bottom: 1rem;
+    min-height: 2.5rem;   /* Ensures alignment if text is short */
+    display: flex;
+    align-items: center;  /* Vertically centers the text with the circle */
+}
+
+/* 3. Create and style the custom circle numbers */
+ol.circled-list li::before {
+    content: counter(circled-counter);
+
+    /* Positioning */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* Circle Construction & Sizing */
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+
+    /* Colors - Change these to match your theme */
+    background-color: #0073aa; /* Example: WordPress blue */
+    color: #ffffff;
+
+    /* Centering the text inside the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Typography */
+    font-weight: bold;
+    font-size: 1rem;
+}
