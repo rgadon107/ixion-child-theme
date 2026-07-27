@@ -60,6 +60,11 @@ function enqueue_frontend_styles(): void    {
             'deps'      => ['ixion-child-variables'],
             'condition' => true
         ],
+        'ixion-child-list-styles' => [
+            'file'      => '/assets/css/lists.css',
+            'deps'      => ['ixion-child-variables'],
+            'condition' => true
+        ],
         'ixion-child-main' => [
             'file'      => '/assets/css/main-style.css',
             'deps'      => ['ixion-child-variables'],

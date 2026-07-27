@@ -1,0 +1,80 @@
+/* ==================================
+    STYLE ORDERED AND UNORDERED LISTS
+   =================================== */
+
+/* 1. Reset list style and ensure zero baseline margin */
+ol.wp-block-list.circled-list,
+ol.circled-list {
+    list-style: none !important;
+    counter-reset: circled-counter;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* 2. List Item Positioning */
+ol.wp-block-list.circled-list > li,
+ol.circled-list > li {
+    counter-increment: circled-counter;
+    position: relative;
+    display: block;
+    padding-left: 4rem !important; /* Space for circle */
+    margin-bottom: 2rem;
+    line-height: 1.75 !important; /* Fixed line-height for baseline alignment calculations */
+    box-sizing: border-box;
+}
+
+/* 3. Style and align circle pseudo-element */
+ol.wp-block-list.circled-list > li::before,
+ol.circled-list > li::before {
+    content: counter(circled-counter) !important;
+
+    /* Positioning: Center visually against the first line-height box */
+    position: absolute;
+    left: 0;
+    top: calc((1.5em - 2.25rem) / 2); /* Aligns vertical center of circle to center of line 1 */
+
+    /* Circle Sizing */
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+
+    /* Color Overrides: Uses !important to defeat parent theme text colors */
+    background-color: var(--brand-green-dark) !important;
+    color: var(--brand-white-lime) !important;
+    -webkit-text-fill-color: var(--brand-white-lime) !important;
+
+    /* Flex Alignment for Counter Text */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    /* Typography */
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1; /* Reset line-height inside the circle */
+    box-sizing: border-box;
+}
+
+ol.wp-block-list.circled-list li a,
+ol.circled-list li a {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 3px; /* Adds clean breathing room between text and underline */
+}
+
+/* Explicitly target the :hover and :focus states to override theme hover styles */
+ol.wp-block-list.circled-list li a:hover,
+ol.wp-block-list.circled-list li a:focus,
+ol.circled-list li a:hover,
+ol.circled-list li a:focus {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+/* Ensure nested images inside circled list items align smoothly */
+ol.wp-block-list.circled-list > li figure.wp-block-image {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+    max-width: 100%;
+}
