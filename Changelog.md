@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased Version 1.3.9 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/25)
+
+### Added
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.3.9`.
+
+### Fixed
+
+### Correction
+
 ## [Version 1.3.8 - 2026-07-27](https://github.com/rgadon107/ixion-child-theme/pull/24)
 
 ### Changed
