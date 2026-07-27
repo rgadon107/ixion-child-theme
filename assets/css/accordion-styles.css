@@ -382,15 +382,15 @@
     text-decoration-color: var(--brand-soft-orange);
 }
 
-/* Target the .faq-accordion container size on the Deane Fund page. */
-body.page-id-17636 .faq-accordion .wp-block-accordion-heading__toggle {
+/* Style a compact-accordion to align with the page hierarchy of headings. */
+.wp-block-accordion.faq-accordion.compact-accordion .wp-block-accordion-heading__toggle {
     font-size: 1.125rem !important;
     line-height: 1.4;
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
 }
 
-body.page-id-17636 .faq-accordion {
+.wp-block-accordion.faq-accordion.compact-accordion {
     height: auto !important;
     min-height: unset !important;
 }
