@@ -5,15 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Version 1.3.X - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/23)
-
-### Added
+## [Version 1.3.7 - 2026-07-27](https://github.com/rgadon107/ixion-child-theme/pull/23)
 
 ### Changed
+- `/assets/css/main-style.css`: Increase child theme version number to `1.3.7`.
 
 ### Fixed
-
-### Correction
+- `/assets/css/accordion-styles.css`: Replace `.post-id-*` specific selector with utility class to reduce accordion size.
 
 ## [Version 1.3.6 - 2026-07-27](https://github.com/rgadon107/ixion-child-theme/pull/22)
 
