@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.3.6 - 2026-07-26](https://github.com/rgadon107/ixion-child-theme/pull/22)
+## [Version 1.3.6 - 2026-07-27](https://github.com/rgadon107/ixion-child-theme/pull/22)
+
+This child theme version adds styles for ordered lists and a stand-alone stylesheet targeting lists in the child theme. It adds specific styles for the WP accordion block used on the Deane Fund page. 
+
+Those styles reduce the size of the WP accordion container to match the heading heirarchy of the page. 
 
 ### Added 
 
@@ -13,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Changed
 - `/functions.php`: Added custom configuration to enqueue the `lists.css` stylesheet.
+- `/assets/css/accordion-styles.css`: Style the font and container size of the WP accordion on the Deane Fund page.
 - `/style.css`: Increase child theme version number to `1.3.6`.
 
 ### Fixed
