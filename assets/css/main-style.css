@@ -1170,22 +1170,21 @@ ol.register-list li:last-child {
     .footer-site-info .wp-block-column:nth-child(3) p { text-align: right; }
 }
 
-/* Deane Fund Grant Application Modifications for Number Field. */
-#nf-field-1765-container.first.one-quarter,
-#nf-field-1766-container.first.one-quarter  {
+/* Ninja Forms number field container targeting for Deane Fund grant application. */
+.nf-field-container.df-grant-quarter-field {
     width: 25% !important;
     float: left !important;
     clear: none !important;
-    position: relative; /* Establish a layout anchor */
+    position: relative;
 }
 
-/* Corrected selectors: Target the IDs directly and force them out of the 25% box */
-#nf-description-1765,
-#nf-description-1766 {
+/* Description paragraph targeting inside the container */
+.df-grant-quarter-field .nf-field-description p,
+.df-grant-description p {
     display: block !important;
-    width: 400% !important; /* Over-corrects the 25% width constraint (25% x 4 = 100%) */
-    max-width: 80vw !important; /* Keeps it perfectly bounded to the browser window viewport */
+    width: 400% !important; /* Expands past the 25% parent width (25% * 4 = 100%) */
+    max-width: 80vw !important;
     clear: both !important;
     float: left !important;
+    margin-bottom: 1.25em !important;
 }
-
