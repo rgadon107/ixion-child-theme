@@ -382,6 +382,19 @@
     text-decoration-color: var(--brand-soft-orange);
 }
 
+/* Target the .faq-accordion container size on the Deane Fund page. */
+body.page-id-17636 .faq-accordion .wp-block-accordion-heading__toggle {
+    font-size: 1.125rem !important;
+    line-height: 1.4;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+body.page-id-17636 .faq-accordion {
+    height: auto !important;
+    min-height: unset !important;
+}
+
 /* ==========================================================================
    FAQ CUSTOM SVG CARET STYLES
    ========================================================================== */
@@ -461,6 +474,7 @@
 .faq-accordion__item .wp-block-accordion-panel .wp-block-paragraph  {
     line-height: 1.4rem;
     padding-left: 2.25rem !important;
+    padding-right: 2.25rem !important;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 1.5em;
