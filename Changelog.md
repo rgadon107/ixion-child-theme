@@ -20,11 +20,6 @@ Those styles reduce the size of the WP accordion container to match the heading 
 - `/assets/css/accordion-styles.css`: Style the font and container size of the WP accordion on the Deane Fund page.
 - `/style.css`: Increase child theme version number to `1.3.6`.
 
-### Fixed
-
-### Corrections
-
-
 ## [Version 1.3.5 - 2026-07-18](https://github.com/rgadon107/ixion-child-theme/pull/21)
 
 ### Added
