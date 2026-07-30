@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Version 1.3.9 - 2026-07-30](https://github.com/rgadon107/ixion-child-theme/pull/25)
 
+Register and style a two-column hero section pattern.
+
 ### Added
 - `/patterns/two-column-hero-section.php`: Added file docblock and HTML for design pattern.
 - `/functions.php`: Registered `hero-section.css` stylesheet to enqueue.
@@ -15,10 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ### Changed
 - `/style.css`: Increase child theme version number to `1.3.9`.
 - `/includes/register-design-patterns.php`: Add `two-column-hero-section` to the `register_design_categories` function.
-
-### Fixed
-
-### Correction
 
 ## [Version 1.3.8 - 2026-07-27](https://github.com/rgadon107/ixion-child-theme/pull/24)
 
@@ -58,10 +56,10 @@ Those styles reduce the size of the WP accordion container to match the heading 
 Register categories and design patterns to redesign the Flower, Food & Foto Show page. 
 
 - `/includes/register-design-patterns.php`: Register `faq-accordion` design pattern. 
-- `/includes/register-design-patterns.php`: Register `two-column-layout-with-header` design pattern..
-- `/patterns/faq-accordion.php`: Add custom design pattern file to directory.
-- `/patterns/faq-accordion-with-media-grid.php`: Add file to include a 33%/67% 2-column media grid in the Accordion Component of the registered block.
-- `/patterns/two-column-layout-with-header.php`: Add design pattern file that includes a 2-column grid layout with section and column headings.
+- `/includes/register-design-patterns.php`: Register `two-column-layout-with-header` design pattern.
+- `/patterns/faq-accordion.php`: Add custom design pattern to directory.
+- `/patterns/faq-accordion-with-media-grid.php`: Add a file to include a 33%/67% 2-column media grid in the Accordion Component of the registered block.
+- `/patterns/two-column-layout-with-header.php`: Add a design pattern file that includes a 2-column grid layout with section and column headings.
 - `/assets/css/main-style.css`: 
   - Add styles for the custom class `.useful-docs-columns` and descendent selectors.
   - Ninja Forms custom styles: Add styles to target a container id attribute surrounding a number field used on the Deane Fund grant application form.
@@ -82,7 +80,7 @@ Register categories and design patterns to redesign the Flower, Food & Foto Show
 
 ## [Version 1.3.4 - 2026-07-11](https://github.com/rgadon107/ixion-child-theme/pull/19)
 
-WIP: FFF Show styles: - Style the .event-schedule-header attribute.
+WIP: FFF Show styles: Style the .event-schedule-header attribute.
 
 ### Added
 - `/assets/css/main-style.css`: Added styles for the event schedule H2 heading.
