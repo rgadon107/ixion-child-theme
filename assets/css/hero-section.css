@@ -1,0 +1,76 @@
+/* ======================================
+    2-COLUMN HERO SECTION PATTERN
+   ====================================== /*
+
+/* Base Desktop Styles */
+.split-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    min-height: 500px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.media-container {
+    width: 100%;
+    height: 100%;
+}
+
+.media-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.content-container {
+    background-color: var(--brand-green-light);
+    padding: 4rem 3rem 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Concave curve path on desktop */
+    clip-path: path("M 20 0 Q 80 250, 0 500 L 1000 500 L 1000 0 Z");
+}
+
+.content-container h3 {
+    color: var(--brand-green-dark);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.content-container p {
+    color: var(--brand-text-main);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================================================
+   Mobile Viewport Adjustments (max-width: 37.5rem)
+   ========================================================================== */
+@media (max-width: 37.5rem) {
+    .split-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .media-container {
+        height: 300px;
+    }
+
+    .content-container {
+        clip-path: none;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .content-container h3 {
+        font-size: 1.5rem;
+    }
+
+    .content-container p {
+        font-size: 1rem;
+    }
+}

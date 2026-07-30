@@ -65,6 +65,11 @@ function enqueue_frontend_styles(): void    {
             'deps'      => ['ixion-child-variables'],
             'condition' => true
         ],
+        'ixion-child-hero-section' => [
+            'file'      => '/assets/css/hero-section.css',
+            'deps'      => ['ixion-child-variables'],
+            'condition' => true
+        ],
         'ixion-child-main' => [
             'file'      => '/assets/css/main-style.css',
             'deps'      => ['ixion-child-variables'],
