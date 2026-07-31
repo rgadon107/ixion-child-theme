@@ -752,6 +752,13 @@ section.full-width-trio-section {
     right: auto !important;
 }
 
+.full-width-trio-section h2.trio-section-heading {
+    margin-top: 0 !important;
+    margin-bottom: 3rem !important; /* Increases gap above the 3 column images */
+    color: var(--brand-green-dark, #527a55) !important;
+    line-height: 1.2 !important;
+}
+
 /* 2. Inner columns container sizing & gap */
 .full-width-trio-section .trio-columns {
     max-width: 1200px !important;
