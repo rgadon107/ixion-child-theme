@@ -741,6 +741,17 @@ section.full-width-trio-section {
     background-color: var(--brand-white-lime, #f8faf8);
 }
 
+/* Override global .alignwide breakout inside full-bleed sections */
+.full-width-trio-section .trio-columns.alignwide,
+.alignfull .alignwide {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: var(--site-width, 1100px) !important;
+    left: auto !important;
+    right: auto !important;
+}
+
 /* 2. Inner columns container sizing & gap */
 .full-width-trio-section .trio-columns {
     max-width: 1200px !important;
@@ -785,10 +796,18 @@ section.full-width-trio-section {
 }
 
 /* 6. Responsive behavior */
-@media (max-width: 48em) { /* 768px */
-    .full-width-trio-section .trio-columns {
-        flex-direction: column !important;
-        gap: 2.5rem !important;
+
+/* Default Mobile: Stack columns vertically with comfortable gap */
+.full-width-trio-section .trio-columns.wp-block-columns {
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+}
+
+/* Desktop & Tablet Landscape (768px / 48em and up): Row layout with wider gap */
+@media (min-width: 48em) {
+    .full-width-trio-section .trio-columns.wp-block-columns {
+        flex-direction: row !important;
+        gap: 4rem !important; /* Expanded horizontal spacing between columns */
     }
 }
 
