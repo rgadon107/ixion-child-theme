@@ -14,7 +14,7 @@ Style the FFF Show page redesign.
 - `/patterns/two-column-hero-section.php`: Added file docblock and HTML for design pattern.
 - `/functions.php`: Registered `hero-section.css` stylesheet to enqueue.
 - `/assets/css/hero-section.css`: Added desktop and mobile styles for the 2-column hero section.
-- `/patterns/button-group`: Register a button group design pattern.
+- `/patterns/button-group`: WIP: Register a button group design pattern.
 
 ### Changed
 - `/style.css`: 
