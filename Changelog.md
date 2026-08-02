@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.3.9 - 2026-08-01](https://github.com/rgadon107/ixion-child-theme/pull/25)
+
+Register and style a two-column hero section pattern and button group pattern.
+Style the FFF Show page redesign. 
+
+### Added
+- `/patterns/two-column-hero-section.php`: Added file docblock and HTML for design pattern.
+- `/functions.php`: Registered `hero-section.css` stylesheet to enqueue.
+- `/assets/css/hero-section.css`: Added desktop and mobile styles for the 2-column hero section.
+- `/patterns/button-group`: WIP: Register a button group design pattern.
+
+### Changed
+- `/style.css`: 
+  - Increase child theme version number to `1.3.9`.
+  - Add section styles for the FFF Show page redesign.
+- `/includes/register-design-patterns.php`: 
+  - Add `two-column-hero-section` to the `register_design_categories` function.
+  - Add `button-group` to the `register_design_categories` function.
+
 ## [Version 1.3.8 - 2026-07-27](https://github.com/rgadon107/ixion-child-theme/pull/24)
 
 ### Changed
@@ -43,10 +62,10 @@ Those styles reduce the size of the WP accordion container to match the heading 
 Register categories and design patterns to redesign the Flower, Food & Foto Show page. 
 
 - `/includes/register-design-patterns.php`: Register `faq-accordion` design pattern. 
-- `/includes/register-design-patterns.php`: Register `two-column-layout-with-header` design pattern..
-- `/patterns/faq-accordion.php`: Add custom design pattern file to directory.
-- `/patterns/faq-accordion-with-media-grid.php`: Add file to include a 33%/67% 2-column media grid in the Accordion Component of the registered block.
-- `/patterns/two-column-layout-with-header.php`: Add design pattern file that includes a 2-column grid layout with section and column headings.
+- `/includes/register-design-patterns.php`: Register `two-column-layout-with-header` design pattern.
+- `/patterns/faq-accordion.php`: Add custom design pattern to directory.
+- `/patterns/faq-accordion-with-media-grid.php`: Add a file to include a 33%/67% 2-column media grid in the Accordion Component of the registered block.
+- `/patterns/two-column-layout-with-header.php`: Add a design pattern file that includes a 2-column grid layout with section and column headings.
 - `/assets/css/main-style.css`: 
   - Add styles for the custom class `.useful-docs-columns` and descendent selectors.
   - Ninja Forms custom styles: Add styles to target a container id attribute surrounding a number field used on the Deane Fund grant application form.
@@ -67,7 +86,7 @@ Register categories and design patterns to redesign the Flower, Food & Foto Show
 
 ## [Version 1.3.4 - 2026-07-11](https://github.com/rgadon107/ixion-child-theme/pull/19)
 
-WIP: FFF Show styles: - Style the .event-schedule-header attribute.
+WIP: FFF Show styles: Style the .event-schedule-header attribute.
 
 ### Added
 - `/assets/css/main-style.css`: Added styles for the event schedule H2 heading.
