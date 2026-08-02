@@ -5,18 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Version 1.3.9 - 2026-07-30](https://github.com/rgadon107/ixion-child-theme/pull/25)
+## [Version 1.3.9 - 2026-08-01](https://github.com/rgadon107/ixion-child-theme/pull/25)
 
-Register and style a two-column hero section pattern.
+Register and style a two-column hero section pattern and button group pattern.
+Style the FFF Show page redesign. 
 
 ### Added
 - `/patterns/two-column-hero-section.php`: Added file docblock and HTML for design pattern.
 - `/functions.php`: Registered `hero-section.css` stylesheet to enqueue.
 - `/assets/css/hero-section.css`: Added desktop and mobile styles for the 2-column hero section.
+- `/patterns/button-group`: Register a button group design pattern.
 
 ### Changed
-- `/style.css`: Increase child theme version number to `1.3.9`.
-- `/includes/register-design-patterns.php`: Add `two-column-hero-section` to the `register_design_categories` function.
+- `/style.css`: 
+  - Increase child theme version number to `1.3.9`.
+  - Add section styles for the FFF Show page redesign.
+- `/includes/register-design-patterns.php`: 
+  - Add `two-column-hero-section` to the `register_design_categories` function.
+  - Add `button-group` to the `register_design_categories` function.
 
 ## [Version 1.3.8 - 2026-07-27](https://github.com/rgadon107/ixion-child-theme/pull/24)
 
