@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.4.0 - 2026-08-03](https://github.com/rgadon107/ixion-child-theme/pull/26)
+
+Modify Button Group pattern to style only a primary button. Style button for Garden Spray page. 
+
+### Added
+- `/assets/css/main-style.css`: Add styles for the primary custom button group. 
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.4.0`.
+- `/patterns/button-group.php`: Modify file to retain only a primary button group. Delete secondary button.
+
 ## [Version 1.3.9 - 2026-08-01](https://github.com/rgadon107/ixion-child-theme/pull/25)
 
 Register and style a two-column hero section pattern and button group pattern.
