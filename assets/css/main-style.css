@@ -1664,7 +1664,8 @@ section.documents-and-links-section h2.documents-and-links-heading {
 }
 
 /* Custom Primary Button Base State */
-.wp-block-button.btn--primary.garden-spray a.wp-block-button__link {
+.wp-block-button.btn--primary.garden-spray a.wp-block-button__link,
+.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link     {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1677,7 +1678,6 @@ section.documents-and-links-section h2.documents-and-links-heading {
     color: var(--brand-white-lime);
 
     /* Underline Style */
-    text-decoration: underline 1px solid var(--brand-white-lime);
     text-underline-offset: 4px;
 
     /* Smooth State Transitions */
@@ -1686,10 +1686,32 @@ section.documents-and-links-section h2.documents-and-links-heading {
 
 /* Interactive States: Hover, Focus, Active */
 .wp-block-button.btn--primary.garden-spray a.wp-block-button__link:hover,
-.wp-block-button.btn--primary.garden-spray a.wp-block-button__link:focus    {
+.wp-block-button.btn--primary.garden-spray a.wp-block-button__link:focus,
+.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:hover,
+.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:focus   {
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-soft-orange) !important;
     text-decoration-color: var(--brand-soft-orange) !important;
+}
+
+/* ==========================================================================
+   Mobile Overflows & Text Wrapping Adjustments (<= 370px)
+   ========================================================================== */
+
+@media screen and (max-width: 52.1875rem) {
+    .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link {
+        /* 1. Increases vertical spacing between wrapped text lines */
+        line-height: 1.4;
+
+        /* 2. Lowers the underline so it stays clear of wrapped text above it */
+        text-underline-offset: 6px;
+
+        /* 3. Slightly reduces horizontal padding to give text more room before wrapping */
+        padding: 1.25rem 1.5625rem;
+
+        /* 4. Ensures text inside centers nicely when stacked */
+        text-align: center;
+    }
 }
 
 /* ==========================================================================
