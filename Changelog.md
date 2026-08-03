@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.4.1 - 2026-08-03](https://github.com/rgadon107/ixion-child-theme/pull/27)
+
+### Added
+
+- `/assets/css/main-style.css`: 
+  - Increase specificity of FFF Show hero button to assert child-theme color styles.
+  - Add tablet and mobile media query for button group styles.
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.4.1`.
+- `/assets/css/main-style.css`:
+  - Custom button style: Remove the `:active` pseudo-class style.
+  - Enforce front-end button colors with `!Important`.
+
 ## [Version 1.4.0 - 2026-08-03](https://github.com/rgadon107/ixion-child-theme/pull/26)
 
 Modify Button Group pattern to style only a primary button. Style button for Garden Spray page. 
