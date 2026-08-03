@@ -25,6 +25,7 @@
         J. Targeted Button Styles (Pages, Accordion, and Footer)
         K. List Styling
         L. Footer (Call-To-Action, Site Map & Site Info)
+        M. Button Group
    --------------------------------------------------------------- */
 
 /* ==========================================================================
@@ -1649,6 +1650,47 @@ section.documents-and-links-section h2.documents-and-links-heading {
     .footer-site-info .wp-block-column:nth-child(1) p { text-align: left; }
     .footer-site-info .wp-block-column:nth-child(2) p { text-align: center; }
     .footer-site-info .wp-block-column:nth-child(3) p { text-align: right; }
+}
+
+/* ==========================================================================
+   M. BUTTON GROUP
+   ========================================================================== */
+
+/* Base Container Alignment & Spacing */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom Primary Button Base State */
+.wp-block-button.btn--primary.garden-spray a.wp-block-button__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 3rem ;
+    border-radius: 50px;
+    font-weight: 600;
+
+    /* Brand Colors */
+    background-color: var(--brand-green-dark, #527a55);
+    color: var(--brand-white-lime, #f8faf8);
+
+    /* Underline Style */
+    text-decoration: underline 1px solid var(--brand-white-lime, #f8faf8);
+    text-underline-offset: 4px;
+
+    /* Smooth State Transitions */
+    transition: color 0.2s ease, background-color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+/* Interactive States: Hover, Focus, Active */
+.wp-block-button.btn--primary.garden-spray a.wp-block-button__link:hover,
+.wp-block-button.btn--primary.garden-spray a.wp-block-button__link:focus,
+.wp-block-button.btn--primary.garden-spray a.wp-block-button__link:active {
+    background-color: var(--brand-green-dark, #527a55);
+    color: var(--brand-soft-orange, #f3bd50);
+    text-decoration-color: var(--brand-soft-orange, #f3bd50);
 }
 
 /* ==========================================================================
