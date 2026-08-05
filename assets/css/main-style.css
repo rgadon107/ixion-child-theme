@@ -26,6 +26,7 @@
         K. List Styling
         L. Footer (Call-To-Action, Site Map & Site Info)
         M. Button Group
+    7. Membership Benefits Section
    --------------------------------------------------------------- */
 
 /* ==========================================================================
@@ -1665,7 +1666,8 @@ section.documents-and-links-section h2.documents-and-links-heading {
 
 /* Custom Primary Button Base State */
 .wp-block-button.btn--primary.garden-spray a.wp-block-button__link,
-.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link     {
+.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link,
+.wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link     {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1688,7 +1690,9 @@ section.documents-and-links-section h2.documents-and-links-heading {
 .wp-block-button.btn--primary.garden-spray a.wp-block-button__link:hover,
 .wp-block-button.btn--primary.garden-spray a.wp-block-button__link:focus,
 .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:hover,
-.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:focus   {
+.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:focus,
+.wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link:hover,
+.wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link:focus   {
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-soft-orange) !important;
     text-decoration-color: var(--brand-soft-orange) !important;
@@ -1699,7 +1703,8 @@ section.documents-and-links-section h2.documents-and-links-heading {
    ========================================================================== */
 
 @media screen and (max-width: 52.1875rem) {
-    .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link {
+    .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link,
+    .wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link     {
         /* 1. Increases vertical spacing between wrapped text lines */
         line-height: 1.4;
 
@@ -1714,6 +1719,161 @@ section.documents-and-links-section h2.documents-and-links-heading {
     }
 }
 
+/* ==========================================================================
+   7. Membership Benefits Section
+   ========================================================================== */
+
+/* Full-Bleed Section Container */
+section.wp-block-group.membership-benefits-section {
+    background-color: var(--brand-green-light);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 50px;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    box-sizing: border-box;
+    border-bottom: 5px solid var(--brand-green-dark);
+}
+
+/* Constrain Inner Contents to Site Grid & Elevate z-index */
+section.wp-block-group.membership-benefits-section > .wp-block-group__inner-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Heading Spacing */
+h2.wp-block-heading.membership-benefits-section-heading {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
+}
+
+/* Container & Column Rules */
+.membership-benefits-media-text-columns {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.membership-benefits-media-text-columns > .wp-block-column {
+    min-width: 0;
+}
+
+.membership-benefits-media-text-columns .media-column-container {
+    flex: 0 0 33.33%;
+}
+
+.membership-benefits-media-text-columns .text-column-container {
+    flex: 1 1 66.66%;
+}
+
+.membership-benefits-media-text-columns .media-column-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* List Item Formatting & Custom Floret Marker */
+.membership-benefits-section .wp-block-list li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 0.25em;
+    margin-bottom: 0.75em;
+    color: var(--brand-green-dark) !important;
+}
+
+.membership-benefits-section .wp-block-list li::before {
+    content: "✿";
+    position: absolute;
+    left: -1.35em;
+    top: 0;
+    line-height: inherit;
+    font-size: 0.85em;
+    color: var(--brand-green-dark) !important;
+}
+
+/* Button Container Spacing */
+.membership-benefits-section .register-button {
+    margin-top: 1.5rem;
+    margin-bottom: 5.5rem;
+}
+
+/* Default Button Color State (Ensures proper base colors over light green background) */
+.membership-benefits-section .join-the-club .wp-block-button__link {
+    background-color: var(--brand-green-dark) !important;
+    color: var(--brand-white-lime) !important;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    border: 2px solid transparent;
+}
+
+/* Hover & Focus State (Flips to light lime/white background with dark green text) */
+.membership-benefits-section .join-the-club .wp-block-button__link:hover,
+.membership-benefits-section .join-the-club .wp-block-button__link:focus {
+    background-color: var(--brand-white-lime) !important;
+    color: var(--brand-green-dark) !important;
+    border-color: var(--brand-green-dark) !important;
+    outline: none; /* Replaces default browser ring with crisp border */
+}
+
+/* Gradient from Button Midpoint to Bottom Section Edge */
+section.wp-block-group.membership-benefits-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Calculated from padding-bottom (3.5rem) + button margin-bottom (2.5rem) + half button height (~25px) */
+    top: calc(100% - 6rem - 25px);
+    background: linear-gradient(180deg, var(--brand-green-light) 0%, var(--brand-green-dark) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Mobile Responsive Overrides */
+@media screen and (max-width: 48.875em) {
+    section.wp-block-group.membership-benefits-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        margin-bottom: 35px;
+    }
+
+    section.wp-block-group.membership-benefits-section::after {
+        /* Adjusted offset calculation for mobile padding & margins */
+        top: calc(100% - 4rem - 25px);
+    }
+
+    .membership-benefits-media-text-columns {
+        flex-direction: column !important;
+        gap: 1.75rem;
+    }
+
+    .membership-benefits-media-text-columns .media-column-container,
+    .membership-benefits-media-text-columns .text-column-container {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+    }
+
+    .membership-benefits-media-text-columns .media-column-container figure {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .membership-benefits-section .register-button {
+        margin-bottom: 4rem;
+    }
+
+
+}
 /* ==========================================================================
    Structural Layout & Page Footer Adjustments
    ========================================================================== */

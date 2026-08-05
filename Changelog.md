@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.4.2 - 2026-08-05](https://github.com/rgadon107/ixion-child-theme/pull/28)
+
+Added styles for the MN State Fair event volunteer button.
+Fixed the HTML of the 'Membership Benefits Include...' section on the Membership Benefits page and restyled it. 
+
+### Added
+- `/assets/css/main-style.css`:
+  - Add styles for the MN State Fair event volunteer button.
+  - Add styles for the `membership-benefits-section` section on the Membership Benefits page. 
+    - Includes a color gradient at the bottom of the section to visually transition from the section to the footer.
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.4.2`.
+
+### Fixed
+- Membership Benefits page: Built `section.membership-benefits-section` on the page that integrated the section heading, 2-column layout (media & text), and button link.
+
 ## [Version 1.4.1 - 2026-08-03](https://github.com/rgadon107/ixion-child-theme/pull/27)
 
 ### Added
