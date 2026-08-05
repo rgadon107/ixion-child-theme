@@ -1665,7 +1665,8 @@ section.documents-and-links-section h2.documents-and-links-heading {
 
 /* Custom Primary Button Base State */
 .wp-block-button.btn--primary.garden-spray a.wp-block-button__link,
-.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link     {
+.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link,
+.wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link     {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1688,7 +1689,9 @@ section.documents-and-links-section h2.documents-and-links-heading {
 .wp-block-button.btn--primary.garden-spray a.wp-block-button__link:hover,
 .wp-block-button.btn--primary.garden-spray a.wp-block-button__link:focus,
 .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:hover,
-.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:focus   {
+.wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:focus,
+.wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link:hover,
+.wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link:focus   {
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-soft-orange) !important;
     text-decoration-color: var(--brand-soft-orange) !important;
@@ -1699,7 +1702,8 @@ section.documents-and-links-section h2.documents-and-links-heading {
    ========================================================================== */
 
 @media screen and (max-width: 52.1875rem) {
-    .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link {
+    .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link,
+    .wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link     {
         /* 1. Increases vertical spacing between wrapped text lines */
         line-height: 1.4;
 
