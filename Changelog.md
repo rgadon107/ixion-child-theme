@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.4.3 - 2026-08-07](https://github.com/rgadon107/ixion-child-theme/pull/29)
+
+### Added
+
+- `/assets/css/main-style.css`: Style the `Membership Join/Review` popup.
+- Built and styled the `Membership Join/Renew` popup to display on the `/membeship-join-renew` page.
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.4.3`.
+- Updated the local development site database to accept and render 'utfmb4' characters ( emojis ).
+
 ## [Version 1.4.2 - 2026-08-05](https://github.com/rgadon107/ixion-child-theme/pull/28)
 
 Added styles for the MN State Fair event volunteer button.

@@ -1921,3 +1921,8 @@ footer.entry-footer .edit-link  {
     float: left !important;
     margin-bottom: 1.25em !important;
 }
+
+/* Increase the font-size of text within the Membership Join/Renew popup. */
+#popmake-18357.pum-container .popmake-content .join-or-renew-popup-group p {
+    font-size: 1rem !important;
+}
