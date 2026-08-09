@@ -468,6 +468,24 @@ section.alignfull,
     margin-bottom: var(--block-margin-bottom);
 }
 
+.entry-content .custom-tight-card .event-description-group .event-description-list li,
+.entry-content .custom-tight-card-home-page .event-description-group .event-description-list li {
+    list-style: none;
+    position: relative;
+}
+
+.entry-content .custom-tight-card .event-description-group .event-description-list li::before,
+.entry-content .custom-tight-card-home-page .event-description-group .event-description-list li::before {
+    content: "✿";
+    position: absolute;
+    left: -1.35em;
+    top: 0.7em;
+    transform: translateY(-50%);
+    font-size: 0.85em;
+    color: var(--brand-green-dark) !important;
+    line-height: 1;
+}
+
 .entry-content .custom-tight-card .event-description-group ul.event-description-list li,
 .entry-content .custom-tight-card-home-page .event-description-group ul.event-description-list li   {
     color: var(--brand-text-main);
@@ -550,6 +568,15 @@ section.alignfull,
 .entry-content .custom-tight-card-home-page .event-schedule-group p strong,
 .entry-content .custom-tight-card-home-page .event-schedule-group p.event-schedule  {
     font-weight: 700;
+}
+
+.entry-content .custom-tight-card .event-schedule-group .volunteer-schedule-description-group p.wp-block-paragraph {
+    margin-bottom: 1.5rem !important;
+    font-style: italic;
+}
+
+.entry-content .custom-tight-card .event-schedule-group .volunteer-schedule-description-group p.wp-block-paragraph:last-of-type {
+    margin-bottom: 1rem !important;
 }
 
 .entry-content,
@@ -1920,4 +1947,14 @@ footer.entry-footer .edit-link  {
     clear: both !important;
     float: left !important;
     margin-bottom: 1.25em !important;
+}
+
+#popmake-18357.pum-container .popmake-content .join-or-renew-popup-group    {
+    background-color: var(--brand-green-light) !important;
+    padding: 20px;
+    margin: 20px var(--brand-green-dark) !important;
+}
+/* Increase the font-size of text within the Membership Join/Renew popup. */
+#popmake-18357.pum-container .popmake-content .join-or-renew-popup-group p {
+    font-size: 1.3rem !important;
 }
