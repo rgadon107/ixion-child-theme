@@ -579,6 +579,12 @@ section.alignfull,
     margin-bottom: 1rem !important;
 }
 
+@media screen and (max-width: 30em) {
+    .entry-content .custom-tight-card .event-schedule-group h3.event-schedule-heading {
+        line-height: 1.5rem;
+    }
+}
+
 .entry-content,
 .entry-content > *:last-child {
     margin-bottom: 0 !important;

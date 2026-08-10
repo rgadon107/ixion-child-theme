@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.4.4 - 2026-08-XX](https://github.com/rgadon107/ixion-child-theme/pull/30)
+
+### Added
+
+- `/assets/css/main-style.css`: Added mobile media query to adjust line-height on `h3.event-schedule-heading`.
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.4.4`.
+
+### Fixed
+
+### Corrections
+
 ## [Version 1.4.3 - 2026-08-09](https://github.com/rgadon107/ixion-child-theme/pull/29)
 
 ### Added
