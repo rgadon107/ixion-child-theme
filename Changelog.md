@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Added
 
-- `/assets/css/main-style.css`: Added mobile media query to adjust line-height on `h3.event-schedule-heading`.
+- `/assets/css/main-style.css`: 
+  - Added mobile media query to adjust line-height on `h3.event-schedule-heading`.
+  - Added popup styles that target correct post_id on the production site ( different than development ).
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.4`.

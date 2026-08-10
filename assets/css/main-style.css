@@ -1955,6 +1955,7 @@ footer.entry-footer .edit-link  {
     margin-bottom: 1.25em !important;
 }
 
+/* GCM development site popup post_id */
 #popmake-18357.pum-container .popmake-content .join-or-renew-popup-group    {
     background-color: var(--brand-green-light) !important;
     padding: 20px;
@@ -1962,5 +1963,16 @@ footer.entry-footer .edit-link  {
 }
 /* Increase the font-size of text within the Membership Join/Renew popup. */
 #popmake-18357.pum-container .popmake-content .join-or-renew-popup-group p {
+    font-size: 1.3rem !important;
+}
+
+/* GCM production site popup post_id */
+#popmake-17915.pum-container .popmake-content .join-or-renew-popup-group    {
+    background-color: var(--brand-green-light) !important;
+    padding: 20px;
+    margin: 20px var(--brand-green-dark) !important;
+}
+/* Increase the font-size of text within the Membership Join/Renew popup. */
+#popmake-17915.pum-container .popmake-content .join-or-renew-popup-group p {
     font-size: 1.3rem !important;
 }
