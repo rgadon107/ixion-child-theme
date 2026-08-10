@@ -18,6 +18,7 @@
     --brand-text-main:     #333333; /* Dark gray for readability */
     --card-background:     #f4f4f4; /* Very light gray */
     --white:               #ffffff;
+    --vivid-red:           #cc0000; /* Use for notifications */
 
     /* --- C. INTERACTIVE TOKENS --- */
     /* 60% Opacity (40% transparent) per your preference */
