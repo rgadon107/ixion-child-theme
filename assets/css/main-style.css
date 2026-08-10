@@ -402,6 +402,64 @@ section.alignfull,
     border-left: var(--border-thick);
 }
 
+/* Container to keep date and badge on the same line */
+.event-date-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem; /* Spacing above the h2 event title */
+}
+
+/* Ensure headings/paragraphs don't force extra margins inside the flex row */
+.event-date-group .event-date,
+.event-date-group .event-date-notification {
+    margin: 0;
+}
+
+/* Base Styles: True Oval Badge */
+.entry-content .custom-tight-card .event-date-notification,
+.entry-content .custom-tight-card-home-page .event-date-notification {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--vivid-red);
+
+    /* Padding controls the height-to-width proportions of the oval */
+    padding: 0.75rem 1.4rem;
+    margin-left: 1rem;
+
+    /* 1. Creates a smooth, true ellipse / oval background */
+    border-radius: 50%;
+
+    /* 2. Rotation */
+    transform: rotate(17deg);
+    transform-origin: center;
+
+    /* Subtle text shadow for press depth */
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* If the .event-date-notification block is empty, don't show accidental padding */
+.event-date-notification:empty {
+    display: none;
+}
+
+/* Mobile Adjustments (Viewport below 34rem) */
+@media (max-width: 34rem) {
+    .entry-content .custom-tight-card .event-date-notification,
+    .entry-content .custom-tight-card-home-page .event-date-notification {
+        text-align: center;
+        justify-content: center;
+        margin-left: 0.5rem;
+        padding: 0.6rem 1.1rem; /* Scaled down for mobile while retaining the oval ratio */
+    }
+}
+
 .entry-content .custom-tight-card h1, .entry-content .custom-tight-card p,
 .custom-tight-card-home-page h1, .custom-tight-card-home-page p {
     color: var(--brand-text-main);
@@ -901,10 +959,7 @@ section.how-to-enter-section {
 
     /* 2. Background and vertical spacing */
     background-color: var(--brand-white-lime, #f8faf8) !important;
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+    padding: 3.5rem 1.5rem !important;
 }
 
 section.how-to-enter-section h2.how-to-enter-fff-show-section-heading {
@@ -1119,10 +1174,7 @@ section.wp-block-group.documents-and-links-section {
     clear: both;
 
     background-color: var(--brand-green-dark, #527a55) !important;
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
-    padding-left: clamp(1.5rem, 5vw, 4rem) !important;
-    padding-right: clamp(1.5rem, 5vw, 4rem) !important;
+    padding: 3.5rem clamp(1.5rem, 5vw, 4rem) !important;
 }
 
 /* 2. Base Columns Architecture */
@@ -1369,7 +1421,7 @@ section.documents-and-links-section h2.documents-and-links-heading {
     font-size: 0.9rem;
     text-align: center;
     margin: 0;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .footer-site-info a {
@@ -1440,7 +1492,7 @@ section.documents-and-links-section h2.documents-and-links-heading {
     color: var(--brand-soft-orange) !important;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
 }

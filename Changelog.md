@@ -12,13 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 - `/assets/css/main-style.css`: 
   - Added mobile media query to adjust line-height on `h3.event-schedule-heading`.
   - Added popup styles that target correct post_id on the production site ( different than development ).
+  - Add `.event-date-group` and `.event-date-notification` classes to the Event card.
+  - Style `.event-date-group` and `.event-date-notification` to display a 'Date Change!' notice next to event date.
+  - Add `:empty` pseudo-class to prevent displaying padding when `.event-date-notification` block is empty.
+- `/assets/css/variables.css`:
+  - Define `--vivid-red` variable for use as background color on `.event-date-notification` block. 
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.4`.
-
-### Fixed
-
-### Corrections
 
 ## [Version 1.4.3 - 2026-08-09](https://github.com/rgadon107/ixion-child-theme/pull/29)
 
