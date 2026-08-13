@@ -14,10 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.5`.
 
-### Fixed
-
-### Corrections
-
 ## [Version 1.4.4 - 2026-08-10](https://github.com/rgadon107/ixion-child-theme/pull/30)
 
 ### Added
