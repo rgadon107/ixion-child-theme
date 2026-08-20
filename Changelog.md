@@ -9,7 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Added
 - `/patterns/primary-and-secondary-button-group.php`: Added custom design pattern file.
-- `/includes/register-design-patterns.php`: Added `primary-and-secondary-button-group` to the `register_design_categories` function.
+- `/includes/register-design-patterns.php`: 
+  - Added `primary-and-secondary-button-group` to the `register_design_categories` function.
+  - Added inline styles within the button group for `margin-top` and `margin-bottom`.
+- `/assets/css/main-style.css`: Added styles for the primary and secondary button group with The Garden Spray.
 
 ### Fixed
 
