@@ -1837,7 +1837,7 @@ section.documents-and-links-section h2.documents-and-links-heading {
 /* Interactive States: Hover, Focus, Active for Secondary Button - Primary and Secondary Button Group */
 .wp-block-button.btn--secondary.garden-spray a.wp-block-button__link:hover,
 .wp-block-button.btn--secondary.garden-spray a.wp-block-button__link:focus    {
-    border: 1px solid var(--brand-green-dark);
+    border: 2px solid var(--brand-green-dark);
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-white-lime) !important;
     text-decoration: underline dotted var(--brand-white-lime) 2px !important;
