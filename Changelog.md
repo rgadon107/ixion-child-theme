@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.4.6 - 2026-08-XX](https://github.com/rgadon107/ixion-child-theme/pull/32)
+## [Version 1.4.6 - 2026-08-20](https://github.com/rgadon107/ixion-child-theme/pull/32)
 
 ### Added
 - `/patterns/primary-and-secondary-button-group.php`: Added custom design pattern file.
@@ -14,14 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org).
   - Added inline styles within the button group for `margin-top` and `margin-bottom`.
 - `/assets/css/main-style.css`: Added styles for the primary and secondary button group with The Garden Spray.
 
-### Fixed
-
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.6`.
 - `/patterns/button-group.php`: Changed file name to `primary-button-group.php`. Updated file docblock.
-- `/includes/register-design-patterns.php`: Changed named of registered design pattern from `button-group` to `primary-button-group`.
-
-### Corrections
+- `/includes/register-design-patterns.php`: Changed named of the registered design pattern from `button-group` to `primary-button-group`.
 
 ## [Version 1.4.5 - 2026-08-13](https://github.com/rgadon107/ixion-child-theme/pull/31)
 
@@ -37,8 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ### Added
 
 - `/assets/css/main-style.css`: 
-  - Added mobile media query to adjust line-height on `h3.event-schedule-heading`.
-  - Added popup styles that target correct post_id on the production site ( different than development ).
+  - Added a mobile media query to adjust line-height on `h3.event-schedule-heading`.
+  - Added popup styles that target the correct `post_id` on the production site (different from the development site).
   - Add `.event-date-group` and `.event-date-notification` classes to the Event card.
   - Style `.event-date-group` and `.event-date-notification` to display a 'Date Change!' notice next to event date.
   - Add `:empty` pseudo-class to prevent displaying padding when `.event-date-notification` block is empty.
@@ -60,7 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.3`.
-- Updated the local development site database to accept and render 'utfmb4' characters ( emojis ).
+- Updated the local development site database to accept and render 'utfmb4' characters (emojis).
 
 ## [Version 1.4.2 - 2026-08-05](https://github.com/rgadon107/ixion-child-theme/pull/28)
 
@@ -77,15 +73,15 @@ Fixed the HTML of the 'Membership Benefits Include...' section on the Membership
 - `/style.css`: Increase child theme version number to `1.4.2`.
 
 ### Fixed
-- Membership Benefits page: Built `section.membership-benefits-section` on the page that integrated the section heading, 2-column layout (media & text), and button link.
+- Membership Benefits page: Built `section.membership-benefits-section` on the page that integrated the section heading, 2-column layout (media and text), and button link.
 
 ## [Version 1.4.1 - 2026-08-03](https://github.com/rgadon107/ixion-child-theme/pull/27)
 
 ### Added
 
 - `/assets/css/main-style.css`: 
-  - Increase specificity of FFF Show hero button to assert child-theme color styles.
-  - Add tablet and mobile media query for button group styles.
+  - Increase the specificity of FFF Show hero button to assert child-theme color styles.
+  - Add a tablet and mobile media query for button group styles.
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.1`.
@@ -95,14 +91,14 @@ Fixed the HTML of the 'Membership Benefits Include...' section on the Membership
 
 ## [Version 1.4.0 - 2026-08-03](https://github.com/rgadon107/ixion-child-theme/pull/26)
 
-Modify Button Group pattern to style only a primary button. Style button for Garden Spray page. 
+Modify a button group pattern to style only a primary button. Style button for `The Garden Spray` archive page. 
 
 ### Added
 - `/assets/css/main-style.css`: Add styles for the primary custom button group. 
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.0`.
-- `/patterns/button-group.php`: Modify file to retain only a primary button group. Delete secondary button.
+- `/patterns/button-group.php`: Modify file to retain only a primary button group. Delete the secondary button.
 
 ## [Version 1.3.9 - 2026-08-01](https://github.com/rgadon107/ixion-child-theme/pull/25)
 
