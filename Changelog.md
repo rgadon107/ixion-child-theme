@@ -8,11 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ## [Unreleased Version 1.4.6 - 2026-08-XX](https://github.com/rgadon107/ixion-child-theme/pull/32)
 
 ### Added
+- `/patterns/primary-and-secondary-button-group.php`: Added custom design pattern file.
+- `/includes/register-design-patterns.php`: Added `primary-and-secondary-button-group` to the `register_design_categories` function.
 
 ### Fixed
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.6`.
+- `/patterns/button-group.php`: Changed file name to `primary-button-group.php`. Updated file docblock.
+- `/includes/register-design-patterns.php`: Changed named of registered design pattern from `button-group` to `primary-button-group`.
 
 ### Corrections
 
