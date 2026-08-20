@@ -1749,8 +1749,7 @@ section.documents-and-links-section h2.documents-and-links-heading {
     align-items: center;
 }
 
-/* Custom Primary Button Base State */
-.wp-block-button.btn--primary.garden-spray a.wp-block-button__link,
+/* Custom Primary Button Base State - Primary Button Group pattern */
 .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link,
 .wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link,
 .wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link     {
@@ -1772,9 +1771,7 @@ section.documents-and-links-section h2.documents-and-links-heading {
     transition: color 0.2s ease, background-color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-/* Interactive States: Hover, Focus, Active */
-.wp-block-button.btn--primary.garden-spray a.wp-block-button__link:hover,
-.wp-block-button.btn--primary.garden-spray a.wp-block-button__link:focus,
+/* Interactive States: Hover, Focus, Active - Primary Button Group */
 .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:hover,
 .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link:focus,
 .wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link:hover,
@@ -1784,6 +1781,66 @@ section.documents-and-links-section h2.documents-and-links-heading {
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-soft-orange) !important;
     text-decoration-color: var(--brand-soft-orange) !important;
+}
+
+/* Custom Primary Button Base State - Primary and Secondary Button Group pattern */
+.wp-block-button.btn--primary.garden-spray a.wp-block-button__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 3rem ;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    /* Brand Colors */
+    background-color: var(--brand-green-dark);
+    color: var(--brand-white-lime);
+
+    /* Underline Style */
+    text-underline-offset: 4px;
+
+    /* Smooth State Transitions */
+    transition: color 0.2s ease, background-color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+/* Custom Secondary Button Base State - Primary and Secondary Button Group pattern */
+.wp-block-button.btn--secondary.garden-spray a.wp-block-button__link    {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 3rem ;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: normal;
+
+    /* Brand Colors */
+    border: 1px solid var(--brand-green-dark);
+    background-color: var(--brand-white-lime);
+    color: var(--brand-green-dark);
+
+    /* Underline Style */
+    text-underline-offset: 4px;
+
+    /* Smooth State Transitions */
+    transition: color 0.2s ease, background-color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+/* Interactive States: Hover, Focus, Active for Primary Button - Primary and Secondary Button Group */
+.wp-block-button.btn--primary.garden-spray a.wp-block-button__link:hover,
+.wp-block-button.btn--primary.garden-spray a.wp-block-button__link:focus    {
+    background-color: var(--brand-green-dark) !important;
+    color: var(--brand-soft-orange) !important;
+    text-decoration-color: var(--brand-soft-orange) !important;
+}
+
+/* Interactive States: Hover, Focus, Active for Secondary Button - Primary and Secondary Button Group */
+.wp-block-button.btn--secondary.garden-spray a.wp-block-button__link:hover,
+.wp-block-button.btn--secondary.garden-spray a.wp-block-button__link:focus    {
+    border: 1px solid var(--brand-green-dark);
+    background-color: var(--brand-green-dark) !important;
+    color: var(--brand-white-lime) !important;
+    text-decoration: underline dotted var(--brand-white-lime) 2px !important;
 }
 
 /* ==========================================================================
