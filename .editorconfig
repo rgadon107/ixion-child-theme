@@ -1,0 +1,28 @@
+# This file unifies coding style for editors and IDEs (PHPStorm / WebStorm)
+# https://editorconfig.org
+
+root = true
+
+# Standard WordPress Coding Standards for theme files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = tab
+
+[*.txt]
+end_of_line = crlf
+
+# Gutenberg Block Pattern Rules for Child Theme Patterns
+# Prevents PHPStorm from adding tabs/spaces/newlines that break Gutenberg parser
+[patterns/*.php]
+insert_final_newline = false
+indent_size = 0
+indent_style = space
+
+# JetBrains-specific overrides for PHPStorm
+ij_php_indent_size = 0
+ij_html_indent_size = 0
+ij_visual_guides = none
+ij_html_align_attributes = false
