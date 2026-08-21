@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ## [Unreleased Version 1.4.7 - 2026-08-XX](https://github.com/rgadon107/ixion-child-theme/pull/33)
 
 ### Added
+- `/assets/css/main-style.css`:
+  - Add base styles for `.is-vertical-layout` on `.btn-group` container.
+  - Add mobile media queries for the `a.wp-block-button__link` selectors to increase line height of label text and offset text-underline. 
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.7`.
@@ -15,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ### Fixed
 - `patterns/primary-and-secondary-button-group.php`:
     - Change `wp:buttons` block JSON delimiter `orientation` attribute from `horizontal` to `vertical`.
-        - Fixes a problem with vertical stacking of the 2 buttons on the production website.
+        - Fixes a problem with vertical stacking of the 2 (two) buttons on the production website.
     - Remove inline styles for `margin-top` and `margin-bottom` from the `wp:button` block JSON delimiter. 
 
 ### Corrections
