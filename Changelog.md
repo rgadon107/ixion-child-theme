@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 - `/includes/register-design-patterns.php`: 
   - Added `primary-and-secondary-button-group` to the `register_design_categories` function.
   - Added inline styles within the button group for `margin-top` and `margin-bottom`.
-- `/assets/css/main-style.css`: Added styles for the primary and secondary button group with The Garden Spray.
+- `/assets/css/main-style.css`: Added styles for the primary and secondary button group applied to `The Garden Spray` section of the `members-only-content` page.
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.6`.
