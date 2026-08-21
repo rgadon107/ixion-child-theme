@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Primary and Secondary Button Group
- * Slug: ixion-child/primary-and-secondary-button-group
+ * Title: Primary and Secondary Button Group V2
+ * Slug: ixion-child/primary-and-secondary-button-group-v2
  * Categories: primary-and-secondary-button-group, featured
  * Sync Status: unsynced
  * Description: A reusable custom button pattern for two buttons styled with the site color palette and expected behavior.
