@@ -39,7 +39,8 @@ function register_pattern_categories(): void    {
         'two-column-layout-with-header'         => array('label' => __('Two Column Layout With Header', 'ixion-child')),
         'two-column-hero-section'               => array('label' => __('Two Column Hero Section', 'ixion-child')),
         'full-width-three-column-feature'       => array('label' => __('Full-Width 3-Column Circular Feature Trio', 'ixion-child')),
-        'button-group'                          => array('label' => __('Button Group', 'ixion-child')),
+        'primary-button-group'                  => array('label' => __('Primary Button Group', 'ixion-child')),
+        'primary-and-secondary-button-group'    => array('label' => __('Primary and Secondary Button Group', 'ixion-child')),
     );
 
     foreach ($categories as $slug => $settings) {
