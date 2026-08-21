@@ -1804,7 +1804,37 @@ section.documents-and-links-section h2.documents-and-links-heading {
     transition: color 0.2s ease, background-color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
+@media screen and (max-width: 37.5rem) {
+    .wp-block-button.btn--primary.garden-spray a.wp-block-button__link,
+    .wp-block-button.btn--secondary.garden-spray a.wp-block-button__link {
+        /* 1. Increases line-height so wrapped text lines don't collide */
+        line-height: 1.45;
+
+        /* 2. Lowers the underline clearance away from baselines */
+        text-underline-offset: 6px;
+
+        /* 3. Ensures multi-line text stays centered inside the button container */
+        text-align: center;
+    }
+}
+
 /* Custom Secondary Button Base State - Primary and Secondary Button Group pattern */
+
+/* Vertical alignment & center positioning for the container */
+.wp-block-buttons.btn-group.is-vertical-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem; /* Space between primary and secondary button */
+    margin-top: 1.25rem;
+}
+
+/* Ensure individual buttons span evenly and center text */
+.wp-block-buttons.btn-group.is-vertical-layout .wp-block-button {
+    margin: 0; /* Clears default core margins */
+}
+
 .wp-block-button.btn--secondary.garden-spray a.wp-block-button__link    {
     display: inline-flex;
     align-items: center;
