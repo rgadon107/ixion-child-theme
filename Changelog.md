@@ -19,7 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 - `patterns/primary-and-secondary-button-group.php`:
     - Change `wp:buttons` block JSON delimiter `orientation` attribute from `horizontal` to `vertical`.
         - Fixes a problem with vertical stacking of the 2 (two) buttons on the production website.
-    - Remove inline styles for `margin-top` and `margin-bottom` from the `wp:button` block JSON delimiter. 
+    - Remove inline styles for `margin-top` and `margin-bottom` from the `wp:button` block JSON delimiter.
+    - Resolve editor parse error by changing the block JSON delimiter to eliminate Unicode escape sequences and replace with `--`.
+    - To prevent editor parse errors, limit valid categories in the file header to `primary-and-secondary-button-group, featured`. 
 
 ### Corrections
 
