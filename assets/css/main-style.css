@@ -1821,18 +1821,18 @@ section.documents-and-links-section h2.documents-and-links-heading {
 /* Custom Secondary Button Base State - Primary and Secondary Button Group pattern */
 
 /* Vertical alignment & center positioning for the container */
-.wp-block-group .wp-block-group__inner-container .wp-block-buttons.btn-group.is-vertical-layout {
+.wp-block-buttons.btn-group.is-content-justification-center.is-vertical-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem; /* Space between primary and secondary button */
-    margin-top: 1.25rem;
+    gap: 1.5rem !important; /* Space between primary and secondary button */
+    margin-top: 1.25rem !important;
 }
 
 /* Ensure individual buttons span evenly and center text */
-.wp-block-group .wp-block-group__inner-container .wp-block-buttons.btn-group.is-vertical-layout .wp-block-button {
-    margin: 0; /* Clears default core margins */
+.wp-block-buttons.btn-group.is-content-justification-center.is-vertical-layout .wp-block-button {
+    margin: 0 !important; /* Clears default core margins */
 }
 
 .wp-block-button.btn--secondary.garden-spray a.wp-block-button__link    {
