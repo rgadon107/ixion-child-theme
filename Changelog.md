@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.4.8 - 2026-08-22](https://github.com/rgadon107/ixion-child-theme/pull/34)
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.4.8`.
+
+### Fixed
+- `/assets/css/main-style.css`:
+	- Increase specifity to increase vertical gap of primary and secondary buttons.
+	- Increase `border` and `font-weight` of secondary button.
+
 ## [Version 1.4.7 - 2026-08-21](https://github.com/rgadon107/ixion-child-theme/pull/33)
 
 ### Added
