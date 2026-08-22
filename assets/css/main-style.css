@@ -1826,13 +1826,19 @@ section.documents-and-links-section h2.documents-and-links-heading {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem !important; /* Space between primary and secondary button */
     margin-top: 1.25rem !important;
 }
 
 /* Ensure individual buttons span evenly and center text */
 .wp-block-buttons.btn-group.is-content-justification-center.is-vertical-layout .wp-block-button {
     margin: 0 !important; /* Clears default core margins */
+}
+
+/* Override Gutenberg layout flex gap for the primary/secondary button group */
+div.wp-block-buttons.btn-group.is-vertical-layout,
+div.wp-block-buttons.btn-group.is-vertical,
+div.btn-group.wp-block-buttons-is-layout-flex {
+	gap: 1.5em !important;
 }
 
 .wp-block-button.btn--secondary.garden-spray a.wp-block-button__link    {

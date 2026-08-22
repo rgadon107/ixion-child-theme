@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.5.0 - 2026-08-22](https://github.com/rgadon107/ixion-child-theme/pull/36)
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.5.0`.
+- `/assets/css/main-style.css`:
+	- Override the Gutenberg layout flex gap for the 'Primary and Secondary Button Group' pattern.
+    - Moved the `gap` property out of one selector group and into one appended to a `<div>` element.
+
 ## [Version 1.4.9 - 2026-08-22](https://github.com/rgadon107/ixion-child-theme/pull/35)
 
 ### Changed
