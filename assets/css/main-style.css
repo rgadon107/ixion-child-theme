@@ -1821,7 +1821,7 @@ section.documents-and-links-section h2.documents-and-links-heading {
 /* Custom Secondary Button Base State - Primary and Secondary Button Group pattern */
 
 /* Vertical alignment & center positioning for the container */
-.wp-block-buttons.btn-group.is-vertical-layout {
+.wp-block-group .wp-block-group__inner-container .wp-block-buttons.btn-group.is-vertical-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1831,7 +1831,7 @@ section.documents-and-links-section h2.documents-and-links-heading {
 }
 
 /* Ensure individual buttons span evenly and center text */
-.wp-block-buttons.btn-group.is-vertical-layout .wp-block-button {
+.wp-block-group .wp-block-group__inner-container .wp-block-buttons.btn-group.is-vertical-layout .wp-block-button {
     margin: 0; /* Clears default core margins */
 }
 
@@ -1842,10 +1842,10 @@ section.documents-and-links-section h2.documents-and-links-heading {
     padding: 1.5rem 3rem ;
     border-radius: 50px;
     font-size: 0.95rem;
-    font-weight: normal;
+    font-weight: 600;
 
     /* Brand Colors */
-    border: 1px solid var(--brand-green-dark);
+    border: 3px solid var(--brand-green-dark);
     background-color: var(--brand-white-lime);
     color: var(--brand-green-dark);
 
