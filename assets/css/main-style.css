@@ -1826,7 +1826,6 @@ section.documents-and-links-section h2.documents-and-links-heading {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 1.25rem !important;
 }
 
 /* Ensure individual buttons span evenly and center text */
@@ -1838,6 +1837,7 @@ section.documents-and-links-section h2.documents-and-links-heading {
 div.wp-block-buttons.btn-group.is-vertical-layout,
 div.wp-block-buttons.btn-group.is-vertical,
 div.btn-group.wp-block-buttons-is-layout-flex {
+	margin-top: 1.25rem !important;
 	gap: 1.5em !important;
 }
 
