@@ -8,4 +8,4 @@
  * Keywords: featured, primary-button-group, button-primary, buttons
  * Viewport Width: 800
  */
-?><!-- wp:buttons {"className":"btn-group"} --><div class="wp-block-buttons btn-group"><!-- wp:button {"placeholder":"Primary Button Text","metadata":{"name":"Button Label Text"},"className":"btn\u002d\u002dprimary"} --><div class="wp-block-button btn--primary"><a class="wp-block-button__link wp-element-button" href="#"><span class="btn__label"></span></a></div><!-- /wp:button --></div><!-- /wp:buttons -->
+?><!-- wp:buttons {"className":"btn-group","layout":{"type":"flex","justifyContent":"center"}} --><div class="wp-block-buttons btn-group"><!-- wp:button {"placeholder":"Button Label Text","className":"btn\u002d\u002dprimary"} --><div class="wp-block-button btn--primary"><a class="wp-block-button__link wp-element-button" href="#"></a></div><!-- /wp:button --></div><!-- /wp:buttons -->
