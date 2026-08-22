@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.5.1`.
+- `/assets/css/main-style.css`: Move `margin-top` property between selectors to override Gutenberg layout engine.
 
 ### Fixed
 
