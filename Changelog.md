@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
     - Remove inline styles for `margin-top` and `margin-bottom` from the `wp:button` block JSON delimiter.
     - To prevent editor parse errors, limit valid categories in the file header to `primary-and-secondary-button-group, featured`.
     - Rebuilt the custom design pattern in the Gutenberg editor on a clean, private page and pasted the markup into the design pattern file.
+- `patterns/primary-button-group.php`: Fixed the HTML markup and block JSON delimiter in the pattern file to resolve a Gutenberg editor parse error.
 
 ## [Version 1.4.6 - 2026-08-20](https://github.com/rgadon107/ixion-child-theme/pull/32)
 
