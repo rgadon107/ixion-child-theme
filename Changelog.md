@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.5.1 - 2026-08-24](https://github.com/rgadon107/ixion-child-theme/pull/37)
+
+### Added
+- `/assets/css/main-style.css`: Style the 'Primary Button Group' button used with the awards banquet event card.
+
+### Changed
+- `/style.css`: Increase child theme version number to `1.5.1`.
+- `/assets/css/main-style.css`:
+  - Move `margin-top` property between selectors to override Gutenberg layout engine.
+  - This targets the 'Primary and Secondary Button Group' button pattern.
+
 ## [Version 1.5.0 - 2026-08-22](https://github.com/rgadon107/ixion-child-theme/pull/36)
 
 ### Changed
@@ -18,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ### Changed
 - `/style.css`: Increase child theme version number to `1.4.9`.
 - `/assets/css/main-style.css`:
-  - Adjust primary and secondary button styles to override inline styles on production site.
+  - Adjust primary and secondary button styles to override inline styles on the production site.
 
 ## [Version 1.4.8 - 2026-08-22](https://github.com/rgadon107/ixion-child-theme/pull/34)
 
@@ -27,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Fixed
 - `/assets/css/main-style.css`:
-	- Increase specifity to increase vertical gap of primary and secondary buttons.
+	- Increase specifity to increase the vertical gap of primary and secondary buttons.
 	- Increase `border` and `font-weight` of secondary button.
 
 ## [Version 1.4.7 - 2026-08-21](https://github.com/rgadon107/ixion-child-theme/pull/33)
