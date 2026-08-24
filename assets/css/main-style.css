@@ -1752,7 +1752,8 @@ section.documents-and-links-section h2.documents-and-links-heading {
 /* Custom Primary Button Base State - Primary Button Group pattern */
 .wp-block-button.btn--primary.fff-show-hero a.wp-block-button__link,
 .wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link,
-.wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link     {
+.wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link,
+.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link	{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1777,10 +1778,31 @@ section.documents-and-links-section h2.documents-and-links-heading {
 .wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link:hover,
 .wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link:focus,
 .wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link:hover,
-.wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link:focus   {
+.wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link:focus	{
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-soft-orange) !important;
     text-decoration-color: var(--brand-soft-orange) !important;
+}
+
+.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link	{
+	border: 3px solid var(--brand-green-dark);
+}
+
+.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link:hover,
+.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link:focus,
+.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link:active {
+	background-color: var(--brand-green-light) !important;
+	color: var(--brand-green-dark) !important;
+	border: 3px solid var(--brand-green-dark);
+	text-decoration: none !important;
+}
+
+@media screen and (max-width: 37.5rem)	{
+	.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link	{
+		line-height: 1.45;
+		padding: 1.25rem 1.5625rem;
+		text-align: center;
+	}
 }
 
 /* Custom Primary Button Base State - Primary and Secondary Button Group pattern */
