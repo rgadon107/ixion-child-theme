@@ -12,7 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.5.1`.
-- `/assets/css/main-style.css`: Move `margin-top` property between selectors to override Gutenberg layout engine.
+- `/assets/css/main-style.css`:
+  - Move `margin-top` property between selectors to override Gutenberg layout engine.
+  - This targets the 'Primary and Secondary Button Group' button pattern.
 
 ## [Version 1.5.0 - 2026-08-22](https://github.com/rgadon107/ixion-child-theme/pull/36)
 
