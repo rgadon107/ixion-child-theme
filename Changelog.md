@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ## [Unreleased Version 1.5.3 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/39)
 
 ### Added
+- `/theme.json`: Added file to activate `textAlign` capability for the post title and center align all post titles throughout the site.
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.5.3`.

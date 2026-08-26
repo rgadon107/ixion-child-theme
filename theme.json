@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"blocks": {
+			"core/post-title": {
+				"typography": {
+					"textAlign": true
+				}
+			}
+		}
+	},
+	"styles": {
+		"blocks": {
+			"core/post-title": {
+				"typography": {
+					"textAlign": "center"
+				}
+			}
+		}
+	}
+}
