@@ -1863,7 +1863,8 @@ div.btn-group.wp-block-buttons-is-layout-flex {
 	gap: 1.5em !important;
 }
 
-.wp-block-button.btn--secondary.garden-spray a.wp-block-button__link    {
+.wp-block-button.btn--secondary.garden-spray a.wp-block-button__link,
+.wp-block-button.btn--secondary.awards-banquet a.wp-block-button__link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1894,8 +1895,10 @@ div.btn-group.wp-block-buttons-is-layout-flex {
 
 /* Interactive States: Hover, Focus, Active for Secondary Button - Primary and Secondary Button Group */
 .wp-block-button.btn--secondary.garden-spray a.wp-block-button__link:hover,
-.wp-block-button.btn--secondary.garden-spray a.wp-block-button__link:focus    {
-    border: 2px solid var(--brand-green-dark);
+.wp-block-button.btn--secondary.garden-spray a.wp-block-button__link:focus,
+.wp-block-button.btn--secondary.awards-banquet a.wp-block-button__link:hover,
+.wp-block-button.btn--secondary.awards-banquet a.wp-block-button__link:focus {
+    border: 3px solid var(--brand-green-dark);
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-white-lime) !important;
     text-decoration: underline dotted var(--brand-white-lime) 2px !important;
