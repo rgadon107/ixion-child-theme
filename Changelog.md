@@ -5,18 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.5.3 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/39)
+## [Version 1.5.3 - 2026-08-30](https://github.com/rgadon107/ixion-child-theme/pull/39)
+
+This version update adds styles to the Awards Banquet webpage for fundraising and donations; fixes labels, input fields, field descriptions, and submit buttons on the Ninja Forms `2026 Awards Banquet Donation Form`; and adds a `theme.json` file to the child-theme to activate the block-based `textAlign` capability for all page titles.
 
 ### Added
 - `/theme.json`: Added a file to activate `textAlign` capability for the post-title and center align all post-titles throughout the site.
-- `/assets/css/main-style.css`: Added baseline styles for the awards banquet fundraising activity section.
+- `/assets/css/main-style.css`:
+  - Added and updated baseline styles for the awards banquet fundraising activity section.
+  - Add styles for Awards Banquet donation section.
+  - Add outline to Awards Banquet secondary buttons on hover and focus.
+  - Target width of number fields and field descriptions on Awards Banquet donation form.
+  - Target styles of all Ninja Forms breadcrumb navigation elements.
+  - Increase label font size and add margin bottom on description fields within the Awards Banquet donation form.
+  - Style the 'Submit Donation' button on the Awards Banquet donation form.
 
 ### Changed
 - `/style.css`: Increase child theme version number to `1.5.3`.
-
-### Fixed
-
-### Corrections
 
 ## [Version 1.5.2 - 2026-08-25](https://github.com/rgadon107/ixion-child-theme/pull/38)
 

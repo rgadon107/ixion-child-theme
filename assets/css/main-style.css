@@ -653,32 +653,30 @@ section.alignfull,
    Awards Banquet Fundraising Activity Section
    ========================================================================== */
 
-/* Full-Bleed Section Background & Vertical Spacing */
+/* 1. Outer Section - Full-Bleed Viewport Container */
 section.ab-fundraising-activity-section {
-	background-color: var(--brand-white-lime);
-
-	/* Increased padding creates internal vertical space filled by the background color */
-	padding-top: 3.5rem !important;
-	padding-bottom: 3.5rem !important;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-
-	/* Full-bleed viewport breakout */
+	background-color: var(--brand-white-lime) !important;
 	width: 100vw !important;
+	max-width: 100vw !important;
+	margin-left: calc(50% - 50vw) !important;
+	margin-right: calc(50% - 50vw) !important;
 	position: relative !important;
-	left: 50% !important;
-	right: 50% !important;
-	margin-left: -50vw !important;
-	margin-right: -50vw !important;
-	margin-top: 0 !important;
-	margin-bottom: 0 !important;
-	box-sizing: border-box;
+	left: 0 !important;
+	right: 0 !important;
+	padding: 3.5rem 1.5rem !important;
+	box-sizing: border-box !important;
+	display: flow-root !important; /* Prevents vertical margin collapse at section bottom */
 }
 
-/* Headings & Header Spacing */
-.ab-fundraising-activity-section h2.ab-fundraising-section-heading {
-	color: var(--brand-green-dark);
-	margin-bottom: 2.5rem !important; /* Space below the main H2 header */
+/* Prevent margin leakage from last child elements */
+section.ab-fundraising-activity-section .wp-block-column > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+/* 2. Main Columns Container & Section Heading */
+section.ab-fundraising-activity-section h2.ab-fundraising-section-heading {
+	margin-top: 0 !important;
+	margin-bottom: 2rem !important;
 }
 
 .ab-fundraising-activity-section h3 {
@@ -896,6 +894,88 @@ section.ab-event-schedule-section {
 		flex: 1 1 320px;
 		max-width: 420px; /* Prevents columns from spreading too wide */
 	}
+}
+
+/* ==========================================================================
+   Awards Banquet: Standalone Donation Section
+   ========================================================================== */
+
+/* 1. Outer Section - Full-Bleed Edge-to-Edge Dark Green Background */
+section.ab-donation-section {
+	background-color: var(--brand-green-dark) !important;
+	width: 100vw !important;
+	max-width: 100vw !important;
+	margin-left: calc(50% - 50vw) !important;
+	margin-right: calc(50% - 50vw) !important;
+	position: relative !important;
+	left: 0 !important;
+	right: 0 !important;
+	padding: 3.5rem 1.5rem !important;
+	box-sizing: border-box !important;
+	display: flow-root !important; /* Prevents vertical margin collapse */
+}
+
+/* 2. Main Heading (H2) */
+section.ab-donation-section h2.donation-section-heading {
+	color: var(--brand-soft-orange) !important;
+	background-color: transparent !important;
+	margin-top: 0 !important;
+	margin-bottom: 2rem !important;
+}
+
+/* 3. Columns Wrapper (Aligned to 900px content width) */
+section.ab-donation-section .wp-block-columns.donation-section-columns {
+	max-width: 1140px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: 100% !important;
+}
+
+/* Ensure equal column balancing and vertical alignment */
+@media (min-width: 48em) {
+	section.ab-donation-section .wp-block-columns.donation-section-columns {
+		display: flex !important;
+		align-items: center !important; /* Vertically centers the button with paragraph text */
+		gap: 3.5rem !important;        /* Generous horizontal space between text & button */
+	}
+
+	section.ab-donation-section .wp-block-column.col-1-text {
+		flex: 1 1 45% !important; /* Allocates proportional width to text */
+	}
+
+	section.ab-donation-section .wp-block-column.col-2-button {
+		flex: 1 1 45% !important; /* Allocates proportional width to button wrapper */
+	}
+}
+
+/* 4. Text Column Styling */
+section.ab-donation-section .wp-block-column.col-1-text,
+section.ab-donation-section .wp-block-column.col-1-text p {
+	color: var(--brand-white-lime) !important;
+}
+
+/* 5. Primary Button (.btn--primary.ab-donation inside section) */
+section.ab-donation-section .btn--primary.ab-donation a.wp-block-button__link {
+	background-color: var(--brand-white-lime) !important;
+	color: var(--brand-green-dark) !important;
+	border: 3px solid var(--brand-green-light) !important;
+	outline: 2px solid transparent;                       /* Outer Ring Placeholder */
+	outline-offset: 3px;                                  /* Gap between border & outline */
+	font-size: 1.7rem !important;                         /* Enlarges text by an additional 30% */
+	padding: 1.1em 2.6em !important;                      /* Enlarges padding by an additional 30% */
+	transition: outline-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+	display: inline-block;
+}
+
+/* Primary Button State Transitions */
+section.ab-donation-section .btn--primary.ab-donation a.wp-block-button__link:hover,
+section.ab-donation-section .btn--primary.ab-donation a.wp-block-button__link:focus,
+section.ab-donation-section .btn--primary.ab-donation a.wp-block-button__link:active {
+	border-color: var(--brand-green-light) !important;
+	color: var(--brand-green-dark) !important;
+	outline-color: var(--brand-soft-orange) !important;  /* Reveals outer ring */
+	text-underline-offset: 4px;
+	text-decoration-color: var(--brand-green-dark);
 }
 
 /* ==========================================================================
@@ -2074,6 +2154,8 @@ div.btn-group.wp-block-buttons-is-layout-flex {
     border: 3px solid var(--brand-green-dark);
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-white-lime) !important;
+	outline: 2px solid var(--brand-green-dark, #527a55) !important;
+	outline-offset: 4px;
     text-decoration: underline dotted var(--brand-white-lime) 2px !important;
 }
 
@@ -2284,7 +2366,8 @@ footer.entry-footer .edit-link  {
 }
 
 /* Ninja Forms number field container targeting for Deane Fund grant application. */
-.nf-field-container.df-grant-quarter-field {
+.nf-field-container.df-grant-quarter-field,
+.nf-field-container.ab-donation-quarter-field	{
     width: 25% !important;
     float: left !important;
     clear: none !important;
@@ -2293,13 +2376,56 @@ footer.entry-footer .edit-link  {
 
 /* Description paragraph targeting inside the container */
 .df-grant-quarter-field .nf-field-description p,
-.df-grant-description p {
+.df-grant-description p,
+.ab-donation-quarter-field .nf-field-description p	{
     display: block !important;
     width: 400% !important; /* Expands past the 25% parent width (25% * 4 = 100%) */
     max-width: 80vw !important;
     clear: both !important;
     float: left !important;
     margin-bottom: 1.25em !important;
+}
+
+/* Applies to ALL multi-part Ninja Forms site-wide */
+.nf-breadcrumbs li.active a.nf-breadcrumb {
+	font-weight: 700 !important;
+	outline: 2px solid var(--brand-green-dark, #527a55) !important;
+	outline-offset: 4px;
+	border-radius: 3px; /* Optional: rounds the outline corners slightly */
+}
+
+/* Awards Banquet Donation Form - 'Donation Type' Field Adjustments */
+
+/* 1. Increase Label Font Size */
+.ab-donation-type-wrap .nf-field-label .nf-label-span {
+	font-size: 1.125rem !important; /* ~18px (adjust as needed) */
+	font-weight: 600 !important;   /* Optional: adds slight emphasis */
+}
+
+/* 2. Add Bottom Margin to Field Description */
+.ab-donation-type-wrap .nf-field-description,
+.ab-donation-category-wrap .nf-field-description	{
+	margin-bottom: 1rem !important; /* ~16px gap below description */
+}
+
+/* Awards Banquet Donation Form - Custom Submit Button Styling */
+.nf-form-content input[type="button"].ab-donation-submit-btn,
+.nf-form-content input[type="submit"].ab-donation-submit-btn {
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	padding: 0.75rem 1.75rem !important; /* ~12px top/bottom, ~28px left/right */
+	height: auto !important;             /* Prevents fixed-height clipping */
+	line-height: normal !important;      /* Cleans up vertical text alignment */
+}
+
+.nf-form-content input[type="button"].ab-donation-submit-btn:hover,
+.nf-form-content input[type="button"].ab-donation-submit-btn:focus,
+.nf-form-content input[type="submit"].ab-donation-submit-btn:hover,
+.nf-form-content input[type="submit"].ab-donation-submit-btn:focus	{
+	outline: 2px solid var(--brand-green-dark, #527a55) !important;
+	outline-offset: 4px;
+	border-radius: 3px; /* Optional: rounds the outline corners slightly */
 }
 
 /* GCM development site popup post_id */
