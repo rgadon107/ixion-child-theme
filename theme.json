@@ -2,6 +2,11 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
+		"useRootPaddingAwareAlignments": true,
+		"layout": {
+			"contentSize": "800px",
+			"wideSize": "1200px"
+		},
 		"blocks": {
 			"core/post-title": {
 				"typography": {
