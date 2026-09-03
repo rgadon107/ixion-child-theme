@@ -2265,9 +2265,11 @@ h2.wp-block-heading.membership-benefits-section-heading {
 }
 
 /* Button Container Spacing */
-.membership-benefits-section .register-button {
+.membership-benefits-section .register-button .wp-block-button__link {
     margin-top: 1.5rem;
     margin-bottom: 5.5rem;
+	position: relative;
+	z-index: 10;
 }
 
 /* Default Button Color State (Ensures proper base colors over light green background) */
