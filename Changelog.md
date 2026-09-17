@@ -5,16 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.5.5 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/41)
+## [Version 1.5.5 - 2026-09-16](https://github.com/rgadon107/ixion-child-theme/pull/41)
 
 ### Added
+- `/assets/css/main-style.css`: Added styles for the primary and secondary buttons on the `/membership-form-submit-success` page.
 
 ### Changed
 - `/style.css`: Increase child-theme version update to `1.5.5`.
-
-### Fixed
-
-### Corrections
 
 ## [Version 1.5.4 - 2026-09-03](https://github.com/rgadon107/ixion-child-theme/pull/40)
 
