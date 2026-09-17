@@ -1997,7 +1997,8 @@ section.documents-and-links-section h2.documents-and-links-heading {
 .wp-block-button.btn--primary.mn-state-fair a.wp-block-button__link,
 .wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link,
 .wp-block-button.btn--primary.awards-banquet a.wp-block-button__link,
-.wp-block-button.btn--primary.ab-hero a.wp-block-button__link	{
+.wp-block-button.btn--primary.ab-hero a.wp-block-button__link,
+.wp-block-button.btn--primary.membership a.wp-block-button__link	{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -2030,13 +2031,17 @@ section.documents-and-links-section h2.documents-and-links-heading {
     text-decoration-color: var(--brand-soft-orange) !important;
 }
 
-.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link	{
+.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link,
+.wp-block-button.btn--primary.membership a.wp-block-button__link 	{
 	border: 3px solid var(--brand-green-dark);
 }
 
 .wp-block-button.btn--primary.awards-banquet a.wp-block-button__link:hover,
 .wp-block-button.btn--primary.awards-banquet a.wp-block-button__link:focus,
-.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link:active {
+.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link:active,
+.wp-block-button.btn--primary.membership a.wp-block-button__link:hover,
+.wp-block-button.btn--primary.membership a.wp-block-button__link:focus,
+.wp-block-button.btn--primary.membership a.wp-block-button__link:active		{
 	background-color: var(--brand-green-light) !important;
 	color: var(--brand-green-dark) !important;
 	border: 3px solid var(--brand-green-dark);
@@ -2044,7 +2049,8 @@ section.documents-and-links-section h2.documents-and-links-heading {
 }
 
 @media screen and (max-width: 37.5rem)	{
-	.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link	{
+	.wp-block-button.btn--primary.awards-banquet a.wp-block-button__link,
+	.wp-block-button.btn--primary.membership a.wp-block-button__link{
 		line-height: 1.45;
 		padding: 1.25rem 1.5625rem;
 		text-align: center;
@@ -2076,7 +2082,8 @@ section.documents-and-links-section h2.documents-and-links-heading {
     .wp-block-button.btn--primary.garden-spray a.wp-block-button__link,
     .wp-block-button.btn--secondary.garden-spray a.wp-block-button__link,
 	.wp-block-button.btn--primary.ab-hero a.wp-block-button__link,
-	.wp-block-button.btn--secondary.ab-hero a.wp-block-button__link		{
+	.wp-block-button.btn--secondary.ab-hero a.wp-block-button__link,
+	.wp-block-button.btn--secondary.membership a.wp-block-button__link	{
         /* 1. Increases line-height so wrapped text lines don't collide */
         line-height: 1.45;
 
@@ -2113,7 +2120,8 @@ div.btn-group.wp-block-buttons-is-layout-flex {
 
 .wp-block-button.btn--secondary.garden-spray a.wp-block-button__link,
 .wp-block-button.btn--secondary.awards-banquet a.wp-block-button__link,
-.wp-block-button.btn--secondary.ab-hero a.wp-block-button__link {
+.wp-block-button.btn--secondary.ab-hero a.wp-block-button__link,
+.wp-block-button.btn--secondary.membership a.wp-block-button__link	{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -2138,7 +2146,7 @@ div.btn-group.wp-block-buttons-is-layout-flex {
 .wp-block-button.btn--primary.garden-spray a.wp-block-button__link:hover,
 .wp-block-button.btn--primary.garden-spray a.wp-block-button__link:focus,
 .wp-block-button.btn--primary.ab-hero a.wp-block-button__link:hover,
-.wp-block-button.btn--primary.ab-hero a.wp-block-button__link:focus{
+.wp-block-button.btn--primary.ab-hero a.wp-block-button__link:focus		{
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-soft-orange) !important;
     text-decoration-color: var(--brand-soft-orange) !important;
@@ -2150,7 +2158,9 @@ div.btn-group.wp-block-buttons-is-layout-flex {
 .wp-block-button.btn--secondary.awards-banquet a.wp-block-button__link:hover,
 .wp-block-button.btn--secondary.awards-banquet a.wp-block-button__link:focus,
 .wp-block-button.btn--secondary.ab-hero a.wp-block-button__link:hover,
-.wp-block-button.btn--secondary.ab-hero a.wp-block-button__link:focus 	{
+.wp-block-button.btn--secondary.ab-hero a.wp-block-button__link:focus,
+.wp-block-button.btn--secondary.membership a.wp-block-button__link:hover,
+.wp-block-button.btn--secondary.membership a.wp-block-button__link:focus	{
     border: 3px solid var(--brand-green-dark);
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-white-lime) !important;
