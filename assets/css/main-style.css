@@ -1998,6 +1998,7 @@ section.documents-and-links-section h2.documents-and-links-heading {
 .wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link,
 .wp-block-button.btn--primary.awards-banquet a.wp-block-button__link,
 .wp-block-button.btn--primary.ab-hero a.wp-block-button__link,
+.wp-block-button.btn--primary.ab-hero-volunteer a.wp-block-button__link,
 .wp-block-button.btn--primary.membership a.wp-block-button__link	{
     display: inline-flex;
     align-items: center;
@@ -2025,7 +2026,9 @@ section.documents-and-links-section h2.documents-and-links-heading {
 .wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link:hover,
 .wp-block-button.btn--primary.member-photo-directory a.wp-block-button__link:focus,
 .wp-block-button.btn--primary.ab-hero a.wp-block-button__link:hover,
-.wp-block-button.btn--primary.ab-hero a.wp-block-button__link:focus	{
+.wp-block-button.btn--primary.ab-hero a.wp-block-button__link:focus,
+.wp-block-button.btn--primary.ab-hero-volunteer a.wp-block-button__link:hover,
+.wp-block-button.btn--primary.ab-hero-volunteer a.wp-block-button__link:focus		{
     background-color: var(--brand-green-dark) !important;
     color: var(--brand-soft-orange) !important;
     text-decoration-color: var(--brand-soft-orange) !important;

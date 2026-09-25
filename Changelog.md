@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.5.6 - 2026-09-25](https://github.com/rgadon107/ixion-child-theme/pull/42)
+
+### Added
+- `/assets/css/main-style.css`: Add custom class attribute `.ab-hero-volunteer` to primary button styles.
+
+### Changed
+- `/style.css`: Increase child-theme version update to `1.5.6`.
+
 ## [Version 1.5.5 - 2026-09-16](https://github.com/rgadon107/ixion-child-theme/pull/41)
 
 ### Added
