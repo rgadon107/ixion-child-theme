@@ -236,6 +236,12 @@ section.alignfull,
     display: none;
 }
 
+/* Center-align page headers */
+.entry-content h1.alignfull,
+h1.entry-title {
+	text-align: center;
+}
+
 /* B. Navigation: Final Edge-to-Edge & Color Lock */
 #site-navigation a,
 #site-navigation ul li a {
