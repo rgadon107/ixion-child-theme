@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 - `/assets/css/main-style.css`:
   - Inverted the colors for the 'Primary Button Group' design pattern in its base state, and for hover and focus.
   - Added a mobile query.
-  - Assigned a new custom class attribute for styling purposes, `.btn--inverted`.
+  - Assigned a new custom class attribute to style the 'Primary Button Group' pattern named `.btn--inverted`.
   - Add styles to center-align page headers.
 
 ### Changed
