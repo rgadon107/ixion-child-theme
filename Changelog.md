@@ -5,16 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.5.8 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/44)
-
-### Added
+## [Version 1.5.8 - 2026-10-19](https://github.com/rgadon107/ixion-child-theme/pull/45)
 
 ### Changed
 - `/style.css`: Increase child-theme version update to `1.5.8`.
-
-### Fixed
-
-### Corrections
+- `/patterns/faq-accordion-with-text.php`: Added a group wrapper around the accordion block. Allows for block renaming in the editor.
 
 ## [Version 1.5.7 - 2026-10-16](https://github.com/rgadon107/ixion-child-theme/pull/43)
 
