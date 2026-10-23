@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Version 1.5.8 - 2026-10-19](https://github.com/rgadon107/ixion-child-theme/pull/44)
 
+### Added
+- `/assets/css/variables.css`: Add brand-green acessible and hover color variables.
+
 ### Changed
 - `/style.css`: Increase child-theme version update to `1.5.8`.
 - `/patterns/faq-accordion-with-text.php`: Added a group wrapper around the accordion block. Allows for block renaming in the editor.
