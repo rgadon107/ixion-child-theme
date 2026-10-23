@@ -520,6 +520,63 @@
     margin-bottom: 0;
 }
 
+/* --------------------------------------------------------------------------
+   ACCESSIBLE ACCORDION TEXT LINKS (ENHANCED HOVER)
+-------------------------------------------------------------------------- */
+.wp-block-accordion-panel .wp-block-list a.accordion-link {
+	color: var(--brand-green-accessible);
+	text-decoration: underline;
+	text-decoration-color: var(--brand-green-accessible);
+	text-decoration-thickness: 1.5px;
+	text-underline-offset: 3px;
+	padding: 2px 6px;
+	margin: -2px -6px;
+	border-radius: 4px;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	transition:
+		color 0.2s ease,
+		background-color 0.2s ease,
+		text-decoration-color 0.2s ease,
+		text-underline-offset 0.2s ease,
+		transform 0.2s ease;
+}
+
+/* Enlarged inline micro-indicator arrow */
+.wp-block-accordion-panel .wp-block-list a.accordion-link::after {
+	content: "↗";
+	font-size: 1.35em;
+	font-weight: bold;
+	line-height: 1;
+	display: inline-block;
+	opacity: 0.8;
+	/* Adjust value: positive shifts down (+1px or +2px), negative shifts up (-1px or -2px) */
+	transform: translateY(-1px);
+	transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Dynamic Hover and Focus States */
+.wp-block-accordion-panel .wp-block-list a.accordion-link:hover,
+.wp-block-accordion-panel .wp-block-list a.accordion-link:focus-visible {
+	color: var(--branch-green-accessible-hover);
+	background-color: rgba(82, 122, 85, 0.15); /* Soft tint using brand green */
+	text-decoration-color: var(--branch-green-accessible-hover);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 5px; /* Pushes underline lower for dynamic feel */
+	transform: translateY(-2px); /* Subtle 1px lift */
+	outline-offset: 2px;
+}
+
+/* Arrow shift and expansion animation on hover */
+.wp-block-accordion-panel .wp-block-list a.accordion-link:hover::after,
+.wp-block-accordion-panel .wp-block-list a.accordion-link:focus-visible::after {
+	opacity: 1;
+	/* Combine base 1px offset with the -2px hover lift = -1px total net vertical shift */
+	transform: translate(2px, -1px) scale(1.15);
+}
+
+
 /* ==========================================================================
    FAQ ACCORDION WITH MEDIA GRID - BLOCK STYLES
    ========================================================================== */
