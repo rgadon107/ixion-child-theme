@@ -11,14 +11,16 @@
     --site-width: 1100px;
 
     /* --- B. BRAND COLORS --- */
-    --brand-soft-orange:   #f3bd50;
-    --brand-green-dark:    #527a55;
-    --brand-green-light:   #cbd8cb;
-    --brand-white-lime:    #f8faf8;
-    --brand-text-main:     #333333; /* Dark gray for readability */
-    --card-background:     #f4f4f4; /* Very light gray */
-    --white:               #ffffff;
-    --vivid-red:           #cc0000; /* Use for notifications */
+    --brand-soft-orange:   				#f3bd50;
+    --brand-green-dark:    				#527a55;
+	--brand-green-accessible: 			#436446; /* Use with `--brand-green-light` */
+    --branch-green-accessible-hover: 	#2e442f; /* Hover color for accessible green. */
+	--brand-green-light:   				#cbd8cb;
+    --brand-white-lime:    				#f8faf8;
+    --brand-text-main:     				#333333; /* Dark gray for readability */
+    --card-background:     				#f4f4f4; /* Very light gray */
+    --white:               				#ffffff;
+    --vivid-red:           				#cc0000; /* Use for notifications */
 
     /* --- C. INTERACTIVE TOKENS --- */
     /* 60% Opacity (40% transparent) per your preference */
