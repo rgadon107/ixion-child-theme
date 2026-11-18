@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ## [Unreleased Version 1.6.0 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/46)
 
 ### Added
+- `/assets/css/main-style.css`: Set text-align to left on the `event-title` selector in 'single-events.html'.
 
 ### Changed
 - `/style.css`: Increase child-theme version update to `1.6.0`.

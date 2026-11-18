@@ -408,6 +408,11 @@ h1.entry-title {
     border-left: var(--border-thick);
 }
 
+.entry-content .custom-tight-card .event-title,
+.entry-content .custom-tight-card .wp-block-post-title.has-text-align-left {
+	text-align: left;
+}
+
 /* Container to keep date and badge on the same line */
 .event-date-group {
     display: flex;
