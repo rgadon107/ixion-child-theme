@@ -654,12 +654,16 @@ h1.entry-title {
     }
 }
 
-.entry-content,
+.entry-content .custom-tight-card,
+.entry-content .custom-tight-card-home-page,
 .entry-content > *:last-child {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
+.single-events .custom-tight-card	{
+	margin-bottom: 25px;
+}
 /* ==========================================================================
    Awards Banquet Fundraising Activity Section
    ========================================================================== */
