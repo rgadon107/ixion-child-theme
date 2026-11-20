@@ -655,15 +655,16 @@ h1.entry-title {
 }
 
 .entry-content .custom-tight-card,
-.entry-content .custom-tight-card-home-page,
-.entry-content > *:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
+.entry-content .custom-tight-card-home-page	{
+    margin-bottom: 25px;
+    padding-bottom: 2px;
 }
 
-.single-events .custom-tight-card	{
-	margin-bottom: 25px;
+.single-events main.entry-content .custom-tight-card	{
+	padding-bottom: 25px;
+	margin-bottom: 25px !important;
 }
+
 /* ==========================================================================
    Awards Banquet Fundraising Activity Section
    ========================================================================== */
