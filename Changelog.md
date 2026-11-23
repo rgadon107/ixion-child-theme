@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Version 1.6.0 - 2026-11-23](https://github.com/rgadon107/ixion-child-theme/pull/46)
+
+### Changed
+- `/style.css`: Increase child-theme version update to `1.6.0`.
+- `/assets/css/main-style.css`:
+  - Set text-align to left on the `.event-title` selector in 'single-events.html'.
+  - Modify event-card styles to encompass 'single-events.html' template styles.
+  - Update styles for `.custom-tight-card` for use with 'single-events.html'.
+
 ## [Version 1.5.9 - 2026-10-23](https://github.com/rgadon107/ixion-child-theme/pull/45)
 
 ### Added
