@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased Version 1.6.0 - 2026-XX-XX](https://github.com/rgadon107/ixion-child-theme/pull/46)
+## [Version 1.6.0 - 2026-11-23](https://github.com/rgadon107/ixion-child-theme/pull/46)
 
 ### Added
 - `/assets/css/main-style.css`: Set text-align to left on the `event-title` selector in 'single-events.html'.
